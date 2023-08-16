@@ -2,6 +2,7 @@ import loadable from '@loadable/component'
 
 import { useTranslation } from 'react-i18next'
 import { Navigate, Route, Routes } from 'react-router-dom'
+
 import { useScroll2Top } from '@/hooks/useScroll2Top'
 
 const Home2 = loadable(() => import('@/pages/Home2'))
@@ -15,7 +16,7 @@ function App() {
 
   return (
     <div id="app-container">
-      <h1 onClick={() => i18n.changeLanguage('zh-CN')}>{t('common.twoway')}</h1>
+      <h1 onClick={() => i18n.changeLanguage('en')}>{t('common.twoway')}</h1>
       <Routes>
         <Route path="/" element={<Home1 />} />
         <Route path="/1" element={<Home1 />} />

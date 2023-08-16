@@ -9,13 +9,15 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "preview": "vite preview",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json}'",
-    "stylelint": "stylelint 'src/style/**/*.scss' --fix"
+    "stylelint": "stylelint 'src/style/**/*.scss' --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@apollo/client": "^3.8.1",
     "@loadable/component": "^5.15.3",
     "fbemitter": "^3.0.0",
     "graphql": "^16.8.0",
+    "husky": "^8.0.3",
     "i18next": "^21.10.0",
     "i18next-browser-languagedetector": "^7.1.0",
     "jotai": "^2.3.1",
@@ -44,8 +46,8 @@
     "eslint-plugin-react": "^7.33.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
-    "lint-staged": "^12.5.0",
-    "prettier": "^3.0.2",
+    "prettier": "^2.8.8",
+    "pretty-quick": "^3.1.3",
     "sass": "^1.65.1",
     "stylelint": "^15.10.2",
     "stylelint-config-prettier": "^9.0.5",
