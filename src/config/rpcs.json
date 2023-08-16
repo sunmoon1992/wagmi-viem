@@ -1,0 +1,42 @@
+{
+  "42161": {
+    "rpc": [
+      "https://arb1.arbitrum.io/rpc",
+      "https://arbitrum-mainnet.infura.io/v3/90b17115b540472ba9383500c4361b54",
+      "https://arbitrum-mainnet.infura.io/v3/2ae3a06d40634a05abf2962d708e382f",
+      "https://arbitrum-mainnet.infura.io/v3/541ee9915c1742bb92b38e10b375e398"
+    ],
+    "bridges": [
+      {
+        "url": "https://bridge.arbitrum.io"
+      }
+    ],
+    "explorers": [
+      {
+        "name": "Arbiscan",
+        "url": "https://arbiscan.io",
+        "standard": "EIP3091"
+      },
+      {
+        "name": "Arbitrum Explorer",
+        "url": "https://explorer.arbitrum.io",
+        "standard": "EIP3091"
+      }
+    ]
+  },
+  "421613": {
+    "rpc": ["https://goerli-rollup.arbitrum.io/rpc", "https://endpoints.omniatech.io/v1/arbitrum/goerli/public"],
+    "bridges": [
+      {
+        "url": "https://bridge.arbitrum.io/"
+      }
+    ],
+    "explorers": [
+      {
+        "name": "Arbitrum Goerli Rollup Explorer",
+        "url": "https://goerli-rollup-explorer.arbitrum.io",
+        "standard": "EIP3091"
+      }
+    ]
+  }
+}

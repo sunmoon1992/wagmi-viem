@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-prettier",
+    "stylelint-config-prettier-scss",
+    "stylelint-config-standard-scss"
+  ],
+  "rules": {
+    "indentation": 4,
+    "string-quotes": "single"
+  }
+}
