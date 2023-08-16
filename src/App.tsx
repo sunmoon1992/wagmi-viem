@@ -2,7 +2,6 @@ import loadable from '@loadable/component'
 
 import { useTranslation } from 'react-i18next'
 import { Navigate, Route, Routes } from 'react-router-dom'
-
 import { useScroll2Top } from '@/hooks/useScroll2Top'
 
 const Home2 = loadable(() => import('@/pages/Home2'))

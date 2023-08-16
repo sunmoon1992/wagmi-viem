@@ -9,8 +9,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "preview": "vite preview",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json}'",
-    "stylelint": "stylelint 'src/style/**/*.scss' --fix",
-    "prepare": "husky install"
+    "stylelint": "stylelint 'src/style/**/*.scss' --fix"
   },
   "dependencies": {
     "@apollo/client": "^3.8.1",
@@ -45,9 +44,8 @@
     "eslint-plugin-react": "^7.33.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
-    "husky": ">=6",
     "lint-staged": "^12.5.0",
-    "prettier": "2.8.8",
+    "prettier": "^3.0.2",
     "sass": "^1.65.1",
     "stylelint": "^15.10.2",
     "stylelint-config-prettier": "^9.0.5",
@@ -59,12 +57,10 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "eslint --cache --fix",
-      "prettier --write"
+      "eslint --cache --fix"
     ],
     "*.{css,scss}": [
-      "stylelint --fix",
-      "prettier --write"
+      "stylelint --fix"
     ],
     "*.{json,md}": "prettier --write"
   }

@@ -30,5 +30,10 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
