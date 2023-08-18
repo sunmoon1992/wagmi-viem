@@ -1,7 +1,11 @@
+import AccountButton from '@/components/Wallet/AccountButton'
+import ConnectButton from '@/components/Wallet/ConnectButton'
+
 function Home() {
   return (
     <>
-      <h1 style={{ height: '1000px' }}>Home1</h1>
+      <AccountButton />
+      <ConnectButton />
     </>
   )
 }

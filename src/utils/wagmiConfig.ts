@@ -23,7 +23,7 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
   ]
 )
 
-export const metaMaskConnector = new MetaMaskConnector({
+const metaMaskConnector = new MetaMaskConnector({
   chains,
   options: {
     shimDisconnect: false
