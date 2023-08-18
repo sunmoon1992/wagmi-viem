@@ -1,10 +1,10 @@
 import invariant from 'tiny-invariant'
 import warning from 'tiny-warning'
-import { getAddress } from 'viem'
+import { Address, getAddress } from 'viem'
 
 import { ChainId, ChainIdRec } from '@/typings'
 
-export const _getAddress = (address: ChainIdRec): `0x${string}` => {
+export const _getAddress = (address: ChainIdRec): Address => {
   const chainId = import.meta.env.DAPP_CHAIN_ID ?? ChainId.MAINNET
   const _address = address[chainId] ?? address[ChainId.MAINNET]
   return _address.toLowerCase()
