@@ -23,7 +23,7 @@ export const useAirdrop = () => {
       const r = await claimed(account)
       console.info('claimed:', r)
       const c = getAirdropContract()
-      const hash = await callWithGas(c, 'claim', [], { account })
+      const hash = await callWithGas(c, 'claim', [], { account } as any)
       console.info('hash:', hash)
       const receipt = await waitForTransaction(hash)
       console.info(receipt)

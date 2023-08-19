@@ -1,4 +1,5 @@
-import { Rec } from '@/typings'
+import { Rec, TXStatus } from '@/typings'
+import { getERC20Contract } from '@/utils/contractHelpers'
 import { publicClient, walletClient } from '@/utils/viem'
 import {
   CallParameters,
@@ -65,4 +66,61 @@ export const estimateContractGas = async (
 ): Promise<EstimateContractGasReturnType> => {
   const data = await _estimateContractGas(publicClient as Client, args)
   return data
+}
+
+/**
+ * @param args:
+ * {
+ *   address: '',
+ *   abi: [],
+ *   args: [account, spender]
+ * }
+ */
+export const contractApprove = async (args: ReadContractParameters): Promise<TXStatus> => {
+  try {
+    const isApprovedForAll = await readContract({ ...args, functionName: 'isApprovedForAll' })
+    console.info('isApprovedForAll:', isApprovedForAll)
+    if (!isApprovedForAll) {
+      const [, spender] = args.args
+      const params = {
+        ...args,
+        args: [spender, true],
+        functionName: 'setApprovalForAll'
+      }
+      const gas = await estimateContractGas(params as EstimateContractGasParameters)
+      const hash = await writeContract({ ...params, gas } as WriteContractParameters)
+      const receipt = await waitForTransaction({ hash })
+      return receipt.status
+    }
+    return 'success'
+  } catch (e) {
+    console.info(e)
+    return 'reverted'
+  }
+}
+
+/**
+ * @param args:
+ * {
+ *   address: '',
+ *   abi: [],
+ *   args: [account, spender]
+ * }
+ * @param amount
+ */
+export const approveAllowance = async (args: ReadContractParameters, amount: bigint): Promise<TXStatus> => {
+  try {
+    const allowance = await readContract({ ...args, functionName: 'allowance' })
+    if (allowance < amount) {
+      const c = getERC20Contract(args.address)
+      const [account, spender] = args.args
+      const hash = await callWithGas(c, 'approve', [spender, amount], { account } as any)
+      const receipt = await waitForTransaction(hash)
+      return receipt.status
+    }
+    return 'success'
+  } catch (e) {
+    console.info(e)
+    return 'reverted'
+  }
 }

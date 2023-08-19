@@ -7,12 +7,12 @@ export const formatUnits = (v: unknown, decimals: number) => _formatUnits(v as b
  * contract.write.withdraw([pid, BigInt(value)])
  */
 
-export const parseUnits = (v: number | string, decimals = 8): string => {
+export const parseUnits = (v: number | string, decimals = 8): bigint => {
   const p1 = String(v)
   const p2 = p1.indexOf('.') > -1 ? p1 : `${p1}.0`
   const p3 = p2.split('.')
   const p4 = `${p3[0]}.${p3[1].substring(0, decimals)}`
-  return _parseUnits(p4, decimals).toString()
+  return _parseUnits(p4, decimals)
 }
 
 const thousandthsDivision = (n: string | number) => {
