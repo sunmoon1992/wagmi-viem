@@ -9,6 +9,7 @@
     "indentation": 4,
     "string-quotes": "single",
     "alpha-value-notation": null,
+    "scss/dollar-variable-pattern": null,
     "color-function-notation": null,
     "comment-empty-line-before": null,
     "custom-property-empty-line-before": null,

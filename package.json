@@ -11,7 +11,7 @@
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json}'",
     "preview": "vite preview",
     "stylelint": "stylelint 'src/style/**/*.scss' --fix",
-    "test": "node src/style/build.js"
+    "stylebuild": "node src/style/build.js"
   },
   "dependencies": {
     "@apollo/client": "^3.8.1",

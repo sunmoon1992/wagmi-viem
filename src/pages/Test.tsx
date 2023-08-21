@@ -887,7 +887,7 @@ function Home() {
     }
   }
   return (
-    <>
+    <div style={{height:'1000px'}}>
       <h1
         onClick={() => {
           i18n.changeLanguage('en')
@@ -900,7 +900,7 @@ function Home() {
       <button onClick={f3}>Airdrop f3</button>
       <AccountButton />
       <ConnectButton />
-    </>
+    </div>
   )
 }
 

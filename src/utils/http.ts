@@ -85,3 +85,20 @@ export async function post(
     latency
   )
 }
+
+export async function formDataPost(path: string, body: Rec, args?: RequestInit): Promise<HttpResponse> {
+  const formData = new FormData()
+  Object.keys(body).forEach((key) => {
+    formData.append(key, body[key])
+  })
+
+  return await http(
+    new Request(externalLink(path), {
+      ...args,
+      method: 'post',
+      mode: 'cors',
+      body: formData
+    })
+  )
+}
+

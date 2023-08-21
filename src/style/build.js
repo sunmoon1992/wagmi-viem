@@ -31,7 +31,7 @@ function writeFileFunc(filePath) {
                 if (err) error('Error: \n %s', err)
               })
             }
-            if (status.isDirectory()) writeFileFunc(fullFilePath)
+            if (fileName !== 'base' && status.isDirectory()) writeFileFunc(fullFilePath)
           }
         })
       })
