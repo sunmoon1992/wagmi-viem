@@ -3,8 +3,7 @@ import { arbitrumGoerli } from 'wagmi/chains'
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
 import { InjectedConnector } from 'wagmi/connectors/injected'
 import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
-// import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
-import { WalletConnectLegacyConnector } from 'wagmi/connectors/walletConnectLegacy'
+import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
 import { publicProvider } from 'wagmi/providers/public'
 
@@ -37,17 +36,11 @@ const coinbaseWalletConnector = new CoinbaseWalletConnector({
   }
 })
 
-// const walletConnectConnector = new WalletConnectConnector({
-//   chains,
-//   options: {
-//     projectId: ''
-//   }
-// })
-
-const walletConnectLegacyConnector = new WalletConnectLegacyConnector({
+// get projectId: https://cloud.walletconnect.com/app
+const walletConnectConnector = new WalletConnectConnector({
   chains,
   options: {
-    qrcode: true
+    projectId: 'a4f1a9fd334c569ccd281f5028b67dde'
   }
 })
 
@@ -63,6 +56,5 @@ export const client = createConfig({
   publicClient,
   webSocketPublicClient,
   autoConnect: true,
-  // connectors: [metaMaskConnector, coinbaseWalletConnector, walletConnectConnector, walletConnectLegacyConnector, injectedConnector]
-  connectors: [metaMaskConnector, coinbaseWalletConnector, walletConnectLegacyConnector, injectedConnector]
+  connectors: [metaMaskConnector, coinbaseWalletConnector, walletConnectConnector, injectedConnector]
 })

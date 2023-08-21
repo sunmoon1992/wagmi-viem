@@ -8,11 +8,13 @@ import {
   readContract,
   simulateContract,
   waitForTransaction,
+  watchPendingTransactions,
   writeContract
 } from '@/utils/callFuncHelpers'
 import i18n from 'i18next'
 import { useTranslation } from 'react-i18next'
 import { EstimateContractGasParameters, ReadContractParameters, SimulateContractParameters } from 'viem'
+import { WatchPendingTransactionsParameters } from 'viem/dist/types/actions/public/watchPendingTransactions'
 import { useAccount, useWalletClient } from 'wagmi'
 
 function Home() {
@@ -872,6 +874,16 @@ function Home() {
       console.info(e)
     }
   }
+  const f3 = () => {
+    try {
+      watchPendingTransactions({
+        onError: (_err) => console.log(_err),
+        onTransactions: (hashes) => console.log(hashes)
+      } as unknown as WatchPendingTransactionsParameters)
+    } catch (e) {
+      console.info(e)
+    }
+  }
   return (
     <>
       <h1
@@ -883,6 +895,7 @@ function Home() {
       </h1>
       <button onClick={f1}>Airdrop claim</button>
       <button onClick={f2}>Airdrop f2</button>
+      <button onClick={f3}>Airdrop f3</button>
       <AccountButton />
       <ConnectButton />
     </>

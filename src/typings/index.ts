@@ -16,6 +16,6 @@ export interface ChainIdRec {
 
 export declare type TXStatus = 'success' | 'reverted'
 
-export declare type ContractKeys = 'multicall' | 'airdrop'
+export declare type ContractKeys = 'airdrop'
 
 export declare type TWalletClient = WalletClient | undefined | null

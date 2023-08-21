@@ -1,3 +1,5 @@
-* {
-    color: red;
+// 已在vite.config.ts中标记为全局导入，页面中可直接引用
+
+body {
+  background: #f2f3f4;
 }

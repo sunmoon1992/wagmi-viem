@@ -10,7 +10,8 @@
     "lint-staged": "npx lint-staged",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json}'",
     "preview": "vite preview",
-    "stylelint": "stylelint 'src/style/**/*.scss' --fix"
+    "stylelint": "stylelint 'src/style/**/*.scss' --fix",
+    "test": "node src/style/build.js"
   },
   "dependencies": {
     "@apollo/client": "^3.8.1",
@@ -42,6 +43,7 @@
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react-swc": "^3.3.2",
     "buffer": "^6.0.3",
+    "colors-console": "^1.0.3",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",

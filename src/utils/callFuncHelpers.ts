@@ -5,6 +5,8 @@ import {
   CallParameters,
   Client,
   EstimateContractGasParameters,
+  MulticallParameters,
+  MulticallReturnType,
   ReadContractParameters,
   SimulateContractParameters,
   TransactionReceipt
@@ -16,12 +18,20 @@ import {
   WriteContractParameters,
   WriteContractReturnType,
   estimateContractGas as _estimateContractGas,
+  multicall as _multicall,
   readContract as _readContract,
   simulateContract as _simulateContract,
+  watchPendingTransactions as _watchPendingTransactions,
   writeContract as _writeContract,
   waitForTransactionReceipt
 } from 'viem/actions'
+import { WatchPendingTransactionsParameters } from 'viem/dist/types/actions/public/watchPendingTransactions'
 import { SendTransactionResult, WaitForTransactionArgs } from 'wagmi/actions'
+
+export const multicall = async (args: MulticallParameters): Promise<MulticallReturnType> => {
+  const data = await _multicall(publicClient as Client, args)
+  return data
+}
 
 export const estimateGas = async (contract: Rec, methodName: string, methodArgs?: Rec, overrides?: CallParameters) => {
   if (!contract.estimateGas[methodName]) throw new Error(`${methodName} doesn't exist`)
@@ -123,4 +133,15 @@ export const approveAllowance = async (args: ReadContractParameters, amount: big
     console.info(e)
     return 'reverted'
   }
+}
+
+/**
+ watchPendingTransactions({
+  onError: error => console.log(error),
+  onTransactions: (hashes) => console.log(hashes),
+})
+ * @param args
+ */
+export const watchPendingTransactions = (args: WatchPendingTransactionsParameters) => {
+  _watchPendingTransactions(publicClient as Client, { ...args, poll: true })
 }
