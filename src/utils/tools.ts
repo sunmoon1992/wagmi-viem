@@ -1,11 +1,6 @@
 import { formatUnits as _formatUnits, parseUnits as _parseUnits } from 'viem'
 
-export const formatUnits = (v: unknown, decimals: number) => _formatUnits(v as bigint, decimals)
-
-/**
- * case:
- * contract.write.withdraw([pid, BigInt(value)])
- */
+export const formatUnits = (v: unknown, decimals: number): string => _formatUnits(v as bigint, decimals)
 
 export const parseUnits = (v: number | string, decimals = 8): bigint => {
   const p1 = String(v)
@@ -15,7 +10,7 @@ export const parseUnits = (v: number | string, decimals = 8): bigint => {
   return _parseUnits(p4, decimals)
 }
 
-const thousandthsDivision = (n: string | number) => {
+const thousandsSeparator = (n: string | number): string => {
   return n.toString().replace(/\d+/, (m) => m.replace(/(\d)(?=(\d{3})+$)/g, ($1) => $1 + ','))
 }
 
@@ -25,5 +20,5 @@ export const keepDecimals = (value: string | number, decimal = 2, format = false
   const [a, b] = _value.split('.')
   const padEnd = decimal > b.length ? b.padEnd(decimal, '0') : b
   const substr = `${a}.${padEnd.substring(0, decimal)}`
-  return format ? thousandthsDivision(substr) : substr
+  return format ? thousandsSeparator(substr) : substr
 }

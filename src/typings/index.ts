@@ -1,4 +1,4 @@
-import { Address, WalletClient } from 'viem'
+import { Address } from 'viem'
 
 export enum ChainId {
   MAINNET = 42161,
@@ -18,4 +18,4 @@ export declare type TXStatus = 'success' | 'reverted'
 
 export declare type ContractKeys = 'airdrop'
 
-export declare type TWalletClient = WalletClient | undefined | null
+export declare type TokenKeys = 'btc' | 'usdc' | 'lion' | 'esLion' | 'lp'

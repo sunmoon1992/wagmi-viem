@@ -2,6 +2,7 @@ import AccountButton from '@/components/Wallet/AccountButton'
 import ConnectButton from '@/components/Wallet/ConnectButton'
 import contracts from '@/config/contracts'
 import { useAirdrop } from '@/hooks/useAirdrop'
+import { useBalances } from '@/hooks/useBalances'
 import {
   contractApprove,
   estimateContractGas,
@@ -22,14 +23,15 @@ function Home() {
   const { address } = useAccount()
   const { data: wc } = useWalletClient()
   const { claim } = useAirdrop()
-
+  const { balances } = useBalances(address)
+  console.info(balances)
   // console.info(import.meta.env)
-  // console.info(parseUnits(1.99))
+  // console.info(parseUnits(1.99999999999911))
   // console.info(formatUnits(10000000100000001000000010000000n, 8))
   // console.info(publicClient)
 
   const f1 = async () => {
-    await claim(address)
+    // await claim(address)
     await contractApprove({
       account: address,
       address: '0x51BfCD546e0328cAdaa86D696B472505082b76fd',

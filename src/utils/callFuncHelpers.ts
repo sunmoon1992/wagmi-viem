@@ -13,11 +13,14 @@ import {
 } from 'viem'
 import {
   EstimateContractGasReturnType,
+  GetBalanceParameters,
+  GetBalanceReturnType,
   ReadContractReturnType,
   SimulateContractReturnType,
   WriteContractParameters,
   WriteContractReturnType,
   estimateContractGas as _estimateContractGas,
+  getBalance as _getBalance,
   multicall as _multicall,
   readContract as _readContract,
   simulateContract as _simulateContract,
@@ -30,6 +33,11 @@ import { SendTransactionResult, WaitForTransactionArgs } from 'wagmi/actions'
 
 export const multicall = async (args: MulticallParameters): Promise<MulticallReturnType> => {
   const data = await _multicall(publicClient as Client, args)
+  return data
+}
+
+export const getBalance = async (args: GetBalanceParameters): Promise<GetBalanceReturnType> => {
+  const data = await _getBalance(publicClient as Client, args)
   return data
 }
 
