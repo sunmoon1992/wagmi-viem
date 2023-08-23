@@ -1,8 +1,12 @@
-import AccountButton from '@/components/Wallet/AccountButton'
-import ConnectButton from '@/components/Wallet/ConnectButton'
+import Button from '@/components/Button'
+import { DropDown, DropDownItem } from '@/components/DropDown'
+import Connect from '@/components/Wallet/Connect'
 import contracts from '@/config/contracts'
 import { useAirdrop } from '@/hooks/useAirdrop'
 import { useBalances } from '@/hooks/useBalances'
+import Complete from '@/pages/c/Modals/Complete'
+import Failure from '@/pages/c/Modals/Failure'
+import Waiting from '@/pages/c/Modals/Waiting'
 import {
   contractApprove,
   estimateContractGas,
@@ -12,7 +16,7 @@ import {
   watchPendingTransactions,
   writeContract
 } from '@/utils/callFuncHelpers'
-import i18n from 'i18next'
+import { useBoolean } from 'ahooks'
 import { useTranslation } from 'react-i18next'
 import { EstimateContractGasParameters, ReadContractParameters, SimulateContractParameters } from 'viem'
 import { WatchPendingTransactionsParameters } from 'viem/dist/types/actions/public/watchPendingTransactions'
@@ -24,7 +28,10 @@ function Home() {
   const { data: wc } = useWalletClient()
   const { claim } = useAirdrop()
   const { balances } = useBalances(address)
-  console.info(balances)
+  const [v1, { setTrue: setTrue1, setFalse: setFalse1 }] = useBoolean(false)
+  const [v2, { setTrue: setTrue2, setFalse: setFalse2 }] = useBoolean(false)
+  const [v3, { setTrue: setTrue3, setFalse: setFalse3 }] = useBoolean(false)
+  // console.info(balances)
   // console.info(import.meta.env)
   // console.info(parseUnits(1.99999999999911))
   // console.info(formatUnits(10000000100000001000000010000000n, 8))
@@ -886,20 +893,75 @@ function Home() {
       console.info(e)
     }
   }
+
+  // i18n.changeLanguage('en')
+
   return (
-    <div style={{height:'1000px'}}>
-      <h1
-        onClick={() => {
-          i18n.changeLanguage('en')
-        }}
-      >
-        {t('common.twoway')}
-      </h1>
-      <button onClick={f1}>Airdrop claim</button>
-      <button onClick={f2}>Airdrop f2</button>
-      <button onClick={f3}>Airdrop f3</button>
-      <AccountButton />
-      <ConnectButton />
+    <div>
+      <h3>Connect Wallet:</h3>
+      <Connect />
+      <br />
+      <br />
+      <h3>Buttons:</h3>
+      <Button type="outline" size="large">
+        outline
+      </Button>
+      <Button type="outline">outline</Button>
+      <Button type="outline" size="small">
+        outline
+      </Button>
+      <Button type="outline" disabled size="large" onClick={() => alert()}>
+        disabled
+      </Button>
+      <Button icon="project" shape="circle" size="large" />
+      <Button icon="arrow-right" shape="circle" />
+      <Button icon="add" size="small">
+        发起新赌注
+      </Button>
+      <Button icon="wallet" shape="circle" size="small" />
+      <Button icon="wallet" size="large">
+        Connect Wallet
+      </Button>
+      <Button icon="wallet">Connect Wallet</Button>
+      <Button icon="wallet" size="small">
+        Connect Wallet
+      </Button>
+      <Button size="large">Connect Wallet</Button>
+      <Button>Connect Wallet</Button>
+      <Button size="small">Connect Wallet</Button>
+      <Button size="large" disabled onClick={() => alert()}>
+        disabled
+      </Button>
+      <Button loading onClick={() => alert()}>
+        loadingloading
+      </Button>
+      <br />
+      <br />
+      <h3>Modals:</h3>
+      <Button onClick={setTrue1}>Complete</Button>
+      <Button onClick={setTrue2}>Failure</Button>
+      <Button onClick={setTrue3}>Waiting</Button>
+      <Complete visible={v1} onCancel={setFalse1} />
+      <Failure visible={v2} onCancel={setFalse2} />
+      <Waiting visible={v3} onCancel={setFalse3} />
+      <br />
+      <br />
+      <h3>DropDown:</h3>
+      <DropDown entry={<div style={{ position: 'relative' }}>ABC:</div>}>
+        {[
+          {
+            id: 1
+          },
+          {
+            id: 2
+          },
+          {
+            id: 3
+          }
+        ].map((o: any, index: number) => {
+          return <DropDownItem key={o.id} content={<>{o.id}</>} onSelect={() => console.info(1)} className="" />
+        })}
+      </DropDown>
     </div>
   )
 }

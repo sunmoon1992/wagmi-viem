@@ -1,11 +1,11 @@
-import AccountButton from '@/components/Wallet/AccountButton'
-import ConnectButton from '@/components/Wallet/ConnectButton'
+import Account from '@/components/Wallet/Account'
+import Connect from '@/components/Wallet/Connect'
 
 function Home() {
   return (
     <>
-      <AccountButton />
-      <ConnectButton />
+      <Account />
+      <Connect />
     </>
   )
 }

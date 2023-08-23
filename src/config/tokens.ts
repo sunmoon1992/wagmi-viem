@@ -61,7 +61,6 @@ const tokens: { [key in TokenKeys]: Token } = {
 export default tokens
 
 export const findToken = memoize((key: string | Address): Token => {
-  // eslint-disable-next-line
   const upper = String(key).toUpperCase()
   const lower = String(key).toLowerCase()
   return Object.values(tokens).find(

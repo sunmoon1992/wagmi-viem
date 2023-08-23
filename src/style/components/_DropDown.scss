@@ -1,0 +1,53 @@
+$drop-down-prefix-cls: #{$prefix}-drop-down;
+
+.#{$drop-down-prefix-cls} {
+  position: relative;
+
+  &-motion-div {
+    overflow: hidden;
+    position: absolute;
+    left: 0;top:36px;
+    z-index: 1;
+  }
+
+  &-inner {
+    width: 200px;
+    padding: 4px;
+  }
+
+  &-items {
+    padding: 10px;
+    border-radius: 20px;
+    box-sizing: content-box;
+    background: $crFCFCFD;
+    box-shadow: 0 0 4px 0px rgba($cr777E90, 0.25);
+    //box-shadow: 0 4px 4px -4px rgba($cr777E90, 0.25);
+    max-height: 200px;
+    overflow: hidden auto;
+
+    ul {
+      li {
+        height: 36px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 20px;
+        font-size: 14px;
+        @include dz(0.1s);
+
+        &:hover {
+          background: rgba($cr777E90, 0.1);
+          //color: rgba($cr23262F, 0.75);
+        }
+
+        &.active, &.active:hover {
+        }
+
+        a {
+          color: inherit;
+        }
+      }
+    }
+  }
+}

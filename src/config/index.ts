@@ -26,5 +26,10 @@ export const EXPLORER_SCAN_URL = EXPLORER_SCAN_URLS[CHAIN_ID]
 export const APOLLO_CLIENT_URI = APOLLO_CLIENT_URIS[CHAIN_ID]
 export const BEST_RPC_KEY = 'rpc'
 export const LANG_CACHE_KEY = 'LANG'
-export const STATIC_RESOURCES_URL = ''
+export const STATIC_RESOURCES_URL = '//librax-static.pages.dev/image/'
 export const ZERO = '0x0000000000000000000000000000000000000000'
+export const MEDIA_LINKS = {
+  dc: '',
+  tw: '',
+  tg: ''
+}

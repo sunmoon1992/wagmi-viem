@@ -6,9 +6,11 @@ import useConnecting from '@/hooks/useConnecting'
 import emitter, { EventTypes } from '@/utils/emitter'
 import { Wallet } from '@/utils/wallets'
 
-import ConnectModal from './ConnectModal'
+import Button from '@/components/Button'
+import Account from '@/components/Wallet/Account'
+import WalletModal from '@/pages/c/Modals/Wallet'
 
-const ConnectButton = () => {
+const Connect = () => {
   const { chain, chains } = useNetwork()
   const { switchNetwork } = useSwitchNetwork()
   const { isConnected, address } = useAccount()
@@ -18,9 +20,7 @@ const ConnectButton = () => {
 
   const connectWalletFunc = async (wallet: Wallet) => {
     const { installed, connectorId, downloadLink } = wallet
-    // console.info(installed)
-    // console.info(connectorId)
-    // console.info(window.ethereum)
+
     if (installed === false) return window.open(downloadLink, '_blank')
 
     const connected = await connectWallet(connectorId)
@@ -47,10 +47,16 @@ const ConnectButton = () => {
 
   return (
     <div>
-      {isConnected && address ? address : <button onClick={setShowModalTrue}>Connect Wallet</button>}
-      <ConnectModal show={showModal} onClose={setShowModalFalse} onClick={connectWalletFunc} />
+      {isConnected && address ? (
+        <Account />
+      ) : (
+        <Button icon="wallet" size="small" onClick={setShowModalTrue}>
+          Connect Wallet
+        </Button>
+      )}
+      <WalletModal visible={showModal} onCancel={setShowModalFalse} onClick={connectWalletFunc} />
     </div>
   )
 }
 
-export default ConnectButton
+export default Connect

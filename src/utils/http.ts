@@ -101,4 +101,3 @@ export async function formDataPost(path: string, body: Rec, args?: RequestInit):
     })
   )
 }
-

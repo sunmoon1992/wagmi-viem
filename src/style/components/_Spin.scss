@@ -1,0 +1,33 @@
+@mixin fCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.#{$prefix}-loading-wrap {
+  .#{$prefix}-icon-loading {
+    animation: 1s cubic-bezier(0, 0, 1, 1) infinite;
+
+    @include animation-keyframes {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &.fixed {
+    z-index: 10;
+    background: rgba($crE6E8EC, .5);
+    @include fCenter();
+    @include overlay();
+    img{
+      width: 36px;
+    }
+  }
+
+  &.absolute {
+    background: inherit;
+    @include fCenter();
+    @include overlay(absolute);
+  }
+}

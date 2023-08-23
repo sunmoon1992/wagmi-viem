@@ -29,7 +29,7 @@ const combine = (): [string[], Token[]] => {
     const _key = key as TokenKeys
     // if (current.includes(_key)) {
     output1.push(_key)
-    output2.push(tokens[_key as TokenKeys])
+    output2.push(tokens[_key])
     // }
   }
   return [output1, output2]

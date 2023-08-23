@@ -32,18 +32,6 @@ const wallets: Wallet[] = [
     downloadLink: 'https://metamask.io/download/'
   },
   {
-    id: 'coinbaseWallet',
-    icon: 'coinbase.svg',
-    title: 'Coinbase Wallet',
-    connectorId: ConnectorIds.WalletLink
-  },
-  {
-    id: 'walletConnect',
-    icon: 'wallet-connect.svg',
-    title: 'WalletConnect',
-    connectorId: ConnectorIds.WalletConnect
-  },
-  {
     id: 'tokenPocket',
     icon: 'token-pocket.svg',
     title: 'TokenPocket',
@@ -54,14 +42,16 @@ const wallets: Wallet[] = [
     downloadLink: 'https://www.tokenpocket.pro/'
   },
   {
-    id: 'OKX',
-    icon: 'okx.svg',
-    title: 'OKX Wallet',
-    get installed() {
-      return typeof window !== 'undefined' && (!!window.ethereum?.isOKExWallet || !!window.ethereum?.isOkxWallet)
-    },
-    connectorId: ConnectorIds.Injected,
-    downloadLink: 'https://www.okx.com/cn/download/'
+    id: 'walletConnect',
+    icon: 'wallet-connect.svg',
+    title: 'WalletConnect',
+    connectorId: ConnectorIds.WalletConnect
+  },
+  {
+    id: 'coinbaseWallet',
+    icon: 'coinbase.svg',
+    title: 'Coinbase Wallet',
+    connectorId: ConnectorIds.WalletLink
   }
 ]
 

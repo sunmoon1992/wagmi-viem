@@ -1,1 +1,7 @@
-@import 'global';
+@import "global.scss";
+@import "components/_Button.scss";
+@import "components/_DropDown.scss";
+@import "components/_Modal.scss";
+@import "components/_Spin.scss";
+@import "components/Wallet/_Account.scss";
+@import "pages/c/_Modals.scss";
