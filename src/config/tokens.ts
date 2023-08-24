@@ -68,3 +68,5 @@ export const findToken = memoize((key: string | Address): Token => {
       t.symbol === upper || t.symbol === lower || t.symbol === key || isAddressEqual(t.tokenAddress, key as Address)
   )!
 })
+
+export const BASE_TOKEN = tokens.usdc

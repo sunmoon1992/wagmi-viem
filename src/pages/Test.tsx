@@ -1,11 +1,11 @@
 import Button from '@/components/Button'
-import { DropDown, DropDownItem } from '@/components/DropDown'
 import Connect from '@/components/Wallet/Connect'
 import contracts from '@/config/contracts'
 import { useAirdrop } from '@/hooks/useAirdrop'
 import { useBalances } from '@/hooks/useBalances'
 import Complete from '@/pages/c/Modals/Complete'
 import Failure from '@/pages/c/Modals/Failure'
+import Investment from '@/pages/c/Modals/Investment'
 import Waiting from '@/pages/c/Modals/Waiting'
 import {
   contractApprove,
@@ -31,6 +31,7 @@ function Home() {
   const [v1, { setTrue: setTrue1, setFalse: setFalse1 }] = useBoolean(false)
   const [v2, { setTrue: setTrue2, setFalse: setFalse2 }] = useBoolean(false)
   const [v3, { setTrue: setTrue3, setFalse: setFalse3 }] = useBoolean(false)
+  const [v4, { setTrue: setTrue4, setFalse: setFalse4 }] = useBoolean(false)
   // console.info(balances)
   // console.info(import.meta.env)
   // console.info(parseUnits(1.99999999999911))
@@ -941,27 +942,13 @@ function Home() {
       <Button onClick={setTrue1}>Complete</Button>
       <Button onClick={setTrue2}>Failure</Button>
       <Button onClick={setTrue3}>Waiting</Button>
+      <Button onClick={setTrue4}>Investment</Button>
       <Complete visible={v1} onCancel={setFalse1} />
       <Failure visible={v2} onCancel={setFalse2} />
       <Waiting visible={v3} onCancel={setFalse3} />
+      <Investment visible={v4} onCancel={setFalse4} />
       <br />
       <br />
-      <h3>DropDown:</h3>
-      <DropDown entry={<div style={{ position: 'relative' }}>ABC:</div>}>
-        {[
-          {
-            id: 1
-          },
-          {
-            id: 2
-          },
-          {
-            id: 3
-          }
-        ].map((o: any, index: number) => {
-          return <DropDownItem key={o.id} content={<>{o.id}</>} onSelect={() => console.info(1)} className="" />
-        })}
-      </DropDown>
     </div>
   )
 }

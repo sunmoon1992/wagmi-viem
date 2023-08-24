@@ -1,6 +1,4 @@
-$investment-prefix-cls: #{$prefix}-investment;
-
-.#{$investment-prefix-cls}-failure {
+.#{$prefix}-investment-failure {
   color: $cr23262F;
   font-size: 16px;
   text-align: center;
@@ -12,7 +10,7 @@ $investment-prefix-cls: #{$prefix}-investment;
   }
 }
 
-.#{$investment-prefix-cls}-complete {
+.#{$prefix}-investment-complete {
   color: $cr23262F;
   font-size: 16px;
 
@@ -126,7 +124,7 @@ $investment-prefix-cls: #{$prefix}-investment;
 
     button {
       font-weight: normal;
-      margin:0 8px 8px 0;
+      margin: 0 8px 8px 0;
       color: $cr23262F;
       background-color: $crff;
       height: 36px;
@@ -146,5 +144,43 @@ $investment-prefix-cls: #{$prefix}-investment;
   &-tips {
     font-size: 12px;
     color: $cr93989A;
+  }
+}
+
+.#{$prefix}-investment-confirm {
+  &-content {
+    color: $cr23262F;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 32px 0;
+
+    img {
+      width: 120px;
+      height: 60px;
+      border-radius: 5px;
+    }
+
+    .left {
+      p {
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: 18px;
+        max-width: 240px;
+        @include oneline(1);
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 500;
+
+        span {
+          color: $primary;
+          padding-left: 20px;
+        }
+      }
+    }
   }
 }

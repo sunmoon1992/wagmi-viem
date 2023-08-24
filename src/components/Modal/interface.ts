@@ -1,7 +1,8 @@
 import { ReactNode } from 'react'
 
 export interface ModalProps {
-  loading?: boolean
+  okLoading?: boolean
+  okDisabled?: boolean
   className?: string | string[]
   onCancel?: () => void
   onOk?: (e?: MouseEvent) => Promise<any> | void

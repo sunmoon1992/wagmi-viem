@@ -12,7 +12,8 @@ const Modal: FC<ModalProps> = ({
   title,
   footer,
   visible,
-  loading,
+  okLoading,
+  okDisabled,
   children,
   okText,
   cancelText,
@@ -30,14 +31,14 @@ const Modal: FC<ModalProps> = ({
         {cancelText || '取消'}
       </Button>
     )
-    const confirmButtonNode = (
-      <Button size="large" loading={loading} onClick={onOk}>
+    const okButtonNode = (
+      <Button size="large" disabled={okDisabled} loading={okLoading} onClick={onOk}>
         {okText || '确定'}
       </Button>
     )
     const footerContent = (
       <>
-        {confirmButtonNode}
+        {okButtonNode}
         {cancelButtonNode}
       </>
     )
