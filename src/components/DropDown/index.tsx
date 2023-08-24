@@ -4,15 +4,16 @@ import { useClickAway } from 'ahooks'
 import { FC, useRef, useState } from 'react'
 
 import { DropDownListItemProps, WrapDropDownListProps } from '@/components/DropDown/interface'
+import * as classNames from 'classnames'
 
-export const DropDown: FC<WrapDropDownListProps> = ({ entry, height = 'auto', children }) => {
+export const DropDown: FC<WrapDropDownListProps> = ({ entry, height = 'auto', children, wrapClassNames }) => {
   const ref = useRef(null)
   const [toggle, setToggle] = useState<boolean>(false)
 
   useClickAway(() => setToggle(false), ref)
 
   return (
-    <div className="libra-drop-down" ref={ref}>
+    <div ref={ref} className={classNames('libra-drop-down', wrapClassNames)}>
       <div onClick={() => setToggle(!toggle)} className="">
         {entry}
       </div>

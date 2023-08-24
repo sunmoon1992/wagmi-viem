@@ -20,15 +20,15 @@ $drop-down-prefix-cls: #{$prefix}-drop-down;
     border-radius: 20px;
     box-sizing: content-box;
     background: $crFCFCFD;
-    box-shadow: 0 0 4px 0px rgba($cr777E90, 0.25);
+    box-shadow: 0 2px 4px 0 rgba($cr777E90, 0.35);
     //box-shadow: 0 4px 4px -4px rgba($cr777E90, 0.25);
     max-height: 200px;
     overflow: hidden auto;
 
     ul {
       li {
-        height: 36px;
-        padding: 0 20px;
+        height: 40px;
+        padding: 0 16px;
         display: flex;
         align-items: center;
         cursor: pointer;

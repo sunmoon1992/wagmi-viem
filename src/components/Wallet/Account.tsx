@@ -8,7 +8,7 @@ import { EXPLORER_SCAN_URL } from '@/config'
 import { hideString } from '@/utils/tools'
 import { useMemo } from 'react'
 
-const Account = () => {
+function Account() {
   const { address } = useAccount()
   const { disconnect } = useDisconnect()
 
@@ -21,30 +21,30 @@ const Account = () => {
   }, [address])
 
   return (
-    <DropDown entry={entry}>
+    <DropDown entry={entry} wrapClassNames="libra-account-options">
       <DropDownItem
         content={
           <CopyToClipboard text={address} onCopy={() => console.info('Copy successfully')}>
-            <>
-              <Image src="copy.svg" className="wallet-icon" />
+            <span>
+              <Image src="copy.svg" />
               Copy Address
-            </>
+            </span>
           </CopyToClipboard>
         }
-        className=""
       />
       <DropDownItem
         content={
           <a href={`${EXPLORER_SCAN_URL}/address/${address}`} target="_blank">
-            <Image src="eye.svg" className="wallet-icon" />
+            <Image src="eye.svg" />
             View In Explorer
           </a>
         }
       />
+      <DropDownItem content={<em />} />
       <DropDownItem
         content={
           <span onClick={disconnect}>
-            <Image src="log-out.svg" className="wallet-icon" />
+            <Image src="log-out.svg" />
             Disconnect
           </span>
         }
