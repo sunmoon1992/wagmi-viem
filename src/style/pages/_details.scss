@@ -1,0 +1,148 @@
+$project-details-prefix-cls: #{$prefix}-project-details;
+
+.#{$project-details-prefix-cls} {
+  padding: 50px 0 100px;
+  position: relative;
+  @extend .web-container;
+
+  h4 {
+    margin: 40px 0 16px;
+    @include fs(16px, 700)
+  }
+
+  &-desc {
+    display: flex;
+
+    dt {
+      margin-right: 96px;
+
+      img {
+        width: 480px;
+        height: 360px;
+        border-radius: 16px;
+      }
+
+      .rewards {
+        @extend .align-center;
+        margin-top: 50px;
+        justify-content: space-between;
+
+        label {
+          @include fs(24px, 500);
+        }
+
+        .amount {
+          color: $emphasize;
+          @include fs(32px, 700);
+        }
+      }
+    }
+
+    dd {
+      .text {
+        h4 {
+          @include fs(40px, 700);
+        }
+
+        p {
+          color: $cr777E90;
+          margin-top: 40px;
+          @include fs(16px, 400);
+        }
+
+        span {
+          @include fs(16px, 400);
+          margin-top: 10px;
+
+          em {
+            padding-left: 8px;
+          }
+        }
+      }
+
+      .info {
+        padding: 24px;
+        border: 1px solid $crE6E8EC;
+        margin-top: 40px;
+        border-radius: 16px;
+        box-shadow: 0 64px 64px 0 rgba(26, 47, 72, 0.12);
+        display: flex;
+        @include fs(14px, 400);
+
+        dd {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+
+          &:first-child {
+            margin-right: 24px;
+
+            span:last-child {
+              color: $secondary;
+              font-weight: 700;
+              text-align: center;
+            }
+          }
+
+          &:last-child {
+            color: $primary;
+
+            a {
+              text-align: center;
+            }
+
+            span {
+              font-weight: 700;
+              text-align: center;
+            }
+          }
+
+          button {
+            margin: 16px 0;
+          }
+        }
+      }
+    }
+  }
+
+  &-about {
+    p {
+      color: $cr777E90;
+      @include fs(16px, 400)
+    }
+  }
+
+  &-holders {
+    section {
+      display: flex;
+      gap: 40px;
+
+      .yes, .no {
+        flex: 1;
+      }
+
+      .row {
+        padding: 16px;
+
+        &-content {
+          width: 50%;
+
+          &:last-child {
+            font-weight: 700;
+          }
+        }
+      }
+
+      .#{$prefix}-tag {
+        margin-right: 10px
+      }
+
+      .#{$prefix}-data-table-header {
+        padding:16px;
+        span {
+          width: 50%;
+        }
+      }
+    }
+  }
+}

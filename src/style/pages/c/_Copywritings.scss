@@ -1,0 +1,19 @@
+.#{$prefix}-copywritings {
+  @include jb($crE9EDF6, $crff);
+
+  &-inner {
+    padding-bottom: 40px;
+    @extend .web-container;
+    h1 {
+      text-align: center;
+      padding: 80px 0 50px;
+      @include fs(44px, 700);
+    }
+
+    .#{$prefix}-copywritings-content {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+}

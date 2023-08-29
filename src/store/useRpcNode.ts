@@ -79,6 +79,7 @@ const useRpcNodeStore = create<RpcNodeState>((set) => ({
   loaded: false,
   fetch: async () => {
     const node = await getHealthyNode()
+    console.info(`node:${node}`)
     localStorage.setItem(BEST_RPC_KEY, node)
     set({ loaded: true })
   }

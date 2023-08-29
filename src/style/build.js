@@ -1,5 +1,5 @@
 import colors from 'colors-console'
-import { appendFile, existsSync, readdir, stat, unlink } from 'fs'
+import { appendFileSync, existsSync, readdir, stat, unlink } from 'fs'
 import { dirname, extname, join, resolve } from 'path'
 import { fileURLToPath } from 'url'
 
@@ -27,9 +27,11 @@ function writeFileFunc(filePath) {
           } else {
             const _extname = extname(fullFilePath)
             if (status.isFile() && matchExtNames.includes(_extname)) {
-              appendFile(outputPath, `@import "${fullFilePath.replace(`${__dirname}/`, '')}";\n`, function (err) {
-                if (err) error('Error: \n %s', err)
-              })
+              try {
+                appendFileSync(outputPath, `@import "${fullFilePath.replace(`${__dirname}/`, '')}";\n`)
+              } catch (e) {
+                error('Error: \n %s', err)
+              }
             }
             if (fileName !== 'base' && status.isDirectory()) writeFileFunc(fullFilePath)
           }

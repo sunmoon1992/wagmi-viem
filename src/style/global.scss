@@ -2,10 +2,30 @@ $res: '//librax-static.pages.dev/image/';
 
 @import 'base';
 
+$prefix: libra;
+
 body {
-    background: $crff;
+  background: $crFCFCFD;
+  color: $cr23262F;
+}
+
+.rotate {
+  animation: 1s cubic-bezier(0, 0, 1, 1) infinite;
+  @include animation-keyframes {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
 }
 
 .web-container {
-    width: 1200px;margin-left: auto;margin-right: auto;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
 }

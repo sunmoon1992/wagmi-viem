@@ -1,8 +1,3 @@
-@mixin fCenter() {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .#{$prefix}-loading-wrap {
   .#{$prefix}-icon-loading {
@@ -22,6 +17,14 @@
     @include overlay();
     img{
       width: 36px;
+    }
+  }
+
+  &.static {
+    @include fCenter();
+    img{
+      width: 32px;
+      height: 32px;
     }
   }
 

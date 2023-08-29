@@ -1,30 +1,26 @@
 import { useScroll2Top } from '@/hooks/useScroll2Top'
-import { ProtectViemClient } from '@/pages/ProtectViemClient'
-import UpdatersForGlobal from '@/pages/Updaters/ForGlobal'
+import { FastClient } from '@/components/pages/FastClient'
 import loadable from '@loadable/component'
 import { Navigate, Route, Routes } from 'react-router-dom'
+import useGlobalInit from "@/hooks/useGlobalInit";
 
-const Home2 = loadable(() => import('@/pages/Home2'))
-const Home1 = loadable(() => import('@/pages/Home1'))
-const Test = loadable(() => import('@/pages/Test'))
+const Test = loadable(() => import('@/pages/test'))
 
 function App() {
   useScroll2Top()
+  useGlobalInit()
 
   return (
     <div id="app-container">
-      <UpdatersForGlobal />
       <Routes>
         <Route
           path="/"
           element={
-            <ProtectViemClient>
+            <FastClient>
               <Test />
-            </ProtectViemClient>
+            </FastClient>
           }
         />
-        <Route path="/1" element={<Home1 />} />
-        <Route path="/2" element={<Home2 />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>

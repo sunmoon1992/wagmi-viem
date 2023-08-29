@@ -13,7 +13,6 @@ export const publicClient = createPublicClient({
     }
   }
 } as PublicClientConfig)
-
 export const walletClient = createWalletClient({
   chain: arbitrumGoerli,
   transport: window.ethereum ? custom(window.ethereum) : http(rpc)

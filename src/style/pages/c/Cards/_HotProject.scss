@@ -1,0 +1,98 @@
+$hot-project-prefix-cls: #{$prefix}-hot-project;
+
+.#{$hot-project-prefix-cls} {
+  width: 394px;
+  padding: 24px;
+  border-radius: 20px;
+  background: $crff;
+  box-shadow: 0 2px 4px -2px rgba($cr777E90, 0.25);
+  //box-shadow: 0 62px 60px -46px rgba(26, 47, 72, 0.12);
+  @include ns;
+
+  dl {
+    display: flex;
+    flex-direction: column;
+
+    dt {
+      h4 {
+        margin-bottom: 20px;
+        @include oneline(1);
+        @include fs(20px, 600);
+      }
+    }
+
+    dd {
+      p {
+        color: $cr93989A;
+        @include fs(18px, 400);
+        @include moreLine(2, 54px);
+      }
+
+      hr {
+        border: none;
+        height: 1px;
+        margin: 16px 0;
+        background: $crE9EDF6;
+      }
+
+      .libra-data-item {
+        label {
+          @include fs(18px, 400);
+        }
+
+        .amount {
+          color: $emphasize;
+          @include fs(20px, 700);
+        }
+      }
+    }
+  }
+
+  &-poster {
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+
+    img {
+      width: 346px;
+      height: 214px;
+    }
+
+    .mask {
+      color: $crff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      line-height: 2;
+      opacity: 0;
+      @include dz();
+      @include jb(rgba($cr00, 0.85), rgba($cr00, 0.5));
+      @include overlay(absolute);
+      @include fs(16px, 400);
+
+      span > em {
+        padding-left: 10px
+      }
+
+    }
+
+    &:hover {
+      .mask {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-footer {
+    display: flex;
+    margin-top: 20px;
+
+    button {
+      flex: 1;
+      &:first-child{margin-right: 24px}
+    }
+  }
+}

@@ -8,13 +8,6 @@ $modal-prefix-cls: #{$prefix}-modal;
   @include yd(-50%, -50%);
 }
 
-@mixin overlay($position: fixed) {
-  position: $position;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-}
 
 .#{$modal-prefix-cls}-content {
   @include center();
@@ -68,7 +61,7 @@ $modal-prefix-cls: #{$prefix}-modal;
   margin-top: 32px;
   display: flex;
   flex-direction: column;
-  button:last-child{margin-top: 16px}
+  button:nth-of-type(2){margin-top: 16px}
 }
 
 .#{$react-modal-overlay}--after-open {

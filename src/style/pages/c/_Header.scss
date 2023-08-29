@@ -1,0 +1,58 @@
+.#{$prefix}-header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px -2px rgba($cr777E90, 0.25);
+  background: $crff;
+
+  &-inner {
+    @extend .web-container;
+    @extend .align-center;
+    justify-content: space-between;
+
+    .left {
+      @extend .align-center;
+
+      a {
+        color: $cr777E90;
+        margin-right: 32px;
+        @include fs(14px, 700);
+
+        &:hover {
+          color: $cr23262F;
+        }
+      }
+
+      img {
+        width: 115px;
+        height: 32px;
+      }
+
+      .active {
+        color: $cr23262F;
+      }
+
+      .divider {
+        width: 2px;
+        height: 40px;
+        margin: 0 32px;
+        border-radius: 2px;
+        background: $crE6E8EC;
+      }
+    }
+
+    .right {
+      @extend .align-center;
+
+      .arco-input-inner-wrapper {
+        height: 40px;
+        width: 256px;
+        padding: 10px 12px 10px 16px;
+        border: 2px solid $crE6E8EC;
+        background: inherit;
+        border-radius: 8px;
+        margin-right: 24px;
+      }
+    }
+  }
+}
