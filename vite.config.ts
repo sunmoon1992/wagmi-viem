@@ -26,7 +26,7 @@ export default defineConfig({
         // Error: Can't find stylesheet to import.
         // @import 'src/style/index.scss';
         // @notice: "@import './xx/xx/xx.scss';"
-        // additionalData: "@import './src/style/global.scss';"
+        // additionalData: "@import './src/style/global.less';"
       }
     }
   },

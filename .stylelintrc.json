@@ -3,10 +3,11 @@
     "stylelint-config-standard",
     "stylelint-config-prettier",
     "stylelint-config-prettier-scss",
-    "stylelint-config-standard-scss"
+    "stylelint-config-standard-scss",
+    "stylelint-config-recommended-less"
   ],
   "rules": {
-    "indentation": 4,
+    "indentation": 2,
     "string-quotes": "single",
     "alpha-value-notation": null,
     "scss/dollar-variable-pattern": null,

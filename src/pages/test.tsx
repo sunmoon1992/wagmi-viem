@@ -1,12 +1,7 @@
-import Button from '@/components/common/Button'
 import Connect from '@/components/pages/Wallet/Connect'
 import contracts from '@/config/contracts'
 import { useAirdrop } from '@/hooks/useAirdrop'
 import { useBalances } from '@/hooks/useBalances'
-import Complete from '@/components/pages/Modals/Complete'
-import Failure from '@/components/pages/Modals/Failure'
-import Investment from '@/components/pages/Modals/Investment'
-import Waiting from '@/components/pages/Modals/Waiting'
 import {
   contractApprove,
   estimateContractGas,
@@ -901,54 +896,6 @@ function Home() {
     <div>
       <h3>Connect Wallet:</h3>
       <Connect />
-      <br />
-      <br />
-      <h3>Buttons:</h3>
-      <Button type="outline" size="large">
-        outline
-      </Button>
-      <Button type="outline">outline</Button>
-      <Button type="outline" size="small">
-        outline
-      </Button>
-      <Button type="outline" disabled size="large" onClick={() => alert()}>
-        disabled
-      </Button>
-      <Button icon="project" shape="circle" size="large" />
-      <Button icon="arrow-right" shape="circle" />
-      <Button icon="add" size="small">
-        发起新赌注
-      </Button>
-      <Button icon="wallet" shape="circle" size="small" />
-      <Button icon="wallet" size="large">
-        Connect Wallet
-      </Button>
-      <Button icon="wallet">Connect Wallet</Button>
-      <Button icon="wallet" size="small">
-        Connect Wallet
-      </Button>
-      <Button size="large">Connect Wallet</Button>
-      <Button>Connect Wallet</Button>
-      <Button size="small">Connect Wallet</Button>
-      <Button size="large" disabled onClick={() => alert()}>
-        disabled
-      </Button>
-      <Button loading onClick={() => alert()}>
-        loadingloading
-      </Button>
-      <br />
-      <br />
-      <h3>Modals:</h3>
-      <Button onClick={setTrue1}>Complete</Button>
-      <Button onClick={setTrue2}>Failure</Button>
-      <Button onClick={setTrue3}>Waiting</Button>
-      <Button onClick={setTrue4}>Investment</Button>
-      <Complete visible={v1} onCancel={setFalse1} />
-      <Failure visible={v2} onCancel={setFalse2} />
-      <Waiting visible={v3} onCancel={setFalse3} />
-      <Investment visible={v4} onCancel={setFalse4} />
-      <br />
-      <br />
     </div>
   )
 }

@@ -1,0 +1,27 @@
+@import 'base/_index.less';
+
+@res: '';
+@prefix: xyz;
+
+body {
+  * {
+    font-family: 'Rubik', sans-serif;
+  }
+}
+
+.rotate {
+  animation: 1s cubic-bezier(0, 0, 1, 1) infinite;
+
+@include animation-keyframes {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+}
+
+.container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}

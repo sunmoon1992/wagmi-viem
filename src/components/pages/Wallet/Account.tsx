@@ -1,7 +1,6 @@
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { useAccount, useDisconnect } from 'wagmi'
 
-import Button from '@/components/common/Button'
 import { DropDown, DropDownItem } from '@/components/common/DropDown'
 import Image from '@/components/common/Image'
 import { EXPLORER_SCAN_URL } from '@/config'
@@ -14,9 +13,9 @@ function Account() {
 
   const entry = useMemo(() => {
     return (
-      <Button icon="wallet" size="small" style={{ position: 'relative' }}>
+      <button style={{ position: 'relative' }}>
         {address && hideString(address, 5, 4)}
-      </Button>
+      </button>
     )
   }, [address])
 

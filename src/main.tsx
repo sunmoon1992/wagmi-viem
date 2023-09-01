@@ -7,7 +7,7 @@ import '@/i18n'
 import ApolloClientProvider from '@/providers/ApolloClient'
 import QueryClientProvider from '@/providers/QueryClient'
 import WagmiClientProvider from '@/providers/WagmiClient'
-import '@/style/index.scss'
+import '@/style/index.less'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

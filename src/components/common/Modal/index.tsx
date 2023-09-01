@@ -1,6 +1,5 @@
 import classNames from 'classnames'
 
-import Button from '@/components/common/Button'
 import { ModalProps } from '@/components/common/Modal/interface'
 import { useBodyScrollLock } from '@/hooks/useBodyScrollLock'
 import { FC } from 'react'
@@ -27,14 +26,14 @@ const Modal: FC<ModalProps> = ({
   const renderFooter = () => {
     if (footer === null) return null
     const cancelButtonNode = (
-      <Button type="outline" size="large" onClick={onCancel}>
+      <button type="outline" onClick={onCancel}>
         {cancelText || '取消'}
-      </Button>
+      </button>
     )
     const okButtonNode = (
-      <Button size="large" disabled={okDisabled} loading={okLoading} onClick={onOk}>
+      <button disabled={okDisabled} loading={okLoading} onClick={onOk}>
         {okText || '确定'}
-      </Button>
+      </button>
     )
     const footerContent = (
       <>

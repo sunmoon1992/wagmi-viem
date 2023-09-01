@@ -6,7 +6,6 @@ import useConnecting from '@/hooks/useConnecting'
 import emitter, { EventTypes } from '@/utils/emitter'
 import { Wallet } from '@/utils/wallets'
 
-import Button from '@/components/common/Button'
 import Account from '@/components/pages/Wallet/Account'
 import WalletModal from '@/components/pages/Modals/Wallet'
 
@@ -50,9 +49,9 @@ const Connect = () => {
       {isConnected && address ? (
         <Account />
       ) : (
-        <Button icon="wallet" size="small" onClick={setShowModalTrue}>
+        <button onClick={setShowModalTrue}>
           Connect Wallet
-        </Button>
+        </button>
       )}
       <WalletModal visible={showModal} onCancel={setShowModalFalse} onClick={connectWalletFunc} />
     </div>

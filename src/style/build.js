@@ -10,9 +10,9 @@ function error(label, err) {
   return console.error(colors(['red'], label), err)
 }
 
-const matchExtNames = ['.scss']
+const matchExtNames = ['.less']
 const targetPath = resolve(__dirname)
-const outputPath = resolve(__dirname, './index.scss')
+const outputPath = resolve(__dirname, './index.less')
 
 function writeFileFunc(filePath) {
   readdir(filePath, function (err, files) {
