@@ -2,10 +2,13 @@
 
 @res: '';
 @prefix: xyz;
+@header: 72px;
 
 body {
+  color: @cr232323;
+
   * {
-    font-family: 'Rubik', sans-serif;
+    font-family: Ubuntu, sans-serif;
   }
 }
 
@@ -24,4 +27,27 @@ body {
   margin-left: auto;
   margin-right: auto;
   position: relative;
+}
+
+.xyz-content-main {
+  padding: 32px;
+  min-height: calc(100vh - @header);
+}
+
+.xyz-content-inner {
+  padding: 0 32px;
+}
+
+.arco-btn {
+  font-weight: 700;
+}
+
+.arco-modal {
+  border-radius: 12px;
+  box-shadow: 0 0 2px 0 rgb(242, 243, 245);
+}
+
+.arco-modal-title {
+  text-align: left !important;
+  .fs(18px, 700)
 }

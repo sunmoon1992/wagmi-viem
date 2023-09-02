@@ -1,3 +1,27 @@
-.dz(@time: 0.25s) {
-    transition: all @time ease-in-out;
+.tr(@time: 0.25s) {
+  transition: all @time ease-in-out;
+}
+
+.fs(@size: 14px, @weight:700) {
+  font-size: @size;
+  font-weight: @weight;
+}
+
+.ac {
+  display: flex;
+  align-items: center;
+}
+
+.colorful {
+  border: 2px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(to right, #fff, #fff),
+  conic-gradient(from 180deg at 50% 50%,
+  #DD8ADD 0deg,
+  #F9CC7D 30deg,
+  #89F9E8 90deg,
+  #91A8F9 180deg,
+  #BE87F4 270deg,
+  #DD8ADD 360deg);
 }

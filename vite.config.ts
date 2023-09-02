@@ -1,3 +1,4 @@
+import { vitePluginForArco } from '@arco-plugins/vite-react'
 import react from '@vitejs/plugin-react-swc'
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
@@ -5,7 +6,17 @@ import nodePolyfills from 'vite-plugin-node-stdlib-browser'
 // add package @types/node
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), nodePolyfills()],
+  plugins: [
+    react(),
+    nodePolyfills(),
+    vitePluginForArco({
+      modifyVars: {
+        'border-1': '2px',
+        'primary-6': '#232323',
+        'border-radius-small': '6px'
+      }
+    })
+  ],
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src')

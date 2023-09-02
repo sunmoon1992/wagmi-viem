@@ -1,7 +1,7 @@
-import Connect from '@/components/pages/Wallet/Connect'
 import contracts from '@/config/contracts'
 import { useAirdrop } from '@/hooks/useAirdrop'
 import { useBalances } from '@/hooks/useBalances'
+import Index from '@/pages/c/Wallet'
 import {
   contractApprove,
   estimateContractGas,
@@ -11,6 +11,7 @@ import {
   watchPendingTransactions,
   writeContract
 } from '@/utils/callFuncHelpers'
+import { Button } from '@arco-design/web-react'
 import { useBoolean } from 'ahooks'
 import { useTranslation } from 'react-i18next'
 import { EstimateContractGasParameters, ReadContractParameters, SimulateContractParameters } from 'viem'
@@ -895,7 +896,8 @@ function Home() {
   return (
     <div>
       <h3>Connect Wallet:</h3>
-      <Connect />
+      <Index />
+      <Button>button</Button>
     </div>
   )
 }

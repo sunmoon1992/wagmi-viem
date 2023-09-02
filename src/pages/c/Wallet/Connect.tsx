@@ -1,13 +1,12 @@
-import { useBoolean } from 'ahooks'
-import { useEffect } from 'react'
-import { useAccount, useNetwork, useSwitchNetwork } from 'wagmi'
+import { Button, Modal } from '@arco-design/web-react'
+import { useEffect, useMemo } from 'react'
 
+import Image from '@/components/common/Image'
 import useConnecting from '@/hooks/useConnecting'
 import emitter, { EventTypes } from '@/utils/emitter'
-import { Wallet } from '@/utils/wallets'
-
-import Account from '@/components/pages/Wallet/Account'
-import WalletModal from '@/components/pages/Modals/Wallet'
+import { getWallets, Wallet } from '@/utils/wallets'
+import { useBoolean } from 'ahooks'
+import { useAccount, useNetwork, useSwitchNetwork } from 'wagmi'
 
 const Connect = () => {
   const { chain, chains } = useNetwork()
@@ -17,13 +16,11 @@ const Connect = () => {
   const [showModal, { setTrue: setShowModalTrue, setFalse: setShowModalFalse }] = useBoolean(false)
   const [switchNet, { setTrue: setSwitchNetTrue }] = useBoolean(false)
 
-  const connectWalletFunc = async (wallet: Wallet) => {
+  const handleClick = async (wallet: Wallet) => {
     const { installed, connectorId, downloadLink } = wallet
-
     if (installed === false) return window.open(downloadLink, '_blank')
-
+    // if (wallet.id === ConnectorIds.WalletConnect) setShowModalFalse()
     const connected = await connectWallet(connectorId)
-
     if (connected && connected.chain.unsupported) setSwitchNetTrue()
   }
 
@@ -44,17 +41,30 @@ const Connect = () => {
     }
   }, [address, isConnected])
 
+  const wallets = useMemo(() => getWallets(), [])
+
   return (
-    <div>
-      {isConnected && address ? (
-        <Account />
-      ) : (
-        <button onClick={setShowModalTrue}>
-          Connect Wallet
-        </button>
-      )}
-      <WalletModal visible={showModal} onCancel={setShowModalFalse} onClick={connectWalletFunc} />
-    </div>
+    <>
+      <Button onClick={setShowModalTrue}>Connect Wallet</Button>
+      <Modal
+        simple
+        closable
+        title="Connect Wallet"
+        footer={null}
+        visible={showModal}
+        onCancel={setShowModalFalse}
+        className="xyz-wallet"
+      >
+        <div className="xyz-wallet-connect">
+          {wallets.map((wallet, index) => (
+            <Button key={wallet.id} onClick={() => handleClick(wallet)}>
+              <Image src={wallet.icon} />
+              <span>{wallet.title}</span>
+            </Button>
+          ))}
+        </div>
+      </Modal>
+    </>
   )
 }
 
