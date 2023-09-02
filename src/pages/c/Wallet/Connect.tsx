@@ -19,7 +19,6 @@ const Connect = () => {
   const handleClick = async (wallet: Wallet) => {
     const { installed, connectorId, downloadLink } = wallet
     if (installed === false) return window.open(downloadLink, '_blank')
-    // if (wallet.id === ConnectorIds.WalletConnect) setShowModalFalse()
     const connected = await connectWallet(connectorId)
     if (connected && connected.chain.unsupported) setSwitchNetTrue()
   }

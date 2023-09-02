@@ -1,5 +1,4 @@
 import { configureChains, createConfig } from 'wagmi'
-import { arbitrumGoerli } from 'wagmi/chains'
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
 import { InjectedConnector } from 'wagmi/connectors/injected'
 import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
@@ -9,11 +8,13 @@ import { publicProvider } from 'wagmi/providers/public'
 
 import { CHAIN_ID, DEFAULT_PRC_URLS } from '@/config'
 import { ChainId } from '@/typings'
+import { goerli } from 'viem/chains'
 
 export const rpcUrl = (DEFAULT_PRC_URLS[CHAIN_ID] ?? DEFAULT_PRC_URLS[ChainId.MAINNET]) as string
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
-  [arbitrumGoerli],
+  [goerli],
+  // [mainnet, goerli, arbitrum, arbitrumGoerli],
   [
     jsonRpcProvider({
       rpc: () => ({ http: rpcUrl })

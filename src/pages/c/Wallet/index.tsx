@@ -16,13 +16,7 @@ const Index = () => {
     })
   }
 
-  return (
-    <div>
-      {address
-        ? <Account/>
-        : <Button onClick={handleClick}>Connect Wallet</Button>}
-    </div>
-  )
+  return <div>{address ? <Account /> : <Button onClick={handleClick}>Connect Wallet</Button>}</div>
 }
 
 export default Index

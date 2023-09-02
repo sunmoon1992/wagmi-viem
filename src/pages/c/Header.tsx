@@ -1,6 +1,7 @@
 import Image from '@/components/common/Image'
 import Wallet from '@/pages/c/Wallet'
 import { Input, Space } from '@arco-design/web-react'
+import { IconHeart } from '@arco-design/web-react/icon'
 import { NavLink, useNavigate } from 'react-router-dom'
 
 const InputSearch = Input.Search
@@ -10,17 +11,18 @@ function Header() {
 
   return (
     <section className="xyz-header">
-      <div className="xyz-header-left">
-        <Space size="large">
-          <Image onClick={() => navigate('/')} />
-          <InputSearch allowClear placeholder="Search for collections, NFTs or users" />
-          <NavLink to="/explore">Explore</NavLink>
-          <NavLink to="/sell">Sell</NavLink>
-        </Space>
-      </div>
-      <div className="xyz-header-right">
+      <Space size="large">
+        <Image onClick={() => navigate('/')} />
+        <InputSearch allowClear placeholder="Search for collections, NFTs or users" />
+        <NavLink to="/explore">Explore</NavLink>
+        <NavLink to="/sell">Sell</NavLink>
+      </Space>
+      <Space size="large">
+        <strong className="xyz-header-create">
+          <IconHeart /> Start Creating
+        </strong>
         <Wallet />
-      </div>
+      </Space>
     </section>
   )
 }

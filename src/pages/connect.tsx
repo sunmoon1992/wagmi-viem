@@ -15,9 +15,7 @@ export const InterceptConnect = (props: PropsWithChildren<ReactNode>) => {
   const { address } = useAccount()
   return useMemo(() => {
     const { state } = location
-    return (address
-      ? <Navigate to={state?.from ? state?.from : '/'}/>
-      : children)
+    return address ? <Navigate to={state?.from ? state?.from : '/'} /> : children
   }, [address])
 }
 
@@ -47,7 +45,7 @@ const Connect = () => {
       <div className="xyz-connect-inner">
         {wallets.map((wallet, index) => (
           <Button key={wallet.id} onClick={() => handleClick(wallet)}>
-            <Image src={wallet.icon}/>
+            <Image src={wallet.icon} />
             <span>{wallet.title}</span>
           </Button>
         ))}
