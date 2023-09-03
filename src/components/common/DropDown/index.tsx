@@ -13,18 +13,18 @@ export const DropDown: FC<WrapDropDownListProps> = ({ entry, height = 'auto', ch
   useClickAway(() => setToggle(false), ref)
 
   return (
-    <div ref={ref} className={classNames('libra-drop-down', wrapClassNames)}>
+    <div ref={ref} className={classNames('xyz-drop-down', wrapClassNames)}>
       <div onClick={() => setToggle(!toggle)} className="">
         {entry}
       </div>
       <motion.div
-        className="libra-drop-down-motion-div"
+        className="xyz-drop-down-motion-div"
         initial={{ height: 0 }}
         animate={{ height: toggle ? height : 0 }}
-        transition={{ duration: 0.15 }}
+        transition={{ duration: 0.1 }}
       >
-        <div className="libra-drop-down-inner">
-          <div className="libra-drop-down-items">
+        <div className="xyz-drop-down-inner">
+          <div className="xyz-drop-down-items">
             <ul onClick={() => setToggle(false)}>{children}</ul>
           </div>
         </div>

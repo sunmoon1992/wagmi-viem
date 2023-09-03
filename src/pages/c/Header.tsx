@@ -1,7 +1,7 @@
 import Image from '@/components/common/Image'
+import Creating from '@/pages/c/Creating'
 import Wallet from '@/pages/c/Wallet'
 import { Input, Space } from '@arco-design/web-react'
-import { IconHeart } from '@arco-design/web-react/icon'
 import { NavLink, useNavigate } from 'react-router-dom'
 
 const InputSearch = Input.Search
@@ -18,9 +18,7 @@ function Header() {
         <NavLink to="/sell">Sell</NavLink>
       </Space>
       <Space size="large">
-        <strong className="xyz-header-create">
-          <IconHeart /> Start Creating
-        </strong>
+        <Creating />
         <Wallet />
       </Space>
     </section>
