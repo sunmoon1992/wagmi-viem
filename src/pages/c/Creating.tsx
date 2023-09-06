@@ -5,10 +5,11 @@ function Creating() {
   return (
     <DropDown
       entry={
-        <strong className="xyz-header-create">
+        <strong className="xyz-header-creating-entry">
           <IconHeart /> Start Creating
         </strong>
       }
+      wrapClassNames='xyz-header-creating'
     >
       <DropDownItem content={'NFT'} />
       <DropDownItem content={'Collection'} />

@@ -12,6 +12,7 @@ const Home = loadable(() => import('@/pages/home'))
 const Explore = loadable(() => import('@/pages/explore'))
 const Sell = loadable(() => import('@/pages/sell'))
 const Connect = loadable(() => import('@/pages/connect'))
+const Notification = loadable(() => import('@/pages/notification'))
 
 function App() {
   useScroll2Top()
@@ -33,6 +34,7 @@ function App() {
           />
           <Route path="/explore" element={<Explore />} />
           <Route path="/sell" element={<Sell />} />
+          <Route path="/notification" element={<Notification />} />
           <Route
             path="/test"
             element={
