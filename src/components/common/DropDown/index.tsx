@@ -21,7 +21,7 @@ export const DropDown: FC<WrapDropDownListProps> = ({ entry, height = 'auto', ch
         className="xyz-drop-down-motion-div"
         initial={{ height: 0 }}
         animate={{ height: toggle ? height : 0 }}
-        transition={{ duration: 0.1 }}
+        transition={{ duration: 0.075 }}
       >
         <div className="xyz-drop-down-inner">
           <div className="xyz-drop-down-items">

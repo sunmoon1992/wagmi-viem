@@ -13,6 +13,10 @@ const Explore = loadable(() => import('@/pages/explore'))
 const Sell = loadable(() => import('@/pages/sell'))
 const Connect = loadable(() => import('@/pages/connect'))
 const Notification = loadable(() => import('@/pages/notification'))
+const NFTs = loadable(() => import('@/pages/explore/nfts'))
+const Users = loadable(() => import('@/pages/explore/users'))
+const Collections = loadable(() => import('@/pages/explore/collections'))
+const Marketplaces = loadable(() => import('@/pages/explore/marketplaces'))
 
 function App() {
   useScroll2Top()
@@ -32,7 +36,12 @@ function App() {
               </InterceptConnect>
             }
           />
-          <Route path="/explore" element={<Explore />} />
+          <Route path="/explore" element={<Explore />}>
+            <Route path="users" element={<Users />} />
+            <Route path="items" element={<NFTs />} />
+            <Route path="collections" element={<Collections />} />
+            <Route path="marketplaces" element={<Marketplaces />} />
+          </Route>
           <Route path="/sell" element={<Sell />} />
           <Route path="/notification" element={<Notification />} />
           <Route

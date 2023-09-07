@@ -1,18 +1,21 @@
 .xyz-header {
   height: @header;
+  top: 0;
   z-index: 1;
   position: sticky;
+  background: white;
   justify-content: space-between;
   .ac;
   .xyz-content-inner;
 
   box-shadow: 0 0 4px 0 #eee;
 
-  a {
+  a, .a {
     .ac;
     .fs(14px, 700);
     height: 32px;
     color: @cr232323;
+    cursor: pointer;
     padding: 0 20px;
     background: rgb(242, 243, 245);
     border-radius: 6px;
@@ -38,11 +41,13 @@
       input {
         font-weight: 500;
       }
-
     }
 
     &-inner-wrapper-focus {
       .colorful;
+      .arco-input-group-suffix {
+        color: #BE87F4;
+      }
     }
   }
 
@@ -110,12 +115,19 @@
   &-personal {
     .xyz-drop-down-motion-div {
       top: 42px;
-      left: -44px;
+      left: -64px;
       transform: translateX(-50%);
+    }
+  }
 
-      .xyz-drop-down-inner {
-        width: 160px;
-      }
+  &-explore {
+    .nav-item{
+      width: 100%;
+    }
+    .xyz-drop-down-motion-div {
+      top: 42px;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 }

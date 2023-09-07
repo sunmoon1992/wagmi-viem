@@ -9,7 +9,7 @@ function Creating() {
           <IconHeart /> Start Creating
         </strong>
       }
-      wrapClassNames='xyz-header-creating'
+      wrapClassNames="xyz-header-creating"
     >
       <DropDownItem content={'NFT'} />
       <DropDownItem content={'Collection'} />

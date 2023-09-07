@@ -1,6 +1,7 @@
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { useAccount, useDisconnect, useNetwork } from 'wagmi'
 
+import wallet from '@/assets/wallet.svg'
 import Image from '@/components/common/Image'
 import { EXPLORER_SCAN_URL } from '@/config'
 import { useBalances } from '@/hooks/useBalances'
@@ -8,7 +9,6 @@ import { hideString, keepDecimals } from '@/utils/tools'
 import { Button, Divider, Modal, Space } from '@arco-design/web-react'
 import { IconCopy, IconExport, IconEye } from '@arco-design/web-react/icon'
 import { useBoolean } from 'ahooks'
-import wallet from "@/assets/wallet.svg";
 
 function Account() {
   const { address, connector } = useAccount()
@@ -20,15 +20,17 @@ function Account() {
   return (
     <>
       <div className="xyz-header-icon" onClick={setShowModalTrue}>
-        {address && <img src={wallet} alt="wallet"/>}
+        {address && <img src={wallet} alt="wallet" />}
       </div>
       <Modal
         simple
         closable
+        focusLock
         title="Connected Wallet"
         footer={null}
         visible={showModal}
         onCancel={setShowModalFalse}
+        autoFocus={false}
         className="xyz-wallet"
       >
         <div className="xyz-wallet-account">
