@@ -1,9 +1,11 @@
-import { Button } from '@arco-design/web-react'
+import * as React from 'react'
+import { Button, Skeleton } from '@arco-design/web-react'
 import { IconHeart } from '@arco-design/web-react/icon'
+import { HTMLAttributes } from "react";
 
-export default function UserCard() {
+const UserCard = ({ id }: HTMLAttributes<HTMLElement>, ref: React.ForwardedRef<HTMLDivElement>) => {
   return (
-    <div className="xyz-user-card">
+    <div className="xyz-user-card" id={id} ref={ref}>
       <dl>
         <dt>
           <img
@@ -24,11 +26,30 @@ export default function UserCard() {
           </div>
           <div className="follow-btn">
             <Button size="mini">
-              Follow <IconHeart />
+              Follow <IconHeart/>
             </Button>
           </div>
         </dd>
       </dl>
+    </div>
+  )
+}
+
+export default React.forwardRef(UserCard)
+
+export const UserCardLoading = () => {
+  return (
+    <div className="xyz-user-card-loading">
+      <Skeleton
+        className='img-loading'
+        loading
+        animation
+        text={{ rows: 1 }}/>
+      <Skeleton
+        className='info-loading'
+        loading animation
+                text={{ rows: 2 }}
+                image={{ shape: 'circle' }}/>
     </div>
   )
 }

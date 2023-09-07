@@ -66,4 +66,40 @@
       }
     }
   }
+
+  &-loading {
+    overflow: hidden;
+    padding: 8px;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    box-shadow: 0 4px 0 0 #eee;
+
+    .img-loading {
+      margin-bottom: 8px;
+
+      .arco-skeleton-text-row {
+        width: 100% !important;
+        height: 150px;
+        border-radius: 12px;
+      }
+    }
+
+    .info-loading {
+      padding: 8px;
+      .ac;
+
+      .arco-skeleton-image {
+        margin-right: 10px;
+      }
+
+      .arco-skeleton-text-row {
+        width: 100% !important;
+        border-radius: 4px;
+
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
 }
