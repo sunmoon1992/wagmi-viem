@@ -5,6 +5,7 @@
 
 body {
   color: @cr232323;
+
   * {
     font-family: Ubuntu, sans-serif;
     user-select: none;
@@ -29,12 +30,6 @@ body {
   margin-right: auto;
 }
 
-@media (min-width: 2256px) {
-  .xyz-content-main {
-    max-width: 2256px
-  }
-}
-
 .xyz-content-inner {
   padding: 0 32px;
   min-width: 1200px;
@@ -42,16 +37,8 @@ body {
   margin-right: auto;
 }
 
-.arco-btn {
-  font-weight: 700;
-}
-
-.arco-modal {
-  border-radius: 12px;
-  box-shadow: 0 0 2px 0 rgb(242, 243, 245);
-}
-
-.arco-modal-title {
-  text-align: left !important;
-  .fs(18px, 700)
+@media (min-width: 2256px) {
+  .xyz-content-main {
+    max-width: 2256px
+  }
 }

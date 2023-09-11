@@ -1,7 +1,7 @@
-import * as React from 'react'
 import { Button, Skeleton } from '@arco-design/web-react'
 import { IconHeart } from '@arco-design/web-react/icon'
-import { HTMLAttributes } from "react";
+import * as React from 'react'
+import { HTMLAttributes } from 'react'
 
 const UserCard = ({ id }: HTMLAttributes<HTMLElement>, ref: React.ForwardedRef<HTMLDivElement>) => {
   return (
@@ -26,7 +26,7 @@ const UserCard = ({ id }: HTMLAttributes<HTMLElement>, ref: React.ForwardedRef<H
           </div>
           <div className="follow-btn">
             <Button size="mini">
-              Follow <IconHeart/>
+              Follow <IconHeart />
             </Button>
           </div>
         </dd>
@@ -40,16 +40,8 @@ export default React.forwardRef(UserCard)
 export const UserCardLoading = () => {
   return (
     <div className="xyz-user-card-loading">
-      <Skeleton
-        className='img-loading'
-        loading
-        animation
-        text={{ rows: 1 }}/>
-      <Skeleton
-        className='info-loading'
-        loading animation
-                text={{ rows: 2 }}
-                image={{ shape: 'circle' }}/>
+      <Skeleton className="img-loading" loading animation text={{ rows: 1 }} />
+      <Skeleton className="info-loading" loading animation text={{ rows: 2 }} image={{ shape: 'circle' }} />
     </div>
   )
 }

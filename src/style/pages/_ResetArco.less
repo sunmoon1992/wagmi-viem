@@ -1,0 +1,95 @@
+.arco-btn {
+  font-weight: 500;
+
+  &.active {
+    .colorful;
+  }
+}
+
+.arco-modal {
+  border-radius: 12px;
+  box-shadow: 0 0 2px 0 rgb(242, 243, 245);
+}
+
+.arco-modal-title {
+  text-align: left !important;
+  .fs(18px, 700)
+}
+
+.arco-collapse-item-content {
+  background-color: inherit;
+
+  &-box {
+    padding: 16px;
+  }
+}
+
+.xyz-search {
+  .arco-input {
+    &-group-wrapper {
+      width: 360px;
+
+      input {
+        font-weight: 500;
+      }
+    }
+
+    &-inner-wrapper-focus {
+      .colorful;
+
+      .arco-input-group-prefix,
+      .arco-input-group-suffix {
+        color: #BE87F4;
+      }
+    }
+  }
+}
+
+.arco-checkbox-mask {
+  border-radius: 4px;
+}
+
+.arco-select {
+  .arco-select-view {
+    border: 2px solid transparent;
+  }
+}
+
+.arco-input{
+}
+
+.arco-select-popup {
+  border: none;
+  padding: 10px;
+  background: white;
+  box-shadow: 0 1px 4px 0 rgba(@cr232323, 0.15);
+  border-radius: 8px;
+
+  .arco-select-option {
+    padding: 0 10px;
+    border-radius: 8px;
+  }
+}
+
+// 渐变色边框
+// border-image: linear-gradient(90deg, #fff 0, #f2f3f5 10%, #f2f3f5 90%, #fff 100%) 0 0 2 0;
+
+.arco-collapse {
+  border-color: #f2f3f5;
+  border-radius: 12px;
+  .arco-collapse-item,
+  .arco-collapse-item-active,
+  .arco-collapse-item-active > .arco-collapse-item-header{
+    border-color: #f2f3f5;
+  }
+  .arco-collapse-item-header-title {
+    .fs(16px, 500);
+  }
+}
+
+.arco-trigger {
+  padding: 10px;
+  background: white;
+  box-shadow: 0 1px 4px 0 rgba(@cr232323, 0.15);
+  border-radius: 8px;
+}

@@ -18,17 +18,21 @@ function Header() {
     <section className="xyz-header">
       <Space size="large">
         <Image onClick={() => navigate('/')} />
-        <InputSearch allowClear placeholder="Search for collections, NFTs or users" />
+        <div className="xyz-search">
+          <InputSearch allowClear placeholder="Search for collections, NFTs or users" />
+        </div>
         <Explore />
         <NavLink to="/sell">Sell</NavLink>
       </Space>
-      <Space size="large">
+      <Space size="medium">
         <Creating />
-        <div className="xyz-header-icon" onClick={() => navigate('/notification')}>
-          {address && <IconNotification />}
-        </div>
+        {address && (
+          <div className="xyz-header-icon" onClick={() => navigate('/notification')}>
+            <IconNotification />
+          </div>
+        )}
         <Wallet />
-        <Personal />
+        {address && <Personal />}
       </Space>
     </section>
   )

@@ -14,7 +14,7 @@ export default function Avatar({ onClick, account, size = 28 }: Props) {
 
   useLayoutEffect(() => {
     const id = document.getElementById('AVATAR')
-    if (id) {
+    if (id && icon) {
       id.appendChild(icon)
       return () => {
         try {

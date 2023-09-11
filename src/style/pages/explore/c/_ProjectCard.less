@@ -1,0 +1,64 @@
+.xyz-project-card {
+  cursor: pointer;
+  overflow: hidden;
+  padding: 8px;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  box-shadow: 0 2px 0 0 #eee;
+  margin-bottom: 16px;
+  justify-content: space-between;
+  .ac;
+  .tr(0.1s);
+
+  &:hover {
+    .colorful;
+    box-shadow: 0 2px 0 0 #BE87F4;
+  }
+
+  dt {
+    .ac;
+
+    img {
+      width: 42px;
+      height: 42px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-right: 20px;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+
+      span:first-child {
+        .fs(14px, 500);
+        max-width: 150px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      span:last-child {
+        color: lighten(@cr232323, 25%);
+        .fs(12px, 500);
+      }
+    }
+  }
+
+  dd {
+    display: flex;
+    flex-direction: column;
+    span:first-child {
+      .fs(14px, 500);
+      max-width: 100px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    span:last-child {
+      color: lighten(@cr232323, 25%);
+      .fs(12px, 500);
+    }
+  }
+}

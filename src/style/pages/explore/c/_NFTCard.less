@@ -1,0 +1,127 @@
+.xyz-nft-card {
+  cursor: pointer;
+  overflow: hidden;
+  padding: 8px;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  box-shadow: 0 4px 0 0 #eee;
+  .tr(0.1s);
+
+  &:hover {
+    .colorful;
+    box-shadow: 0 4px 0 0 #BE87F4;
+  }
+
+  dl {
+    dt {
+      position: relative;
+      img {
+        width: 202px;
+        height: 202px;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+      .tag {
+        width: 24px;
+        height: 24px;
+        left: 8px;
+        bottom: 8px;
+        position: absolute;
+        border-radius: 100%;
+      }
+      .mask{
+        top:0;left:0;right:0;bottom:0;
+        opacity: 0;
+        position: absolute;
+        border-radius: 12px;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+        .ac;
+        .tr(0.15s);
+      }
+      &:hover{
+        .mask{
+          opacity: 1;
+        }
+      }
+    }
+
+    dd {
+      .ac;
+      padding: 4px;
+      margin-top: 6px;
+      justify-content: space-between;
+
+      .xyz-nft-card-info {
+        display: flex;
+        margin-right: 16px;
+        flex-direction: column;
+
+        span:first-child {
+          .fs(14px, 500);
+          max-width: 150px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+
+        span:last-child {
+          color: lighten(@cr232323, 25%);
+          .fs(12px, 500);
+        }
+      }
+    }
+  }
+
+  &-loading {
+    overflow: hidden;
+    padding: 8px;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    box-shadow: 0 4px 0 0 #eee;
+
+    .img-loading {
+      margin-bottom: 10px;
+
+      .arco-skeleton-text-row {
+        width: 202px !important;
+        height: 202px;
+        border-radius: 12px;
+      }
+    }
+
+    .info-loading {
+      padding: 4px;
+
+      .arco-skeleton-text-row {
+        width: 100% !important;
+        height: 12px;
+        border-radius: 4px;
+
+        &:not(:last-child) {
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+}
+
+.xyz-nft-card-menu {
+  padding-right:2px;
+  max-height: 100px;
+  overflow: hidden auto;
+  li {
+    height: 24px;
+    cursor: pointer;
+    padding: 0 10px;
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+    border-radius: 4px;
+    .tr(0.1s);
+
+    &:hover {
+      background: #f2f3f5;
+    }
+  }
+}
