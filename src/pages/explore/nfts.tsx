@@ -22,7 +22,7 @@ function NFTs() {
           <Affix offsetTop={104}>
             <div className="collapse-wrap">
               <section className="collapse-wrap-scroll">
-                <Collapse expandIcon={<IconRight style={{ fontSize: '12px' }} />} defaultActiveKey={['blockchain']}>
+                <Collapse expandIcon={<IconRight style={{ fontSize: '12px' }} />} defaultActiveKey={['collections']}>
                   <CollapseItem header="Blockchain" name="blockchain">
                     <ChainOptions />
                   </CollapseItem>

@@ -16,8 +16,6 @@
     dt {
       position: relative;
       img {
-        width: 202px;
-        height: 202px;
         object-fit: cover;
         border-radius: 12px;
       }
@@ -50,6 +48,7 @@
       .ac;
       padding: 4px;
       margin-top: 6px;
+      flex-wrap: wrap;
       justify-content: space-between;
 
       .xyz-nft-card-info {
@@ -69,6 +68,11 @@
           color: lighten(@cr232323, 25%);
           .fs(12px, 500);
         }
+      }
+
+      .more-btn {
+        flex: 1;
+        text-align: right;
       }
     }
   }

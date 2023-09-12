@@ -1,10 +1,16 @@
 :root {
-  --columns: 3;
+  --columns: 4;
+  --columns-nft: 4;
   @media (min-width: 1200px) {
     --columns: 4;
+    --columns-nft: 4;
   }
   @media (min-width: 1600px) {
     --columns: 5;
+    --columns-nft: 5;
+  }
+  @media screen and(min-width: 1920px) {
+    --columns-nft: 6;
   }
 }
 
@@ -75,14 +81,10 @@
       flex: 1;
 
       &-inner {
-        display: flex;
-        flex-wrap: wrap;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(var(--columns-nft), minmax(0, 1fr));
         gap: 20px 16px;
-
-        //width: 100%;
-        //display: grid;
-        //grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
-        //gap: 24px 20px;
       }
     }
   }
