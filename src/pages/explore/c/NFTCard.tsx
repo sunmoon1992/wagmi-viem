@@ -79,7 +79,7 @@ const NFTCard = ({ size }: Props) => {
         {size === 'small' && (
           <dd className={size}>
             <div className="xyz-nft-card-info">
-              <span>Tom James Kobe KobeKobe</span>
+              <span>Kobe No.1</span>
               <span>Price: 1ETH</span>
             </div>
             <div className="more-btn">

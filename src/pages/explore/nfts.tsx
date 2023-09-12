@@ -36,8 +36,8 @@ function NFTs() {
         </Space>
       </div>
       <div className="xyz-explore-nfts-inner">
-        <div className={classNames(toggle ? 'open' : 'close')}>
-          <div className="left">
+        <div className={classNames('xyz-left-filters', toggle ? 'open' : 'close')}>
+          <div className="xyz-left-filters-inner">
             <Affix offsetTop={104}>
               <div className="collapse-wrap">
                 <section className="collapse-wrap-scroll">

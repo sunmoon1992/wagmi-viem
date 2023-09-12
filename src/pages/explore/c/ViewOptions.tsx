@@ -13,7 +13,7 @@ export const ViewOptions = () => {
   }
 
   return (
-    <div className="xyz-view-options">
+    <div className="xyz-filter-options">
       <span
         className={classNames({ active: sizeType === 'big' })}
         onClick={() => {

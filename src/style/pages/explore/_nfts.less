@@ -4,82 +4,23 @@
   --columns-nft-more: 4;
   @media (min-width: 1200px) {
     --columns: 4;
-    --columns-nft-less: 4;
-    --columns-nft-more: 5;
-  }
-  @media (min-width: 1600px) {
-    --columns: 5;
     --columns-nft-less: 5;
     --columns-nft-more: 6;
   }
-  @media screen and(min-width: 1920px) {
+  @media (min-width: 1600px) {
+    --columns: 5;
     --columns-nft-less: 6;
     --columns-nft-more: 7;
+  }
+  @media screen and(min-width: 1920px) {
+    --columns-nft-less: 7;
+    --columns-nft-more: 8;
   }
 }
 
 .xyz-explore-nfts {
   &-inner {
     display: flex;
-
-    .left {
-      //width: 360px;
-      margin-right: 20px;
-
-      .collapse-wrap {
-        border: 2px solid #f2f3f5;
-        padding: 6px 0 6px;
-        border-radius: 12px;
-
-        &-scroll {
-          height: calc(100vh - 260px);
-          overflow: hidden auto;;
-        }
-
-        .type-options,
-        .status-options,
-        .block-chain-options {
-          .fw(16px);
-        }
-
-        .price-options {
-          .inner {
-            .ac;
-            justify-content: space-between;
-          }
-
-          .arco-input {
-            width: 86px;
-          }
-
-          .arco-select {
-            width: 110px;
-          }
-
-          button {
-            width: 100%;
-            margin-top: 16px;
-          }
-        }
-
-        .arco-collapse {
-          border: none;
-
-          .arco-collapse-item:last-child {
-            .arco-collapse-item-content-box {
-              border-bottom: 0
-            }
-          }
-        }
-
-        .xyz-project-info {
-          &-inner {
-            height: 380px;
-            overflow: hidden auto;;
-          }
-        }
-      }
-    }
 
     .right {
       flex: 1;
@@ -104,18 +45,6 @@
         }
       }
     }
-
-    .open {
-      width: 380px;
-      opacity: 1;
-      .tr(0.1s);
-    }
-
-    .close {
-      width: 0;
-      opacity: 0;
-      .tr(0.1s);
-    }
   }
 
   &-search {
@@ -127,6 +56,78 @@
 
     .arco-select {
       width: 180px;
+    }
+  }
+}
+
+.xyz-left-filters {
+  &.open {
+    width: 380px;
+    opacity: 1;
+    .tr(0.1s);
+  }
+
+  &.close {
+    width: 0;
+    opacity: 0;
+    .tr(0.1s);
+  }
+
+  &-inner {
+    margin-right: 20px;
+
+    .collapse-wrap {
+      border: 2px solid #f2f3f5;
+      padding: 6px 0 6px;
+      border-radius: 12px;
+
+      &-scroll {
+        height: calc(100vh - 260px);
+        overflow: hidden auto;;
+      }
+
+      .type-options,
+      .status-options,
+      .block-chain-options {
+        .fw(16px);
+      }
+
+      .price-options {
+        .inner {
+          .ac;
+          justify-content: space-between;
+        }
+
+        .arco-input {
+          width: 86px;
+        }
+
+        .arco-select {
+          width: 110px;
+        }
+
+        button {
+          width: 100%;
+          margin-top: 16px;
+        }
+      }
+
+      .arco-collapse {
+        border: none;
+
+        .arco-collapse-item:last-child {
+          .arco-collapse-item-content-box {
+            border-bottom: 0
+          }
+        }
+      }
+
+      .xyz-project-info {
+        &-inner {
+          height: 380px;
+          overflow: hidden auto;;
+        }
+      }
     }
   }
 }
