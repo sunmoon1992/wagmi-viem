@@ -38,3 +38,17 @@
   #BE87F4 270deg,
   #DD8ADD 360deg);
 }
+
+._colorful(@cr: #fff) {
+  border: 2px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(to right, @cr, @cr),
+  conic-gradient(from 180deg at 50% 50%,
+  #DD8ADD 0deg,
+  #F9CC7D 30deg,
+  #89F9E8 90deg,
+  #91A8F9 180deg,
+  #BE87F4 270deg,
+  #DD8ADD 360deg);
+}

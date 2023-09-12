@@ -11,7 +11,7 @@ export const ProjectCard = () => {
         </div>
       </dt>
       <dd>
-        <span>1.9K ETH</span>
+        <span>999.9K ETH</span>
         <span>24h</span>
       </dd>
     </dl>
