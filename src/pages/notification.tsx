@@ -1,13 +1,12 @@
 import Null from '@/components/common/Null'
 import { Avatar, Comment, Divider, Space } from '@arco-design/web-react'
-import { IconFindReplace } from '@arco-design/web-react/icon'
 import { times } from 'lodash'
 
 // We couldn't find anything with this criteria
 export default function Notification() {
   return (
     <section className="xyz-notification">
-      <Null icon={<IconFindReplace />} description="Nothing found" />
+      <Null />
       <Space direction="vertical" size="mini">
         {times(10, (i) => (
           <>

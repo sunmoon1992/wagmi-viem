@@ -31,6 +31,7 @@ export const DateOptions = ({ handleClick }: { handleClick: (dateType: string) =
     <div className="xyz-filter-options">
       {dateOptions.map((l) => (
         <span
+          key={l.label}
           className={classNames({ active: dateType === l.value })}
           onClick={() => {
             setDateType(l.value)

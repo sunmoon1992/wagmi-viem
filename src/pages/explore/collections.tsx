@@ -1,15 +1,107 @@
+import Table, { TableItem } from '@/components/common/Table'
 import { ChainOptions } from '@/pages/explore/c/ChainOptions'
 import { DateOptions } from '@/pages/explore/c/DateOptions'
 import { PriceOptions } from '@/pages/explore/c/PriceOptions'
+import { thousandsSeparator } from '@/utils/tools'
 import { Affix, Button, Collapse, Input, Space } from '@arco-design/web-react'
 import { IconRight, IconSearch, IconToLeft, IconToRight } from '@arco-design/web-react/icon'
 import * as classNames from 'classnames'
+import { times } from 'lodash'
 import { useState } from 'react'
 
 const CollapseItem = Collapse.Item
 
+const data = times(100, function (i) {
+  return {
+    id: ++i,
+    icon: 'https://assets.raribleuserdata.com/prod/v1/image/t_avatar_big/aHR0cHM6Ly9pcGZzLmlvL2lwZnMvUW1TZnJUV1prRXpqS1R4ZzFldU0xaVFtTW51eDN0QVZkTjduelVicWY4Q0RGaw==',
+    name: 'Moonbirds',
+    price: '1.2345',
+    priceChange: '-2.55%',
+    volume: 1000255,
+    volumeChange: '+2.6%',
+    items: 255000,
+    owners: 250005
+  }
+})
+
 function Collections() {
   const [toggle, setToggle] = useState<boolean>(true)
+
+  const columns = [
+    {
+      title: '#',
+      width: 60,
+      dataIndex: 'id',
+      render: (_) => {
+        return <span className="collections-id">{_}</span>
+      }
+    },
+    {
+      title: 'Collection',
+      dataIndex: 'icon',
+      render: (_, data) => {
+        return (
+          <Space size="medium">
+            <img src={_} alt="" />
+            <b>{data.name}</b>
+          </Space>
+        )
+      }
+    },
+    {
+      title: 'Floor Price',
+      dataIndex: 'price',
+      render: (_) => {
+        return (
+          <Space size="mini">
+            {_}
+            <span className="collections-unit">ETH</span>
+          </Space>
+        )
+      }
+    },
+    {
+      title: 'Floor Change',
+      dataIndex: 'priceChange',
+      render: (_) => {
+        return <span className="collections-fall">{_}</span>
+      }
+    },
+    {
+      title: 'Volume',
+      dataIndex: 'volume',
+      render: (_) => {
+        return (
+          <Space size="mini">
+            {thousandsSeparator(_)}
+            <span className="collections-unit">ETH</span>
+          </Space>
+        )
+      }
+    },
+    {
+      title: 'Volume Change',
+      dataIndex: 'volumeChange',
+      render: (_) => {
+        return <span className="collections-rise">{_}</span>
+      }
+    },
+    {
+      title: 'Items',
+      dataIndex: 'items',
+      render: (_) => {
+        return thousandsSeparator(_)
+      }
+    },
+    {
+      title: 'Owners',
+      dataIndex: 'owners',
+      render: (_) => {
+        return thousandsSeparator(_)
+      }
+    }
+  ]
 
   return (
     <section className="xyz-explore-collections">
@@ -43,7 +135,18 @@ function Collections() {
             </Affix>
           </div>
         </div>
-        <div className="right">right</div>
+        <div className="right">
+          <Table
+            // loading
+            rowKey="id"
+            data={data}
+            columns={columns}
+          >
+            {(data, columns) => {
+              return data.map((item, index) => <TableItem key={index} item={item} columns={columns} />)
+            }}
+          </Table>
+        </div>
       </div>
     </section>
   )

@@ -10,7 +10,7 @@ export const parseUnits = (v: number | string, decimals = 8): bigint => {
   return _parseUnits(p4, decimals)
 }
 
-const thousandsSeparator = (n: string | number): string => {
+export const thousandsSeparator = (n: string | number): string => {
   return n.toString().replace(/\d+/, (m) => m.replace(/(\d)(?=(\d{3})+$)/g, ($1) => $1 + ','))
 }
 
