@@ -1,7 +1,9 @@
 import { DropDown, DropDownItem } from '@/components/common/DropDown'
 import { IconHeart } from '@arco-design/web-react/icon'
+import { useNavigate } from 'react-router-dom'
 
 function Creating() {
+  const navigate = useNavigate()
   return (
     <DropDown
       entry={
@@ -11,10 +13,9 @@ function Creating() {
       }
       wrapClassNames="xyz-header-creating"
     >
-      <DropDownItem content={'NFT'} />
-      <DropDownItem content={'Collection'} />
-      <DropDownItem content={'Marketplace'} />
-      <DropDownItem content={'NFT App'} />
+      <DropDownItem content={<span onClick={() => navigate('/user/owned')}>NFT</span>} />
+      <DropDownItem content={<span onClick={() => navigate('/user/collections')}>Collection</span>} />
+      <DropDownItem content={<span onClick={() => navigate('/user/marketplace')}>Marketplace</span>} />
     </DropDown>
   )
 }

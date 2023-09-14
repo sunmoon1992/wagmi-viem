@@ -1,41 +1,38 @@
 import { nftCardSizeAtom } from '@/atoms/useNftCardSize'
 import { ViewOptions } from '@/pages/c/ViewOptions'
 import { ChainOptions } from '@/pages/explore/c/ChainOptions'
-import { MarketOptions } from '@/pages/explore/c/MarketOptions'
 import { NFTsCard } from '@/pages/explore/c/NFTsCard'
-import { OtherOptions } from '@/pages/explore/c/OtherOptions'
 import { PriceOptions } from '@/pages/explore/c/PriceOptions'
 import { ProjectInfo } from '@/pages/explore/c/ProjectInfo'
-import { SortOptions } from '@/pages/explore/c/SortOptions'
-import { StatusOptions } from '@/pages/explore/c/StatusOptions'
 import { TypeOptions } from '@/pages/explore/c/TypeOptions'
-import { Affix, Button, Collapse, Input, Space } from '@arco-design/web-react'
-import { IconRight, IconSearch, IconToLeft, IconToRight } from '@arco-design/web-react/icon'
+import { OtherOptions } from '@/pages/user/c/OtherOptions'
+import { SortOptions } from '@/pages/user/c/SortOptions'
+import { StatusOptions } from '@/pages/user/c/StatusOptions'
+import { userOwnedOrSaleOptions } from '@/pages/user/config'
+import { Affix, Button, Collapse, Space } from '@arco-design/web-react'
+import { IconRight, IconToLeft, IconToRight } from '@arco-design/web-react/icon'
 import * as classNames from 'classnames'
 import { useAtom } from 'jotai'
 import { useState } from 'react'
 
 const CollapseItem = Collapse.Item
 
-function NFTs() {
+function Owned() {
   const [toggle, setToggle] = useState<boolean>(true)
   const [nftCardSize] = useAtom(nftCardSizeAtom)
 
   return (
-    <section className="xyz-explore-nfts">
-      <div className="xyz-explore-nfts-filter">
+    <section className="xyz-user-owned">
+      <div className="xyz-user-owned-filter">
         <Space size="large">
           <Button icon={toggle ? <IconToRight /> : <IconToLeft />} onClick={() => setToggle(!toggle)}>
             Filters
           </Button>
-          <div className="xyz-search xyz-explore-nfts-search">
-            <Input placeholder="Search by NFTs" suffix={<IconSearch />} />
-          </div>
-          <SortOptions />
+          <SortOptions options={userOwnedOrSaleOptions} />
           <ViewOptions handleClick={() => null} />
         </Space>
       </div>
-      <div className="xyz-explore-nfts-inner">
+      <div className="xyz-user-owned-inner">
         <div className={classNames('xyz-left-filters', toggle ? 'open' : 'close')}>
           <div className="xyz-left-filters-inner">
             <Affix offsetTop={104}>
@@ -50,9 +47,6 @@ function NFTs() {
                     </CollapseItem>
                     <CollapseItem header="Price" name="price">
                       <PriceOptions />
-                    </CollapseItem>
-                    <CollapseItem header="Marketplace" name="marketplace">
-                      <MarketOptions />
                     </CollapseItem>
                     <CollapseItem header="Type" name="type">
                       <TypeOptions />
@@ -69,7 +63,7 @@ function NFTs() {
             </Affix>
           </div>
         </div>
-        <div className={classNames('right', toggle ? 'less' : 'more', { [nftCardSize]: nftCardSize })}>
+        <div className={classNames('right', toggle ? 'less' : 'more')}>
           <NFTsCard size={nftCardSize} />
         </div>
       </div>
@@ -77,4 +71,4 @@ function NFTs() {
   )
 }
 
-export default NFTs
+export default Owned

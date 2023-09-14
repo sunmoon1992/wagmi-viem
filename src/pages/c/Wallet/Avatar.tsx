@@ -1,16 +1,18 @@
 import jazzicon from '@metamask/jazzicon'
 import { useLayoutEffect, useMemo } from 'react'
+import { useAccount } from 'wagmi'
 
 interface Props {
   size?: number
-  account: string
   onClick: () => void
 }
 
-export default function Avatar({ onClick, account, size = 28 }: Props) {
+export default function Avatar({ onClick, size = 28 }: Props) {
+  const { address = '' } = useAccount()
+
   const icon = useMemo(() => {
-    return account && jazzicon(size, parseInt(account.slice(2, 16), 16))
-  }, [account]) as DocumentFragment
+    return address && jazzicon(size, parseInt(address.slice(2, 16), 16))
+  }, [address]) as DocumentFragment
 
   useLayoutEffect(() => {
     const id = document.getElementById('AVATAR')
@@ -27,5 +29,6 @@ export default function Avatar({ onClick, account, size = 28 }: Props) {
     return
   }, [icon])
 
+  // return <div className="AVATAR"><img src="" alt=""/></div>
   return <div id="AVATAR" onClick={onClick} />
 }

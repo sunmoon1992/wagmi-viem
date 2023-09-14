@@ -17,6 +17,14 @@ const NFTs = loadable(() => import('@/pages/explore/nfts'))
 const Users = loadable(() => import('@/pages/explore/users'))
 const Collections = loadable(() => import('@/pages/explore/collections'))
 const Marketplaces = loadable(() => import('@/pages/explore/marketplaces'))
+const User = loadable(() => import('@/pages/user'))
+const Owned = loadable(() => import('@/pages/user/owned'))
+const Sale = loadable(() => import('@/pages/user/sale'))
+const Created = loadable(() => import('@/pages/user/created'))
+const Sold = loadable(() => import('@/pages/user/sold'))
+const UCollections = loadable(() => import('@/pages/user/collections'))
+const Activity = loadable(() => import('@/pages/user/activity'))
+const Settings = loadable(() => import('@/pages/user/settings'))
 
 function App() {
   useScroll2Top()
@@ -36,6 +44,15 @@ function App() {
               </InterceptConnect>
             }
           />
+          <Route path="/user" element={<User />}>
+            <Route path="owned" element={<Owned />} />
+            <Route path="sale" element={<Sale />} />
+            <Route path="collections" element={<UCollections />} />
+            <Route path="created" element={<Created />} />
+            <Route path="activity" element={<Activity />} />
+            <Route path="sold" element={<Sold />} />
+          </Route>
+          <Route path="/user/settings" element={<Settings />} />
           <Route path="/explore" element={<Explore />}>
             <Route path="users" element={<Users />} />
             <Route path="items" element={<NFTs />} />

@@ -34,13 +34,14 @@
     background: @cr232323;
   }
 
-  #AVATAR {
+  #AVATAR, .AVATAR {
     .ac;
     .colorful;
     cursor: pointer;
     justify-content: center;
     height: 32px;
     width: 32px;
+    overflow: hidden;
     border-radius: 50%;
     position: relative;
   }
@@ -53,6 +54,17 @@
 
       .xyz-drop-down-inner {
         width: 180px;
+
+        li {
+          width: 100%;
+          .ac;
+
+          & > span {
+            flex: 1;
+            height: 100%;
+            .ac;
+          }
+        }
       }
     }
   }
@@ -104,13 +116,25 @@
   }
 
   &-explore {
-    .nav-item{
+    .nav-item {
       width: 100%;
     }
+
     .xyz-drop-down-motion-div {
       top: 42px;
       left: 50%;
       transform: translateX(-50%);
+
+      li {
+        width: 100%;
+        .ac;
+
+        & > span {
+          flex: 1;
+          height: 100%;
+          .ac;
+        }
+      }
     }
   }
 }

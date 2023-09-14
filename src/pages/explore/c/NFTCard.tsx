@@ -22,7 +22,7 @@ const NFTCard = ({ size }: Props) => {
   }, [_size])
 
   return (
-    <div className="xyz-nft-card" ref={ref} id="test">
+    <div className="xyz-nft-card" ref={ref}>
       <dl>
         <dt>
           <img

@@ -1,0 +1,38 @@
+.xyz-user-owned {
+  &-inner {
+    display: flex;
+
+    .right {
+      flex: 1;
+      .tr;
+
+      &-inner {
+        width: 100%;
+        display: grid;
+        gap: 20px 16px;
+        .tr;
+      }
+
+      &.more {
+        .right-inner {
+          grid-template-columns: repeat(var(--columns-nft-more), minmax(0, 1fr));
+        }
+      }
+
+      &.less {
+        .right-inner {
+          grid-template-columns: repeat(var(--columns-nft-less), minmax(0, 1fr));
+        }
+      }
+    }
+  }
+
+  &-filter {
+    .ac;
+    margin-bottom: 24px;
+
+    .arco-select {
+      width: 180px;
+    }
+  }
+}
