@@ -25,6 +25,10 @@ const Sold = loadable(() => import('@/pages/user/sold'))
 const UCollections = loadable(() => import('@/pages/user/collections'))
 const Activity = loadable(() => import('@/pages/user/activity'))
 const Settings = loadable(() => import('@/pages/user/settings'))
+const Profile = loadable(() => import('@/pages/user/settings/profile'))
+const Create = loadable(() => import('@/pages/create'))
+const Create721 = loadable(() => import('@/pages/create/erc721'))
+const Create1155 = loadable(() => import('@/pages/create/erc1155'))
 
 function App() {
   useScroll2Top()
@@ -51,13 +55,26 @@ function App() {
             <Route path="created" element={<Created />} />
             <Route path="activity" element={<Activity />} />
             <Route path="sold" element={<Sold />} />
+            <Route index element={<Navigate to="owned" />} />
           </Route>
-          <Route path="/user/settings" element={<Settings />} />
+          <Route path="/user/settings" element={<Settings />}>
+            <Route path="profile" element={<Profile />} />
+            <Route path="account" element={<Profile />} />
+            <Route path="wallets" element={<Profile />} />
+            <Route path="notifications" element={<Profile />} />
+            <Route index element={<Navigate to="profile" />} />
+          </Route>
           <Route path="/explore" element={<Explore />}>
             <Route path="users" element={<Users />} />
             <Route path="items" element={<NFTs />} />
             <Route path="collections" element={<Collections />} />
             <Route path="marketplaces" element={<Marketplaces />} />
+            <Route index element={<Navigate to="items" />} />
+          </Route>
+          <Route path="/create" element={<Create />}>
+            <Route path="erc721" element={<Create721 />} />
+            <Route path="erc1155" element={<Create1155 />} />
+            <Route index element={<Navigate to="erc721" />} />
           </Route>
           <Route path="/sell" element={<Sell />} />
           <Route path="/notification" element={<Notification />} />

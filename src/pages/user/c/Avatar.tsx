@@ -1,5 +1,5 @@
 import { Upload } from '@arco-design/web-react'
-import { IconUpload } from '@arco-design/web-react/icon'
+import { IconFileImage } from '@arco-design/web-react/icon'
 import jazzicon from '@metamask/jazzicon'
 import { useLayoutEffect, useMemo } from 'react'
 import { useAccount } from 'wagmi'
@@ -45,7 +45,7 @@ export function UploadAvatar() {
       <div className="xyz-user-profile-avatar-upload-trigger">
         <Avatar />
         <div className="mask">
-          <IconUpload style={{ color: 'white', fontSize: '18px' }} />
+          <IconFileImage style={{ color: 'white', fontSize: '18px' }} />
         </div>
       </div>
     </Upload>

@@ -1,0 +1,354 @@
+.xyz-create-nft {
+  .main(800px);
+  padding-top: 32px;
+
+  h2 {
+    .fs(32px);
+    margin-bottom: 6px;
+  }
+
+  p {
+    .fs(16px, 400);
+    color: lighten(@cr232323, 35%);
+  }
+
+  label {
+    .fs(16px, 500);
+    display: block;
+    margin: 24px 0 10px;
+
+    &.large {
+      .fs(18px, 600);
+      margin-bottom: 0;
+    }
+  }
+
+  .price {
+    .arco-select {
+      width: 100px;
+    }
+  }
+
+  .upload {
+    position: relative;
+
+    section {
+      padding: 0 4px;
+    }
+
+    .arco-upload {
+      width: 100%;
+    }
+
+    .xyz-create-nft-poster-upload-trigger {
+      padding: 24px;
+      border: 2px solid transparent;
+      box-shadow: 0 1px 4px 0 rgba(@cr232323, 0.15);
+      border-radius: 12px;
+      flex-direction: column;
+      .ac;
+
+      p {
+        .fs(14px, 500);
+        margin-bottom: 16px;
+      }
+
+      button {
+        width: 140px;
+      }
+
+      &:hover {
+        .colorful;
+      }
+    }
+  }
+
+  .network {
+    padding: 16px;
+    margin: 24px 4px 0;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px 0 rgba(@cr232323, 0.15);
+
+    dl {
+      .ac;
+      justify-content: space-between;
+    }
+
+    dt {
+      .ac;
+
+      img {
+        width: 36px;
+        margin-right: 8px;
+      }
+
+      .account {
+        display: flex;
+        flex-direction: column;
+
+        span {
+          .fs(13px, 500);
+
+          &:last-child {
+            color: lighten(@cr232323, 35%);
+          }
+        }
+      }
+    }
+  }
+
+  .marketplace {
+    .top {
+      .ac;
+      justify-content: space-between;
+
+      .arco-switch {
+        height: 24px;
+        margin-top: 24px;
+
+        .arco-switch-dot {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    .bottom {
+      overflow: hidden;
+
+      section {
+        display: flex;
+        gap: 24px 24px;
+        padding: 0 4px;
+
+        .card {
+          flex: 1;
+          cursor: pointer;
+          border: 2px solid transparent;
+          padding: 30px 0;
+          font-size: 30px;
+          margin-top: 24px;
+          border-radius: 12px;
+          box-shadow: 0 1px 4px 0 rgba(@cr232323, 0.15);
+          flex-direction: column;
+          justify-content: center;
+          .ac;
+          .tr;
+
+          &.default {
+            &.active,
+            &:hover {
+              .colorful;
+            }
+          }
+
+          &.disabled {
+            cursor: default;
+            background: #f2f3f5;
+
+            p {
+              text-align: center;
+              line-height: 1;
+              margin-top: 10px;
+            }
+          }
+
+          span {
+            .fs(14px, 600);
+            margin-top: 10px;
+          }
+        }
+      }
+
+      .motion-div {
+      }
+
+      .price {
+        .info {
+          margin: 24px 0;
+          border: 2px solid rgba(@cr232323, 0.05);
+          padding: 16px;
+          border-radius: 12px;
+
+          &-item {
+            .ac;
+            color: lighten(@cr232323, 45%);
+            justify-content: space-between;
+            .fs(12px, 700);
+
+            span:last-child {
+              color: lighten(@cr232323, 25%);
+            }
+          }
+
+          .arco-divider {
+            margin: 10px 0;
+          }
+        }
+      }
+
+      .arco-select {
+        width: 120px;
+      }
+    }
+  }
+
+  .purchased {
+    .top {
+      .ac;
+      justify-content: space-between;
+
+      label {
+        background-image: linear-gradient(to right, #DD8ADD, #89F9E8);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      .arco-switch {
+        height: 24px;
+        margin-top: 24px;
+
+        .arco-switch-dot {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    .bottom {
+      margin-top: 10px;
+    }
+  }
+
+  .collection {
+    .bottom {
+      display: flex;
+      gap: 24px 24px;
+      margin-top: 24px;
+
+      .card {
+        flex: 1;
+        cursor: pointer;
+        border: 2px solid transparent;
+        padding: 30px 0;
+        font-size: 30px;
+        border-radius: 12px;
+        box-shadow: 0 1px 4px 0 rgba(@cr232323, 0.15);
+        flex-direction: column;
+        .ac;
+        .tr;
+
+        &.active,
+        &:hover {
+          .colorful;
+        }
+
+        img {
+          width: 28px;
+          border-radius: 4px;
+        }
+
+        span {
+          .fs(13px, 500);
+          color: lighten(@cr232323, 35%);
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  .minting {
+    .top {
+      .ac;
+      justify-content: space-between;
+
+      .arco-switch {
+        height: 24px;
+
+        .arco-switch-dot {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+
+  .submit,
+  .advanced {
+    margin-top: 32px;
+  }
+
+  .advanced {
+    section {
+      overflow: hidden;
+    }
+
+    .motion-div {
+    }
+
+  }
+
+  .content-box,
+  .preview-box {
+    border: 2px solid transparent;
+    box-shadow: 0 1px 4px 0 rgba(@cr232323, 0.15);
+    border-radius: 12px;
+    justify-content: center;
+    .ac;
+  }
+
+  &-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+
+    .left {
+      flex: 1;
+
+      .error {
+        opacity: 0;
+        color: red;
+        right: 0;
+        bottom: -22px;
+        position: absolute;
+        .tr;
+
+        &.s {
+          bottom: 2px;
+        }
+
+        &.active {
+          opacity: 1;
+        }
+
+        .fs(12px, 500);
+      }
+    }
+
+    .right {
+      width: 260px;
+
+      small {
+        .fs(14px, 400);
+      }
+
+      .content-box {
+        padding: 16px;
+      }
+
+      .preview-box {
+        .ac;
+        color: lighten(@cr232323, 35%);
+        padding: 16px;
+        min-height: 360px;
+        text-align: center;
+        margin-bottom: 24px;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.p-r {
+  position: relative;
+}

@@ -1,5 +1,5 @@
 import { Upload } from '@arco-design/web-react'
-import { IconUpload } from '@arco-design/web-react/icon'
+import { IconFileImage } from '@arco-design/web-react/icon'
 
 function UploadPoster() {
   return (
@@ -13,7 +13,7 @@ function UploadPoster() {
             }}
           >
             <div className="xyz-user-profile-poster-upload-trigger">
-              <IconUpload />
+              <IconFileImage />
             </div>
           </Upload>
         </div>

@@ -3,7 +3,7 @@ import { Media } from '@/pages/user/c/Media'
 import UploadPoster from '@/pages/user/c/UploadPoster'
 import { hideString } from '@/utils/tools'
 import { Button, Divider, Space } from '@arco-design/web-react'
-import { IconCheckCircleFill, IconHeart, IconStar } from '@arco-design/web-react/icon'
+import { IconHeart, IconSafe, IconStar } from '@arco-design/web-react/icon'
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import { useAccount } from 'wagmi'
 
@@ -23,7 +23,7 @@ function Index() {
               <Space size="medium">
                 {hideString(address ?? '', 10, 7)}
                 <div className="xyz-user-verified">
-                  <IconCheckCircleFill />
+                  <IconSafe />
                   <small>get verified</small>
                 </div>
               </Space>
