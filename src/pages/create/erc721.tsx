@@ -21,7 +21,7 @@ const ERC721 = () => {
           <ResourceUpload />
           <Marketplace />
           <Purchased />
-          <Collection />
+          <Collection type="721" />
           <Minting />
           <div className="p-r">
             <label htmlFor="Name">Name</label>

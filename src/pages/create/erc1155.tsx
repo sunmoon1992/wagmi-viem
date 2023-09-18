@@ -18,7 +18,7 @@ const ERC1155 = () => {
           <ResourceUpload />
           <Marketplace disabled />
           <Purchased />
-          <Collection />
+          <Collection type="1155" />
           <Minting />
           <div className="p-r">
             <label htmlFor="Name">Name</label>

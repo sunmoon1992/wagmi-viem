@@ -347,8 +347,72 @@
       }
     }
   }
+
+
 }
 
 .p-r {
   position: relative;
+}
+
+.xyz-create-collection-drawer {
+  label {
+    .fs(14px, 500);
+    display: block;
+    margin-bottom: 4px;
+
+    &.large {
+      .fs(18px, 600);
+      margin-bottom: 0;
+    }
+  }
+
+  .arco-drawer {
+    .colorful;
+    height: calc(100% - 40px);
+    border-right: 0;
+    margin-top: 20px;
+    border-radius: 20px 0 0 20px;
+
+    p {
+      .fs(16px, 400);
+      color: lighten(@cr232323, 35%);
+
+      small {
+        .fs(12px, 400);
+      }
+
+    }
+
+    .arco-drawer-header{
+      .colorful;
+      height: auto;
+      padding: 12px 20px;
+      border-top:0;
+      border-left:0;
+      border-right:0;
+      border-radius: 20px 0 0 0;
+    }
+    .arco-drawer-content{
+      padding: 20px;
+    }
+  }
+  .media {
+    .ac;
+    p {
+      .fs(12px, 400);
+      margin-bottom: 16px;
+    }
+    img {
+      width: 100px;
+      height: 100px;
+      margin-right: 16px;
+      border-radius: 12px;
+    }
+    .arco-upload{
+      flex: 1;
+    }
+  }
+  .xyz-create-nft-poster-upload-trigger {
+  }
 }
