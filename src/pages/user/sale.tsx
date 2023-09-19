@@ -10,7 +10,7 @@ import { SortOptions } from '@/pages/user/c/SortOptions'
 import { userOwnedOrSaleOptions } from '@/pages/user/config'
 import { Affix, Button, Collapse, Space } from '@arco-design/web-react'
 import { IconRight, IconToLeft, IconToRight } from '@arco-design/web-react/icon'
-import * as classNames from 'classnames'
+import classNames from 'classnames'
 import { useAtom } from 'jotai'
 import { useState } from 'react'
 

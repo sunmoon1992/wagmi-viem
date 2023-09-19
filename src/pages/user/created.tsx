@@ -11,7 +11,7 @@ import { StatusOptions } from '@/pages/user/c/StatusOptions'
 import { userCreatedOptions } from '@/pages/user/config'
 import { Affix, Button, Collapse, Input, Space } from '@arco-design/web-react'
 import { IconRight, IconSearch, IconToLeft, IconToRight } from '@arco-design/web-react/icon'
-import * as classNames from 'classnames'
+import classNames from 'classnames'
 import { useAtom } from 'jotai'
 import { useState } from 'react'
 

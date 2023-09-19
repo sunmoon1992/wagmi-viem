@@ -1,5 +1,5 @@
 import { DropDown, DropDownItem } from '@/components/common/DropDown'
-import * as classNames from 'classnames'
+import classNames from 'classnames'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 function Explore() {

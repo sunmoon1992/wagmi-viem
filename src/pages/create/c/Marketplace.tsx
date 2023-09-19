@@ -1,7 +1,7 @@
 import { Divider, Input, Select, Switch } from '@arco-design/web-react'
 import { IconClockCircle, IconTag } from '@arco-design/web-react/icon'
 import { useBoolean } from 'ahooks'
-import * as classNames from 'classnames'
+import classNames from 'classnames'
 import { motion } from 'framer-motion'
 
 export const Marketplace = ({ disabled }: { disabled?: boolean }) => {

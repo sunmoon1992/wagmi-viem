@@ -1,4 +1,4 @@
-import * as classNames from 'classnames'
+import classNames from 'classnames'
 import { useState } from 'react'
 
 const dateOptions = [

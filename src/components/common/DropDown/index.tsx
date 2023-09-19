@@ -4,7 +4,7 @@ import { useClickAway } from 'ahooks'
 import { FC, useRef, useState } from 'react'
 
 import { DropDownListItemProps, WrapDropDownListProps } from '@/components/common/DropDown/interface'
-import * as classNames from 'classnames'
+import classNames from 'classnames'
 
 export const DropDown: FC<WrapDropDownListProps> = ({ entry, height = 'auto', children, wrapClassNames }) => {
   const ref = useRef(null)

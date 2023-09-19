@@ -1,5 +1,5 @@
 import { Button } from '@arco-design/web-react'
-import * as classNames from 'classnames'
+import classNames from 'classnames'
 import { useState } from 'react'
 
 const status = [

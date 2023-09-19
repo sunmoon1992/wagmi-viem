@@ -1,5 +1,5 @@
 import Image from '@/components/common/Image'
-import * as classNames from 'classnames'
+import classNames from 'classnames'
 
 function Spin({ position }: { position: string }) {
   const icon = position === 'fixed' ? 'waiting' : 'loading'

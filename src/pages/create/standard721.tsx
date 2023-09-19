@@ -8,7 +8,7 @@ import { Purchased } from '@/pages/create/c/Purchased'
 import { ResourceUpload } from '@/pages/create/c/Upload'
 import { Button, Input, Space } from '@arco-design/web-react'
 import { useToggle } from 'ahooks'
-import * as classNames from 'classnames'
+import classNames from 'classnames'
 
 const Standard721 = () => {
   const [status, { toggle }] = useToggle(false)

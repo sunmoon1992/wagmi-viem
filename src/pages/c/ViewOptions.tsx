@@ -1,5 +1,5 @@
 import { nftCardSizeAtom } from '@/atoms/useNftCardSize'
-import * as classNames from 'classnames'
+import classNames from 'classnames'
 import { useAtom } from 'jotai'
 import { useState } from 'react'
 

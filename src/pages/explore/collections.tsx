@@ -5,7 +5,7 @@ import { PriceOptions } from '@/pages/explore/c/PriceOptions'
 import { thousandsSeparator } from '@/utils/tools'
 import { Affix, Button, Collapse, Input, Space } from '@arco-design/web-react'
 import { IconRight, IconSearch, IconToLeft, IconToRight } from '@arco-design/web-react/icon'
-import * as classNames from 'classnames'
+import classNames from 'classnames'
 import { times } from 'lodash'
 import { useState } from 'react'
 
