@@ -1028,6 +1028,13 @@
   resolved "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.12.tgz"
   integrity sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA==
 
+"@types/loadable__component@^5.13.5":
+  version "5.13.5"
+  resolved "https://registry.yarnpkg.com/@types/loadable__component/-/loadable__component-5.13.5.tgz#8e9e40e4381fbfb0e6475f926039a5d7d8849bf5"
+  integrity sha512-YMpOC3hkzuLKi0ZBRn1LFglw4cDP70cGeQ9ZXBh5mYCLo+dJtw+DflNTx55VGl7BQ3MATiS+VNd8apEtaQcl5w==
+  dependencies:
+    "@types/react" "*"
+
 "@types/lodash@^4.14.197":
   version "4.14.197"
   resolved "https://registry.npmjs.org/@types/lodash/-/lodash-4.14.197.tgz"
