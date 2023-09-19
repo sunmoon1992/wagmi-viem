@@ -32,7 +32,7 @@ function Created() {
             <Input placeholder="Search by NFTs" suffix={<IconSearch />} />
           </div>
           <SortOptions options={userCreatedOptions} />
-          <ViewOptions handleClick={() => null} />
+          <ViewOptions />
         </Space>
       </div>
       <div className="xyz-user-created-inner">

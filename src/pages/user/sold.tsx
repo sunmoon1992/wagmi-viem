@@ -29,7 +29,7 @@ function Sold() {
             Filters
           </Button>
           <SortOptions options={userOwnedOrSaleOptions} />
-          <ViewOptions handleClick={() => null} />
+          <ViewOptions />
         </Space>
       </div>
       <div className="xyz-user-sold-inner">

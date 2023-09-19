@@ -32,7 +32,7 @@ function NFTs() {
             <Input placeholder="Search by NFTs" suffix={<IconSearch />} />
           </div>
           <SortOptions />
-          <ViewOptions handleClick={() => null} />
+          <ViewOptions />
         </Space>
       </div>
       <div className="xyz-explore-nfts-inner">

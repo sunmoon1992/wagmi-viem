@@ -1,3 +1,4 @@
+// @ts-nocheck
 import contracts from '@/config/contracts'
 import { useAirdrop } from '@/hooks/useAirdrop'
 import { useBalances } from '@/hooks/useBalances'
