@@ -14,8 +14,8 @@ function Creating() {
       wrapClassNames="xyz-header-creating"
     >
       <DropDownItem content={<span onClick={() => navigate('/user/owned')}>NFT</span>} />
-      <DropDownItem content={<span onClick={() => navigate('/user/collections')}>Collection</span>} />
-      <DropDownItem content={<span onClick={() => navigate('/user/marketplace')}>Marketplace</span>} />
+      <DropDownItem content={<span onClick={() => navigate('/create/erc721')}>ERC-721</span>} />
+      <DropDownItem content={<span onClick={() => navigate('/create/erc1155')}>ERC-1155</span>} />
     </DropDown>
   )
 }

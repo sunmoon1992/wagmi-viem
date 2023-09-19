@@ -22,7 +22,7 @@ function Header() {
           <InputSearch allowClear placeholder="Search for collections, NFTs or users" />
         </div>
         <Explore />
-        <NavLink to="/sell">Sell</NavLink>
+        <NavLink to="/user/owned">Sell</NavLink>
       </Space>
       <Space size="medium">
         <Creating />
