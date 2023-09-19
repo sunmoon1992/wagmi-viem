@@ -1,1 +1,1 @@
-publish trigger
+publish trigger1
