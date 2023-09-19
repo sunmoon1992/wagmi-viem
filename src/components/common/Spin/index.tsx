@@ -1,7 +1,7 @@
 import Image from '@/components/common/Image'
 import * as classNames from 'classnames'
 
-function Spin({ position }) {
+function Spin({ position }: { position: string }) {
   const icon = position === 'fixed' ? 'waiting' : 'loading'
   return (
     <div className={classNames('libra-loading-wrap', { [position]: position })}>

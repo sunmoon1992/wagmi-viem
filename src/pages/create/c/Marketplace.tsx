@@ -18,7 +18,7 @@ export const Marketplace = ({ disabled }: { disabled?: boolean }) => {
               {checked ? (
                 <small>Enter price to allow users instantly purchase your NFT</small>
               ) : (
-                <small>Put your new NFT on Rarible's marketplace</small>
+                <small>Put your new NFT on Rarible&apos;s marketplace</small>
               )}
             </p>
           </div>
@@ -48,7 +48,7 @@ export const Marketplace = ({ disabled }: { disabled?: boolean }) => {
                 <span>Timed Auction</span>
                 {disabled && (
                   <p>
-                    <small>Multiple NFTs (ERC-1155) doesn't support auctions</small>
+                    <small>Multiple NFTs (ERC-1155) doesn&apos;t support auctions</small>
                   </p>
                 )}
               </div>

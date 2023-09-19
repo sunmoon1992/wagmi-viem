@@ -20,7 +20,7 @@ export const DEFAULT_PRC_URLS: ChainIdRec = {
   [ChainId.TESTNET]: 'https://goerli-rollup.arbitrum.io/rpc/'
 }
 
-export const CHAIN_ID = parseInt(import.meta.env.DAPP_CHAIN_ID as string)
+export const CHAIN_ID = parseInt(import.meta.env.DAPP_CHAIN_ID)
 export const API_PREFIX_URL = API_PREFIX_URLS[CHAIN_ID]
 export const EXPLORER_SCAN_URL = EXPLORER_SCAN_URLS[CHAIN_ID]
 export const APOLLO_CLIENT_URI = APOLLO_CLIENT_URIS[CHAIN_ID]

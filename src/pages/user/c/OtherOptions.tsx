@@ -1,5 +1,5 @@
 import { Checkbox } from '@arco-design/web-react'
-import { useState } from 'react'
+// import { useState } from 'react'
 
 const marketplaceOptions = [
   {
@@ -20,7 +20,7 @@ const marketplaceOptions = [
 ]
 
 export function OtherOptions() {
-  const [active, setActive] = useState<string>(marketplaceOptions[0].label)
+  // const [active, setActive] = useState<string>(marketplaceOptions[0].label)
 
   return (
     <div className="type-options">

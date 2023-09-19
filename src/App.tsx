@@ -27,8 +27,8 @@ const Activity = loadable(() => import('@/pages/user/activity'))
 const Settings = loadable(() => import('@/pages/user/settings'))
 const Profile = loadable(() => import('@/pages/user/settings/profile'))
 const Create = loadable(() => import('@/pages/create'))
-const Create721 = loadable(() => import('@/pages/create/erc721'))
-const Create1155 = loadable(() => import('@/pages/create/erc1155'))
+const Create721 = loadable(() => import('@/pages/create/standard721'))
+const Create1155 = loadable(() => import('@/pages/create/standard1155'))
 
 function App() {
   useScroll2Top()

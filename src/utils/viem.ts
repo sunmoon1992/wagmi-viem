@@ -3,7 +3,7 @@ import { PublicClientConfig, WalletClientConfig, createPublicClient, createWalle
 import { arbitrumGoerli } from 'viem/chains'
 
 const value = localStorage.getItem(BEST_RPC_KEY)
-const rpc = value ?? DEFAULT_PRC_URLS[CHAIN_ID]
+const rpc = value ?? (DEFAULT_PRC_URLS[CHAIN_ID] as string)
 export const publicClient = createPublicClient({
   chain: arbitrumGoerli,
   transport: http(rpc),

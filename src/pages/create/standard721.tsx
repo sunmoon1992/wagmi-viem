@@ -7,23 +7,26 @@ import { Network } from '@/pages/create/c/Network'
 import { Purchased } from '@/pages/create/c/Purchased'
 import { ResourceUpload } from '@/pages/create/c/Upload'
 import { Button, Input, Space } from '@arco-design/web-react'
+import { useToggle } from 'ahooks'
+import * as classNames from 'classnames'
 
-const ERC1155 = () => {
+const Standard721 = () => {
+  const [status, { toggle }] = useToggle(false)
   return (
     <div>
-      <p>Multiple edition on Ethereum</p>
+      <p onClick={toggle}>Single edition on Ethereum</p>
       <div className="xyz-create-nft-inner">
         <div className="left">
           <Network />
           <ResourceUpload />
-          <Marketplace disabled />
+          <Marketplace />
           <Purchased />
-          <Collection type="1155" />
+          <Collection type="721" />
           <Minting />
           <div className="p-r">
             <label htmlFor="Name">Name</label>
             <Input />
-            <em className="error">Name is not allowed to be empty</em>
+            <em className={classNames('error', { active: status })}>Name is not allowed to be empty</em>
           </div>
           <div>
             <label htmlFor="Description">Description</label>
@@ -38,14 +41,6 @@ const ERC1155 = () => {
             <p>
               <small>Suggested: 0%, 10%, 20%, 30%. Maximum is 50%</small>
             </p>
-          </div>
-          <div className="p-r">
-            <label htmlFor="Number of copies">Number of copies</label>
-            <Input />
-            <p>
-              <small>Amount of tokens</small>
-            </p>
-            <em className="error s">Supply must be a number</em>
           </div>
           <Advanced />
           <Space className="submit" size="large">
@@ -62,8 +57,4 @@ const ERC1155 = () => {
     </div>
   )
 }
-/**
- * Oops, error occured
- Form validation error. "Name" is not allowed to be empty. "Supply" must be a number. "Price" must be a number. "File" is required
- */
-export default ERC1155
+export default Standard721

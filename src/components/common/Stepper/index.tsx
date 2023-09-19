@@ -17,7 +17,7 @@ const Stepper: FC<StepperProps> = ({ value = 0, min = 0, max = 10, step = 1, onC
     if (val > max) setCurrValue(max)
   }
   useUpdateEffect(() => {
-    onChange?.(currValue as number)
+    onChange?.(currValue)
   }, [currValue])
   useUpdateEffect(() => {
     setCurrValue(value)
@@ -41,10 +41,10 @@ const Stepper: FC<StepperProps> = ({ value = 0, min = 0, max = 10, step = 1, onC
     const diffTime = now - currTime
     if (diffTime > 400) {
       if (action === 'add') {
-        changeValue(max as number)
+        changeValue(max)
       }
       if (action === 'sub') {
-        changeValue(min as number)
+        changeValue(min)
       }
     } else {
       if (action === 'add') {

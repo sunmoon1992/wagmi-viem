@@ -23,6 +23,7 @@ module.exports = {
     'prettier/prettier': 'error',
     '@typescript-eslint/no-redundant-type-constituents': 'off',
     'react-hooks/exhaustive-deps': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/no-unsafe-call': 'off',
     '@typescript-eslint/no-unsafe-argument': 'off',
     '@typescript-eslint/no-misused-promises': 'off',

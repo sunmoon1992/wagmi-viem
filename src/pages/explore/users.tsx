@@ -18,7 +18,7 @@ function Users() {
 
   const [dataCount, setDataCount] = useState<number>(22)
 
-  const funcAsync = useCallback(async () => {
+  const funcAsync = useCallback(() => {
     setDataCount((val) => val + 10)
   }, [])
 

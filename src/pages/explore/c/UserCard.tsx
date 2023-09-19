@@ -3,7 +3,7 @@ import { IconHeart } from '@arco-design/web-react/icon'
 import * as React from 'react'
 import { HTMLAttributes } from 'react'
 
-const UserCard = ({ id }: HTMLAttributes<HTMLElement>, ref: React.ForwardedRef<HTMLDivElement>) => {
+const UserCard = React.forwardRef(({ id }: HTMLAttributes<HTMLElement>, ref: React.ForwardedRef<HTMLDivElement>) => {
   return (
     <div className="xyz-user-card" id={id} ref={ref}>
       <dl>
@@ -33,9 +33,11 @@ const UserCard = ({ id }: HTMLAttributes<HTMLElement>, ref: React.ForwardedRef<H
       </dl>
     </div>
   )
-}
+})
 
-export default React.forwardRef(UserCard)
+UserCard.displayName = 'UserCard'
+
+export default UserCard
 
 export const UserCardLoading = () => {
   return (
