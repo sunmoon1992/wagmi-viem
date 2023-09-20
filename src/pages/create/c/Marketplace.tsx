@@ -57,6 +57,7 @@ export const Marketplace = ({ disabled }: { disabled?: boolean }) => {
               <div className="p-r">
                 <label htmlFor="price">Price</label>
                 <Input
+                  className="price-input"
                   addAfter={
                     <Select defaultValue="ETH">
                       <Select.Option value="ETH">ETH</Select.Option>
@@ -70,16 +71,16 @@ export const Marketplace = ({ disabled }: { disabled?: boolean }) => {
               </div>
               <div className="info">
                 <div className="info-item">
-                  <span>Price</span>
+                  <span>price</span>
                   <span>1 ETH</span>
                 </div>
                 <div className="info-item">
-                  <span>xxx Fee</span>
+                  <span>trading fee</span>
                   <span>1.00%</span>
                 </div>
                 <Divider />
                 <div className="info-item">
-                  <span>You will receive</span>
+                  <span>you will receive</span>
                   <span>1 ETH</span>
                 </div>
               </div>
@@ -88,6 +89,7 @@ export const Marketplace = ({ disabled }: { disabled?: boolean }) => {
               <label htmlFor="expiration">Date of listing expiration</label>
               {/*TODO:自定义时间*/}
               <Input
+                className="date-input"
                 addAfter={
                   <Select defaultValue="1">
                     <Select.Option value="1">1Day</Select.Option>

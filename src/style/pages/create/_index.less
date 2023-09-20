@@ -29,6 +29,18 @@
     }
   }
 
+  .date-input,
+  .price-input{
+    .arco-select-focused {
+      .arco-select-view{
+        border-radius: 0 6px 6px 0;
+      }
+    }
+    .arco-input-inner-wrapper-focus {
+      border-radius: 6px 0 0 6px;
+    }
+  }
+
   .upload {
     position: relative;
 
@@ -167,16 +179,17 @@
         .info {
           margin: 24px 0;
           border: 2px solid rgba(@cr232323, 0.05);
-          padding: 16px;
+          padding: 12px 16px;
           border-radius: 12px;
 
           &-item {
             .ac;
             color: lighten(@cr232323, 45%);
             justify-content: space-between;
-            .fs(12px, 700);
+            .fs(14px, 400);
 
             span:last-child {
+              .fs(12px);
               color: lighten(@cr232323, 25%);
             }
           }
