@@ -1,6 +1,7 @@
 import { Button, Skeleton, Space, Trigger } from '@arco-design/web-react'
 import { IconCheckCircle, IconMore, IconPlus } from '@arco-design/web-react/icon'
 import { useSize } from 'ahooks'
+import * as classNames from 'classnames'
 import { useMemo, useRef } from 'react'
 
 interface Props {
@@ -112,11 +113,24 @@ const NFTCard = ({ size }: Props) => {
 // export default React.forwardRef(NFTCard)
 export default NFTCard
 
-export const NFTCardLoading = () => {
+export const NFTCardLoading = ({ size }: Props) => {
+  const ref = useRef(null)
+  const _size = useSize(ref)
+
+  const divSize = useMemo(() => {
+    const width = _size?.width ?? 0
+    const stable = `${width - 16}px`
+    return {
+      width: stable,
+      height: stable
+    }
+  }, [_size])
+
   return (
-    <div className="xyz-nft-card-loading">
-      <Skeleton className="img-loading" loading animation text={{ rows: 1 }} />
+    <div className={classNames('xyz-nft-card-loading', { [size]: size })} ref={ref}>
+      <Skeleton className="img-loading" loading animation text={{ rows: 1 }} style={divSize} />
       <Skeleton className="info-loading" loading animation text={{ rows: 2 }} />
+      {size !== 'small' && <Skeleton className="price-loading" loading animation text={{ rows: 1 }} />}
     </div>
   )
 }
