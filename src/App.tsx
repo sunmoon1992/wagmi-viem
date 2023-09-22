@@ -39,7 +39,7 @@ function App() {
       <Header />
       <div className="xyz-content-main">
         <Routes>
-          <Route path="/" element={<Navigate to='/explore/items' />} />
+          <Route path="/" element={<Navigate to="/explore/items" />} />
           <Route
             path="/login"
             element={
