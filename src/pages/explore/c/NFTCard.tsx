@@ -31,7 +31,7 @@ const NFTCard = ({ size }: Props) => {
             src="https://assets.raribleuserdata.com/prod/v1/image/t_cover_big/aHR0cHM6Ly9pcGZzLmlvL2lwZnMvUW1jNnpDa3pKWW9MYm40d2lDZHF0YUJVdnROUlR1WnVRaUhkakRlRmRkNlBnUA=="
             alt=""
           />
-          <img src="https://opensea.io/static/images/logos/opensea-logo.svg" alt="" className="tag" />
+          <img src="https://placebear.com/64/64" alt="" className="tag" />
           <div className="mask">
             <Space>
               <Button size="small">Buy Now</Button>

@@ -17,7 +17,7 @@ function Header() {
   return (
     <section className="xyz-header">
       <Space size="large">
-        <Image onClick={() => navigate('/')} />
+        <Image src='https://placebear.com/120/32' onClick={() => navigate('/')} />
         <div className="xyz-search">
           <InputSearch allowClear placeholder="Search for collections, NFTs or users" />
         </div>
