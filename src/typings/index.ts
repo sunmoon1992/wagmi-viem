@@ -14,8 +14,6 @@ export interface ChainIdRec {
   [ChainId.TESTNET]: string | Rec | Address
 }
 
-export declare type TXStatus = 'success' | 'reverted'
-
 export declare type ContractKeys = 'airdrop'
 
 export declare type TokenKeys = 'btc' | 'usdc' | 'lion' | 'esLion' | 'lp'

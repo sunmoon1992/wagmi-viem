@@ -16,7 +16,7 @@ import { useBoolean } from 'ahooks'
 import { useTranslation } from 'react-i18next'
 import { EstimateContractGasParameters, ReadContractParameters, SimulateContractParameters } from 'viem'
 import { WatchPendingTransactionsParameters } from 'viem/dist/types/actions/public/watchPendingTransactions'
-import { useAccount } from 'wagmi'
+import { useAccount, useNetwork } from 'wagmi'
 
 function Home() {
   const { t } = useTranslation()
@@ -892,6 +892,10 @@ function Home() {
   }
 
   // i18n.changeLanguage('en')
+
+  const { connector } = useAccount()
+  const { chain } = useNetwork()
+  console.info(chain?.blockExplorers?.etherscan?.url)
 
   return (
     <div>

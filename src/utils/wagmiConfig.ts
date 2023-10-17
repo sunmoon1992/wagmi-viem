@@ -6,12 +6,10 @@ import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
 import { publicProvider } from 'wagmi/providers/public'
 
-import { CHAIN_ID, DEFAULT_PRC_URLS } from '@/config'
-import { ChainId } from '@/typings'
+import { INIT_RPC_URL } from '@/config'
 import { arbitrumGoerli } from 'viem/chains'
 
-export const rpcUrl = (DEFAULT_PRC_URLS[CHAIN_ID] ?? DEFAULT_PRC_URLS[ChainId.MAINNET]) as string
-
+export const rpcUrl = INIT_RPC_URL()
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [arbitrumGoerli],
   // [mainnet, goerli, arbitrum, arbitrumGoerli],

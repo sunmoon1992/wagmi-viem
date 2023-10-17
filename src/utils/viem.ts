@@ -1,11 +1,11 @@
+import { INIT_RPC_URL } from '@/config'
 import { createPublicClient, createWalletClient, custom, http, PublicClientConfig, WalletClientConfig } from 'viem'
 import { arbitrumGoerli } from 'viem/chains'
 
 export const publicClient = () => {
-  const rpc = localStorage.getItem('rpc') ?? ''
   return createPublicClient({
     chain: arbitrumGoerli,
-    transport: http(rpc),
+    transport: http(INIT_RPC_URL()),
     batch: {
       multicall: {
         batchSize: 1024 * 200
@@ -15,15 +15,9 @@ export const publicClient = () => {
 }
 
 export const walletClient = () => {
-  let _transport
-  if (window.ethereum) {
-    _transport = custom(window.ethereum)
-  } else {
-    const rpc = localStorage.getItem('rpc') ?? ''
-    _transport = http(rpc)
-  }
+  const transport = window.ethereum ? custom(window.ethereum) : http(INIT_RPC_URL())
   return createWalletClient({
     chain: arbitrumGoerli,
-    transport: _transport
+    transport
   } as WalletClientConfig)
 }

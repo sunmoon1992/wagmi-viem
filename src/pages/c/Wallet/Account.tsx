@@ -3,7 +3,6 @@ import { useAccount, useDisconnect, useNetwork } from 'wagmi'
 
 import wallet from '@/assets/wallet.svg'
 import Image from '@/components/common/Image'
-import { EXPLORER_SCAN_URL } from '@/config'
 import { useBalances } from '@/hooks/useBalances'
 import { hideString, keepDecimals } from '@/utils/tools'
 import { Button, Divider, Modal, Space } from '@arco-design/web-react'
@@ -52,7 +51,7 @@ function Account() {
                 <Button
                   size="small"
                   icon={<IconEye />}
-                  onClick={() => window.open(`${EXPLORER_SCAN_URL}/address/${address}`)}
+                  onClick={() => window.open(`${chain?.blockExplorers?.etherscan?.url}/address/${address}`)}
                 />
                 <Button size="small" icon={<IconExport />} onClick={disconnect} />
               </Space>
