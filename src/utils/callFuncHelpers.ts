@@ -32,12 +32,12 @@ import { WatchPendingTransactionsParameters } from 'viem/dist/types/actions/publ
 import { SendTransactionResult, WaitForTransactionArgs } from 'wagmi/actions'
 
 export const multicall = async (args: MulticallParameters): Promise<MulticallReturnType> => {
-  const data = await _multicall(publicClient as Client, args)
+  const data = await _multicall(publicClient() as Client, args)
   return data
 }
 
 export const getBalance = async (args: GetBalanceParameters): Promise<GetBalanceReturnType> => {
-  const data = await _getBalance(publicClient as Client, args)
+  const data = await _getBalance(publicClient() as Client, args)
   return data
 }
 
@@ -59,22 +59,22 @@ export const callWithGas = async (
 }
 
 export const readContract = async (args: ReadContractParameters): Promise<ReadContractReturnType> => {
-  const data = await _readContract(publicClient as Client, args)
+  const data = await _readContract(publicClient() as Client, args)
   return data
 }
 
 export const writeContract = async (args: WriteContractParameters): Promise<WriteContractReturnType> => {
-  const data = await _writeContract(walletClient as Client, args)
+  const data = await _writeContract(walletClient() as Client, args)
   return data
 }
 
 export const simulateContract = async (args: SimulateContractParameters): Promise<SimulateContractReturnType> => {
-  const data = await _simulateContract(publicClient as Client, args)
+  const data = await _simulateContract(publicClient() as Client, args)
   return data
 }
 
 export const waitForTransaction = async (args: WaitForTransactionArgs): Promise<TransactionReceipt> => {
-  const receipt = await waitForTransactionReceipt(publicClient as Client, args) // way1
+  const receipt = await waitForTransactionReceipt(publicClient() as Client, args) // way1
   // const receipt = _waitForTransaction({ ...opts }) // way2
   return receipt
 }
@@ -82,7 +82,7 @@ export const waitForTransaction = async (args: WaitForTransactionArgs): Promise<
 export const estimateContractGas = async (
   args: EstimateContractGasParameters
 ): Promise<EstimateContractGasReturnType> => {
-  const data = await _estimateContractGas(publicClient as Client, args)
+  const data = await _estimateContractGas(publicClient() as Client, args)
   return data
 }
 
@@ -151,5 +151,5 @@ export const approveAllowance = async (args: ReadContractParameters, amount: big
  * @param args
  */
 export const watchPendingTransactions = (args: WatchPendingTransactionsParameters) => {
-  _watchPendingTransactions(publicClient as Client, { ...args, poll: true })
+  _watchPendingTransactions(publicClient() as Client, { ...args, poll: true })
 }

@@ -1,1 +1,1 @@
-export * from './useRpcNode'
+export default null

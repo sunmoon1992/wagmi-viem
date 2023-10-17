@@ -8,12 +8,12 @@ import { publicProvider } from 'wagmi/providers/public'
 
 import { CHAIN_ID, DEFAULT_PRC_URLS } from '@/config'
 import { ChainId } from '@/typings'
-import { goerli } from 'viem/chains'
+import { arbitrumGoerli } from 'viem/chains'
 
 export const rpcUrl = (DEFAULT_PRC_URLS[CHAIN_ID] ?? DEFAULT_PRC_URLS[ChainId.MAINNET]) as string
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
-  [goerli],
+  [arbitrumGoerli],
   // [mainnet, goerli, arbitrum, arbitrumGoerli],
   [
     jsonRpcProvider({

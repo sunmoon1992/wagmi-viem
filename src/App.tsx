@@ -1,10 +1,9 @@
-import useGlobalInit from '@/hooks/useGlobalInit'
 import { useScroll2Top } from '@/hooks/useScroll2Top'
-import { FastClient } from '@/pages/c/FastClient'
 import Footer from '@/pages/c/Footer'
 import Header from '@/pages/c/Header'
 import { InterceptConnect } from '@/pages/connect'
 import loadable from '@loadable/component'
+import * as React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 
 const Test = loadable(() => import('@/pages/test'))
@@ -32,7 +31,6 @@ const Create1155 = loadable(() => import('@/pages/create/standard1155'))
 
 function App() {
   useScroll2Top()
-  useGlobalInit()
 
   return (
     <div id="app-container">
@@ -78,14 +76,7 @@ function App() {
           </Route>
           <Route path="/sell" element={<Sell />} />
           <Route path="/notification" element={<Notification />} />
-          <Route
-            path="/test"
-            element={
-              <FastClient>
-                <Test />
-              </FastClient>
-            }
-          />
+          <Route path="/test" element={<Test />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
@@ -94,4 +85,4 @@ function App() {
   )
 }
 
-export default App
+export default React.memo(App)

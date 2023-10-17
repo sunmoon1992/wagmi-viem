@@ -1,7 +1,5 @@
 // @ts-nocheck
 import contracts from '@/config/contracts'
-import { useAirdrop } from '@/hooks/useAirdrop'
-import { useBalances } from '@/hooks/useBalances'
 import Index from '@/pages/c/Wallet'
 import {
   contractApprove,
@@ -17,14 +15,14 @@ import { useBoolean } from 'ahooks'
 import { useTranslation } from 'react-i18next'
 import { EstimateContractGasParameters, ReadContractParameters, SimulateContractParameters } from 'viem'
 import { WatchPendingTransactionsParameters } from 'viem/dist/types/actions/public/watchPendingTransactions'
-import { useAccount, useWalletClient } from 'wagmi'
+import { useAccount } from 'wagmi'
 
 function Home() {
   const { t } = useTranslation()
   const { address } = useAccount()
-  const { data: wc } = useWalletClient()
-  const { claim } = useAirdrop()
-  const { balances } = useBalances(address)
+  // const { data: wc } = useWalletClient()
+  // const { claim } = useAirdrop()
+  // const { balances } = useBalances(address)
   const [v1, { setTrue: setTrue1, setFalse: setFalse1 }] = useBoolean(false)
   const [v2, { setTrue: setTrue2, setFalse: setFalse2 }] = useBoolean(false)
   const [v3, { setTrue: setTrue3, setFalse: setFalse3 }] = useBoolean(false)
@@ -812,7 +810,7 @@ function Home() {
   }
   const f2 = async () => {
     try {
-      if (!address || !wc) return
+      if (!address) return
       const claimed = await readContract({
         address: contracts.airdrop.contractAddress,
         abi: [
@@ -898,7 +896,7 @@ function Home() {
     <div>
       <h3>Connect Wallet:</h3>
       <Index />
-      <Button>button</Button>
+      <Button onClick={() => f2()}>button</Button>
     </div>
   )
 }

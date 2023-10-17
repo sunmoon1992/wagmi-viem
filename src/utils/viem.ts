@@ -1,19 +1,29 @@
-import { BEST_RPC_KEY, CHAIN_ID, DEFAULT_PRC_URLS } from '@/config'
-import { PublicClientConfig, WalletClientConfig, createPublicClient, createWalletClient, custom, http } from 'viem'
+import { createPublicClient, createWalletClient, custom, http, PublicClientConfig, WalletClientConfig } from 'viem'
 import { arbitrumGoerli } from 'viem/chains'
 
-const value = localStorage.getItem(BEST_RPC_KEY)
-const rpc = value ?? (DEFAULT_PRC_URLS[CHAIN_ID] as string)
-export const publicClient = createPublicClient({
-  chain: arbitrumGoerli,
-  transport: http(rpc),
-  batch: {
-    multicall: {
-      batchSize: 1024 * 200
+export const publicClient = () => {
+  const rpc = localStorage.getItem('rpc') ?? ''
+  return createPublicClient({
+    chain: arbitrumGoerli,
+    transport: http(rpc),
+    batch: {
+      multicall: {
+        batchSize: 1024 * 200
+      }
     }
+  } as PublicClientConfig)
+}
+
+export const walletClient = () => {
+  let _transport
+  if (window.ethereum) {
+    _transport = custom(window.ethereum)
+  } else {
+    const rpc = localStorage.getItem('rpc') ?? ''
+    _transport = http(rpc)
   }
-} as PublicClientConfig)
-export const walletClient = createWalletClient({
-  chain: arbitrumGoerli,
-  transport: window.ethereum ? custom(window.ethereum) : http(rpc)
-} as WalletClientConfig)
+  return createWalletClient({
+    chain: arbitrumGoerli,
+    transport: _transport
+  } as WalletClientConfig)
+}
