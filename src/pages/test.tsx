@@ -10,6 +10,7 @@ import {
   watchPendingTransactions,
   writeContract
 } from '@/utils/callFuncHelpers'
+import { formatUnits, parseUnits } from '@/utils/tools'
 import { Button } from '@arco-design/web-react'
 import { useBoolean } from 'ahooks'
 import { useTranslation } from 'react-i18next'
@@ -29,8 +30,8 @@ function Home() {
   const [v4, { setTrue: setTrue4, setFalse: setFalse4 }] = useBoolean(false)
   // console.info(balances)
   // console.info(import.meta.env)
-  // console.info(parseUnits(1.99999999999911))
-  // console.info(formatUnits(10000000100000001000000010000000n, 8))
+  console.info(parseUnits(1.99999999999911))
+  console.info(formatUnits(10000000100000001000000010000000n, 8))
   // console.info(publicClient)
 
   const f1 = async () => {
