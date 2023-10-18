@@ -6,7 +6,7 @@ export function NFTsCard({ size }: { size: 'big' | 'small' }) {
   const fetchMoreData = () => {
     setTimeout(() => {
       setV((v) => [...v, ...Array.from({ length: 10 })])
-    }, 200000)
+    }, 2000)
   }
   const [v, setV] = useState(Array.from({ length: 20 }))
   return (
