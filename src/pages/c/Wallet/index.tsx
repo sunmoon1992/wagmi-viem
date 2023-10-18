@@ -1,5 +1,4 @@
 import Account from '@/pages/c/Wallet/Account'
-import { Button } from '@arco-design/web-react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useAccount } from 'wagmi'
 
@@ -16,7 +15,7 @@ const Index = () => {
     })
   }
 
-  return <div>{address ? <Account /> : <Button onClick={handleClick}>Connect Wallet</Button>}</div>
+  return <div>{address ? <Account /> : <span onClick={handleClick}>Connect Wallet</span>}</div>
 }
 
 export default Index

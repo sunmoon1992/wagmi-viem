@@ -1,43 +1,9 @@
 @import 'base/_index.less';
 @res: '';
-@header: 72px;
 
 body {
-  color: @cr232323;
-
   * {
     font-family: Ubuntu, sans-serif;
     user-select: none;
-  }
-}
-
-.rotate {
-  animation: 1s cubic-bezier(0, 0, 1, 1) infinite;
-
-  @include animation-keyframes {
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-}
-
-.xyz-content-main {
-  padding: 0 32px 32px;
-  min-height: calc(100vh - @header);
-  min-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.xyz-content-inner {
-  padding: 0 32px;
-  min-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (width >= 2256px) {
-  .xyz-content-main {
-    max-width: 2256px
   }
 }

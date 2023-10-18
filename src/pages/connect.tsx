@@ -1,7 +1,5 @@
-import { Button } from '@arco-design/web-react'
 import { PropsWithChildren, ReactNode, useEffect, useMemo } from 'react'
 
-import Image from '@/components/common/Image'
 import useConnecting from '@/hooks/useConnecting'
 import { getWallets, Wallet } from '@/utils/wallets'
 import { useBoolean } from 'ahooks'
@@ -16,7 +14,7 @@ export const InterceptConnect = (props: PropsWithChildren<ReactNode>) => {
   return useMemo(() => {
     const { state } = location
     return address ? <Navigate to={state?.from ? state?.from : '/'} /> : children
-  }, [address])
+  }, [address, location])
 }
 
 const Connect = () => {
@@ -42,14 +40,14 @@ const Connect = () => {
     <div className="xyz-connect">
       <h3>Connect Your Wallet</h3>
       <p>Choose how you want to connect. There are several wallet providers.</p>
-      <div className="xyz-connect-inner">
+      <ul className="xyz-connect-inner">
         {wallets.map((wallet, index) => (
-          <Button key={wallet.id} onClick={() => handleClick(wallet)}>
-            <Image src={wallet.icon} />
+          <li key={wallet.id} onClick={() => handleClick(wallet)}>
+            <img src={wallet.icon} alt="" />
             <span>{wallet.title}</span>
-          </Button>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   )
 }

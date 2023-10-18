@@ -1,6 +1,5 @@
 // @ts-nocheck
 import contracts from '@/config/contracts'
-import Index from '@/pages/c/Wallet'
 import {
   contractApprove,
   estimateContractGas,
@@ -11,7 +10,6 @@ import {
   writeContract
 } from '@/utils/callFuncHelpers'
 import { formatUnits, parseUnits } from '@/utils/tools'
-import { Button } from '@arco-design/web-react'
 import { useBoolean } from 'ahooks'
 import { useTranslation } from 'react-i18next'
 import { EstimateContractGasParameters, ReadContractParameters, SimulateContractParameters } from 'viem'
@@ -900,8 +898,7 @@ function Home() {
   return (
     <div>
       <h3>Connect Wallet:</h3>
-      <Index />
-      <Button onClick={() => f2()}>button</Button>
+      <button onClick={() => f2()}>button</button>
     </div>
   )
 }
