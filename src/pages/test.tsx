@@ -1,5 +1,6 @@
 // @ts-nocheck
 import contracts from '@/config/contracts'
+import { useBalances } from '@/hooks/useBalances'
 import {
   contractApprove,
   estimateContractGas,
@@ -21,7 +22,7 @@ function Home() {
   const { address } = useAccount()
   // const { data: wc } = useWalletClient()
   // const { claim } = useAirdrop()
-  // const { balances } = useBalances(address)
+  const { balances } = useBalances(address)
   const [v1, { setTrue: setTrue1, setFalse: setFalse1 }] = useBoolean(false)
   const [v2, { setTrue: setTrue2, setFalse: setFalse2 }] = useBoolean(false)
   const [v3, { setTrue: setTrue3, setFalse: setFalse3 }] = useBoolean(false)

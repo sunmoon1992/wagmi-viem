@@ -4,8 +4,7 @@ import { Rec, TokenKeys } from '@/typings'
 import { getBalance, multicall } from '@/utils/callFuncHelpers'
 import { formatUnits } from '@/utils/tools'
 import { useQuery } from '@tanstack/react-query'
-import { MulticallParameters } from 'viem'
-import { GetBalanceParameters } from 'viem/actions'
+import { Address, MulticallParameters } from 'viem'
 import { erc20ABI } from 'wagmi'
 
 export const initialBalances = (): Rec => {
@@ -47,14 +46,14 @@ const getCalls = (account: string) => {
   }))
 }
 
-export const useBalances = (account?: string) => {
+export const useBalances = (account?: Address) => {
   const { data: balances } = useQuery({
     queryKey: ['useBalances'],
     queryFn: async (): Promise<typeof initialVal | null> => {
       if (account) {
         const calls = getCalls(account)
         const res = await multicall({ contracts: calls, allowFailure: true } as MulticallParameters)
-        const eth = await getBalance({ address: account } as GetBalanceParameters)
+        const eth = await getBalance({ address: account })
         const ethBalance = formatUnits(eth, 18)
         if (res.length > 0) {
           res.forEach(({ result, status }, index) => {

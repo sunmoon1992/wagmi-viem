@@ -15,5 +15,6 @@ export interface ChainIdRec {
 }
 
 export declare type ContractKeys = 'airdrop'
+export declare type TXStatus = 'success' | 'reverted'
 
 export declare type TokenKeys = 'btc' | 'usdc' | 'lion' | 'esLion' | 'lp'
