@@ -1,3 +1,4 @@
+import { PublicClientConfig, WalletClientConfig, createPublicClient, createWalletClient, custom, http } from 'viem'
 import { configureChains, createConfig } from 'wagmi'
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
 import { InjectedConnector } from 'wagmi/connectors/injected'
@@ -6,16 +7,25 @@ import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
 import { publicProvider } from 'wagmi/providers/public'
 
-import { INIT_RPC_URL } from '@/config'
 import { arbitrumGoerli } from 'viem/chains'
 
-export const rpcUrl = INIT_RPC_URL()
-const { chains, publicClient, webSocketPublicClient } = configureChains(
-  [arbitrumGoerli],
+const chain = arbitrumGoerli
+
+export const INIT_RPC_URL = () => {
+  const _rpc = localStorage.getItem('rpc')
+  return _rpc ? _rpc : chain?.rpcUrls?.default?.http?.[0] ?? ''
+}
+
+const {
+  chains,
+  publicClient: _publicClient,
+  webSocketPublicClient
+} = configureChains(
+  [chain],
   // [mainnet, goerli, arbitrum, arbitrumGoerli],
   [
     jsonRpcProvider({
-      rpc: () => ({ http: rpcUrl })
+      rpc: () => ({ http: INIT_RPC_URL() })
     }),
     publicProvider()
   ]
@@ -52,8 +62,28 @@ const injectedConnector = new InjectedConnector({
 })
 
 export const client = createConfig({
-  publicClient,
+  publicClient: _publicClient,
   webSocketPublicClient,
   autoConnect: true,
   connectors: [metaMaskConnector, coinbaseWalletConnector, walletConnectConnector, injectedConnector]
 })
+
+export const publicClient = () => {
+  return createPublicClient({
+    chain,
+    transport: http(INIT_RPC_URL()),
+    batch: {
+      multicall: {
+        batchSize: 1024 * 200
+      }
+    }
+  } as PublicClientConfig)
+}
+
+export const walletClient = () => {
+  const transport = window.ethereum ? custom(window.ethereum) : http(INIT_RPC_URL())
+  return createWalletClient({
+    chain,
+    transport
+  } as WalletClientConfig)
+}

@@ -1,6 +1,6 @@
 import { Rec, TXStatus } from '@/typings'
 import { getERC20Contract } from '@/utils/contractHelpers'
-import { publicClient, walletClient } from '@/utils/viem'
+import { publicClient, walletClient } from '@/utils/wagmiConfig'
 import {
   CallParameters,
   Client,

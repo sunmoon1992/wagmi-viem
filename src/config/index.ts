@@ -1,5 +1,4 @@
 import { ChainId, ChainIdRec } from '@/typings'
-import * as chains from 'viem/chains'
 
 const APOLLO_CLIENT_URIS: ChainIdRec = {
   [ChainId.MAINNET]: 'https://api.thegraph.com/subgraphs/name/liondextrade/finance',
@@ -15,15 +14,4 @@ export const MEDIA_LINKS = {
   dc: '',
   tw: '',
   tg: ''
-}
-
-export const INIT_RPC_URL = () => {
-  const _rpc = localStorage.getItem('rpc')
-  if (_rpc) {
-    return _rpc
-  } else {
-    const _chains = chains as any
-    const chainInfo = Object.values(_chains).find((r) => r.id === parseInt(CHAIN_ID))
-    return chainInfo?.rpcUrls?.default?.http?.[0] ?? ''
-  }
 }
