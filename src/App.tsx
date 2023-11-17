@@ -4,12 +4,21 @@ import { InterceptConnect } from '@/pages/connect'
 import loadable from '@loadable/component'
 import * as React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
+import { useEffect } from "react";
+import { test } from "@/api";
 
 const Test = loadable(() => import('@/pages/test'))
 const Connect = loadable(() => import('@/pages/connect'))
 
 function App() {
   useScroll2Top()
+
+  useEffect(() => {
+    const func = async () => {
+      await test()
+    }
+    void func()
+  }, [])
 
   return (
     <div id="app-container">

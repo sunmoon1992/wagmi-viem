@@ -1,7 +1,7 @@
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { useAccount, useDisconnect, useNetwork } from 'wagmi'
 
-import { hideString } from '@/utils/tools'
+import { hideHashOrAddress } from '@/utils/tools'
 
 function Account() {
   const { address, connector } = useAccount()
@@ -11,7 +11,7 @@ function Account() {
   return (
     <ul className="">
       <li>{chain?.name}</li>
-      <li>{address && hideString(address, 7, 5)}</li>
+      <li>{address && hideHashOrAddress(address, 7, 5)}</li>
       <li>
         <CopyToClipboard text={address} onCopy={() => console.info('Copy successfully')}>
           <span>copy</span>
