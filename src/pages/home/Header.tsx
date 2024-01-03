@@ -1,6 +1,7 @@
 import sogaIcon from '@/assets/soga-icon.svg'
 import sogaLogo from '@/assets/soga-logo.svg'
 
+import Connect from '@/components/Modals/Connect'
 import { NavLink } from 'react-router-dom'
 
 const Header = () => {
@@ -13,7 +14,7 @@ const Header = () => {
       <nav>
         <NavLink to="/">Home</NavLink>
       </nav>
-      <button>Connect Wallet</button>
+      <Connect />
     </div>
   )
 }
