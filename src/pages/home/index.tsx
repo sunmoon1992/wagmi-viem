@@ -5,7 +5,7 @@ import Part2 from '@/pages/home/Part2'
 import Part3 from '@/pages/home/Part3'
 import * as React from 'react'
 
-function Home() {
+function Index() {
   return (
     <div>
       <Header />
@@ -17,4 +17,4 @@ function Home() {
   )
 }
 
-export default React.memo(Home)
+export default React.memo(Index)

@@ -56,6 +56,7 @@
     cursor: pointer;
     border-radius: 50%;
     .tr;
+
     &:hover {
       -webkit-animation-name: heartBeat;
       animation-name: heartBeat;
@@ -98,6 +99,7 @@
     color: @crC3C2D4;
     background: @cr232334;
     .fs(16px, 600);
+
     &:hover {
       color: @crfff;
       background: @cr31DEAD;
@@ -106,11 +108,32 @@
       border-bottom-left-radius: 15px;
       border-top-right-radius: 15px;
     }
+
     img {
       width: 32px;
     }
   }
 }
 
-.mobile-mode {
+.h5 {
+  &.c-modal-content {
+    width: calc(100% - 32px);
+  }
+
+  .c-modal-head {
+    button {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  .c-wallet-modal {
+    button {
+      padding: 10px;
+      border-radius: 8px;
+      &:hover{
+        background: @cr232334;
+      }
+    }
+  }
 }

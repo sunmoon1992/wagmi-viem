@@ -34,6 +34,7 @@ button {
   .logo {
     gap: 18px;
     display: flex;
+    align-items: center;
 
     img:first-child {
       width: 52px;
@@ -140,6 +141,7 @@ button {
     display: flex;
     justify-content: center;
     margin-bottom: -140px;
+
     img {
       height: 520px;
       margin: auto 0;
@@ -215,7 +217,7 @@ button {
   }
 
   p {
-    padding-top:80px;
+    padding-top: 80px;
     line-height: 1.1;
     margin-bottom: 80px;
     .fs(100px, 600);
@@ -317,22 +319,6 @@ button {
       gap: 20px;
       display: flex;
       margin-top: 50px;
-
-      .card {
-        width: 312px;
-        height: 380px;
-        position: relative;
-        background: @cr0D0D0D;
-        border-radius: 20px;
-        .tr;
-
-        em {
-          bottom: 20px;
-          left: 18px;
-          position: absolute;
-          .fs(14px, 400);
-        }
-      }
     }
   }
 
@@ -346,13 +332,29 @@ button {
       margin-top: 20px;
     }
   }
+
+  .card {
+    width: 312px;
+    height: 380px;
+    position: relative;
+    background: @cr0D0D0D;
+    border-radius: 20px;
+    .tr;
+
+    em {
+      bottom: 20px;
+      left: 18px;
+      position: absolute;
+      .fs(14px, 400);
+    }
+  }
 }
 
 @media screen and (max-width: 1440px) {
   .soga-part3 { // 78:95
     .inner section > .card {
       width: 300px;
-      height: calc(300/78*95px);
+      height: calc(300 / 78 * 95px);
     }
   }
 }
@@ -361,7 +363,7 @@ button {
   .soga-part3 { // 78:95
     .inner section > .card {
       width: 280px;
-      height: calc(280/78*95px);
+      height: calc(280 / 78 * 95px);
     }
   }
 }
@@ -370,7 +372,7 @@ button {
   .soga-part3 { // 78:95
     .inner section > .card {
       width: 240px;
-      height: calc(240/78*95px);
+      height: calc(240 / 78 * 95px);
     }
   }
 }
@@ -408,5 +410,207 @@ button {
   70% {
     -webkit-transform: scale(1);
     transform: scale(1);
+  }
+}
+
+.h5 {
+  button {
+    padding: 8px 16px;
+    border-radius: 20px;
+    .fs(14px, 600);
+  }
+
+  .soga-header {
+    padding: 12px 16px;
+    top: 0;
+    z-index: 10;
+    background: @cr000;
+    position: sticky;
+    box-shadow: 0 0 6px @cr404040;
+
+    .logo {
+      gap: 12px;
+
+      img:first-child {
+        width: 34px;
+        height: 38px;
+      }
+
+      img:last-child {
+        height: 16px;
+      }
+    }
+
+    button {
+      color: @cr31DEAD;
+      background: transparent;
+      border: 2px solid @cr31DEAD;
+      padding: 6px 16px;
+
+      &:hover {
+        color: @cr000;
+        background: @cr31DEAD;
+      }
+    }
+  }
+
+  .soga-part1 {
+    padding: 0 20px;
+    position: relative;
+    background: url('@/assets/banner5.png') no-repeat;
+    background-position: center 36px;
+    background-size: 100%;
+    padding-bottom: 10px;
+
+    h1 {
+      margin-bottom: 20px;
+      .fs(94px, 600);
+    }
+
+    p {
+      text-align: center;
+      line-height: 1.6;
+      margin-bottom: 64px;
+      .fs(14px, 700);
+
+      &:after {
+        top: 30px;
+      }
+    }
+
+    section {
+      display: flex;
+      justify-content: center;
+      margin-bottom: -70px;
+
+      img {
+        height: 246px;
+        margin: auto 0;
+      }
+    }
+
+    nav {
+      button {
+        padding: 8px 24px;
+      }
+    }
+  }
+
+  .soga-part2 {
+    padding: 30px 20px;
+
+    &:not(section) {
+      text-align: center;
+    }
+
+    img {
+      width: 348px;
+    }
+
+    p {
+      font-size: 32px;
+      padding-top: 0;
+      margin-bottom: 50px;
+    }
+
+    div {
+      &:nth-of-type(2) {
+        margin-bottom: 20px;
+      }
+    }
+
+    section {
+      gap: 30px;
+      width: 100%;
+      padding: 30px 20px;
+
+      button {
+        padding: 10px;
+      }
+    }
+
+    ul {
+      gap: 30px;
+    }
+  }
+
+  .soga-part3 {
+    padding: 0 20px;
+
+    &:not(section) {
+      text-align: center;
+    }
+
+    img {
+      width: 100%;
+      max-width: 390px;
+    }
+
+    p {
+      font-size: 24px;
+
+      &:nth-of-type(2) {
+        font-size: 32px;
+        margin-top: 10px;
+      }
+    }
+
+    section {
+      gap: 16px;
+      display: flex;
+      margin-top: 40px;
+
+      .card {
+        width: 160px;
+        height: 200px;
+        border-radius: 6px;
+
+        em {
+          bottom: 10px;
+          left: 10px;
+          .fs(12px, 400);
+        }
+      }
+    }
+  }
+
+  .soga-footer {
+    margin-top: 60px;
+    padding: 16px;
+
+    .inner {
+      padding: 16px 0 0;
+
+      &:after {
+        width: 96px;
+      }
+
+      &:before {
+        left: 96px;
+      }
+    }
+
+    .logo {
+      gap: 12px;
+      align-items: center;
+
+      img:first-child {
+        width: 34px;
+        height: 38px;
+      }
+
+      img:last-child {
+        height: 16px;
+      }
+    }
+
+    nav {
+      gap: 20px;
+
+      img {
+        width: auto;
+        height: 20px;
+      }
+    }
   }
 }

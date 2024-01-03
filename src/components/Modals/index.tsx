@@ -1,7 +1,7 @@
-import classNames from 'classnames'
-
 import { useBodyScrollLock } from '@/hooks/useBodyScrollLock'
+import classNames from 'classnames'
 import { ReactNode } from 'react'
+import { isMobile } from 'react-device-detect'
 import ReactModal from 'react-modal'
 
 ReactModal.setAppElement('#root')
@@ -71,7 +71,7 @@ const Modal = ({
     <ReactModal
       isOpen={Boolean(visible)}
       shouldFocusAfterRender={false}
-      className={classNames('c-modal-content', contentClassName)}
+      className={classNames('c-modal-content', contentClassName, isMobile && 'h5')}
       overlayClassName="c-modal-overlay"
     >
       <header className="c-modal-head">
