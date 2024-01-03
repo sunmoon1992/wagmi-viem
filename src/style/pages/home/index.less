@@ -30,6 +30,11 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  top: 0;
+  z-index: 10;
+  position: sticky;
+  background: @cr000;
+  box-shadow: 0 0 6px @cr404040;
 
   .logo {
     gap: 18px;
@@ -37,7 +42,6 @@ button {
     align-items: center;
 
     img:first-child {
-      width: 52px;
       height: 58px;
     }
   }
@@ -101,7 +105,6 @@ button {
       display: flex;
 
       img:first-child {
-        width: 52px;
         height: 58px;
       }
     }
@@ -432,7 +435,6 @@ button {
       gap: 12px;
 
       img:first-child {
-        width: 34px;
         height: 38px;
       }
 
@@ -564,6 +566,8 @@ button {
         width: 160px;
         height: 200px;
         border-radius: 6px;
+        box-sizing: border-box;
+        border: 2px solid @cr31DEAD;
 
         em {
           bottom: 10px;
@@ -595,7 +599,6 @@ button {
       align-items: center;
 
       img:first-child {
-        width: 34px;
         height: 38px;
       }
 

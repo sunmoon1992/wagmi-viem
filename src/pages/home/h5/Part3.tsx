@@ -1,4 +1,5 @@
 import banner3 from '@/assets/m-banner3.png'
+import Swiper from '@/components/Swiper'
 import { times } from 'lodash-es'
 
 const Part3 = () => {
@@ -9,11 +10,15 @@ const Part3 = () => {
         <p>Mint NFT item</p>
         <p>My Soga</p>
         <section>
-          {times(1, (i) => (
-            <div className="card" key={i}>
-              <em>#000000</em>
-            </div>
-          ))}
+          <Swiper index={'ddd'} limit={7}>
+            {times(10, (i) => (
+              <div className="swiper-slide" key={i}>
+                <div className="card">
+                  <em>#000000</em>
+                </div>
+              </div>
+            ))}
+          </Swiper>
         </section>
       </div>
     </div>
