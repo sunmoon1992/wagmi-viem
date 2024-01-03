@@ -1,44 +1,20 @@
 import { useScroll2Top } from '@/hooks/useScroll2Top'
-import Wallet from '@/pages/c/Wallet'
-import { InterceptConnect } from '@/pages/connect'
 import loadable from '@loadable/component'
-import * as React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { useEffect } from "react";
-import { test } from "@/api";
 
-const Test = loadable(() => import('@/pages/test'))
-const Connect = loadable(() => import('@/pages/connect'))
+const Home = loadable(() => import('@/pages/home'))
 
 function App() {
   useScroll2Top()
 
-  useEffect(() => {
-    const func = async () => {
-      await test()
-    }
-    void func()
-  }, [])
-
   return (
-    <div id="app-container">
-      <Wallet />
-      <div className="xyz-content-main">
-        <Routes>
-          <Route path="/test" element={<Test />} />
-          <Route
-            path="/login"
-            element={
-              <InterceptConnect>
-                <Connect />
-              </InterceptConnect>
-            }
-          />
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-      </div>
+    <div className="">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
     </div>
   )
 }
 
-export default React.memo(App)
+export default App

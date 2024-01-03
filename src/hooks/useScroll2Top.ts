@@ -5,6 +5,6 @@ import { useLocation } from 'react-router-dom'
 export const useScroll2Top = () => {
   const { pathname } = useLocation()
   useLayoutEffect(() => {
-    document.getElementById('app-container')?.scrollTo({ behavior: 'smooth', top: 0 })
+    document.documentElement.scrollTo({ behavior: 'smooth', top: 0 })
   }, [pathname])
 }
