@@ -60,6 +60,8 @@ button {
     color: @cr31DEAD;
     background: transparent;
     border: 2px solid @cr31DEAD;
+    .animate__animated;
+    .animate__fadeIn;
 
     &:hover {
       color: @cr000;
@@ -351,6 +353,27 @@ button {
   }
 }
 
+.soga-connected {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  padding: 9px 20px;
+
+  span {
+    .tr;
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    background: @cr31DEAD
+  }
+
+  &:hover {
+    span {
+      background: @crfff
+    }
+  }
+}
+
 .h5 {
   button {
     padding: 8px 16px;
@@ -561,7 +584,6 @@ button {
   }
 }
 
-
 @media screen and (max-width: 1760px) {
   .soga-part3 {
     .inner {
@@ -609,10 +631,12 @@ button {
     }
   }
 }
+
 @media screen and (max-width: 1200px) {
   .soga-part3 {
     .inner {
       background-position: center 10px;
+
       .card {
         width: 200px;
         height: 240px;
@@ -621,6 +645,7 @@ button {
     }
   }
 }
+
 @media screen and (max-width: 1000px) {
   .soga-part3 {
     .inner {
@@ -629,7 +654,7 @@ button {
         height: 220px;
 
         em {
-          left:10px;
+          left: 10px;
           bottom: 10px;
           font-size: 12px;
         }
@@ -637,6 +662,7 @@ button {
     }
   }
 }
+
 @media screen and (max-width: 900px) {
   .soga-part3 {
     .inner {
@@ -647,6 +673,7 @@ button {
     }
   }
 }
+
 @media screen and (max-width: 800px) {
   .soga-part3 {
     .inner {
@@ -665,6 +692,11 @@ button {
   animation-duration: var(--animate-duration);
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+}
+
+.animate__fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
 }
 
 @keyframes heartBeat {
@@ -692,4 +724,18 @@ button {
     -webkit-transform: scale(1);
     transform: scale(1);
   }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
 }

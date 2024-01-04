@@ -1,7 +1,11 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 
-import phantom from '@/assets/phantom.svg'
-import { getWallets } from '@/utils/wallets'
+import copy from '@/assets/copy.svg'
+import out from '@/assets/log-out.svg'
+import { hideHashOrAddress } from '@/utils/tools'
+import { useWallet } from '@solana/wallet-adapter-react'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
+import toast from 'react-hot-toast'
 import Modal from './index'
 
 interface Props {
@@ -10,38 +14,76 @@ interface Props {
   onClick: (wallet: string) => void
 }
 
-const M = ({ visible, onCancel, onClick }: Props) => {
-  const wallets = useMemo(() => getWallets(), [])
-
+const Connect = ({ visible, onCancel, onClick }: Props) => {
+  const { wallet, wallets } = useWallet()
   return (
     <Modal footer={null} visible={visible} title="Connect your wallet" onCancel={onCancel}>
       <div className="c-wallet-modal">
-        {/*{wallets.map((wallet) => (*/}
-        {/*  <Button size="default" type="dark" key={wallet.id} onClick={() => onClick(wallet)}>*/}
-        {/*    <Image src={`icon/${wallet.icon}`} />*/}
-        {/*    <span>{wallet.title}</span>*/}
-        {/*  </Button>*/}
-        {/*))}*/}
-        <button onClick={() => onClick('phantom')}>
-          <img src={phantom} alt="soga" />
-          <span>phantom</span>
-        </button>
+        {wallets.map(({ adapter }) => (
+          <button
+            onClick={() => {
+              onClick(adapter.name)
+              onCancel()
+            }}
+          >
+            <img src={adapter.icon} alt="soga" />
+            <span>
+              {adapter.name} {adapter.name === wallet?.adapter.name ? 'primary' : 'ghost'}
+            </span>
+          </button>
+        ))}
+      </div>
+    </Modal>
+  )
+}
+
+const Account = ({ visible, onCancel }: Omit<Props, 'onClick'>) => {
+  const { publicKey, disconnect } = useWallet()
+  return (
+    <Modal footer={null} visible={visible} title="Connected wallet" onCancel={onCancel}>
+      <div className="c-wallet-modal">
+        <section>
+          <span>{hideHashOrAddress(publicKey?.toBase58() ?? '', 7, 10)}</span>
+          <section>
+            <CopyToClipboard text={publicKey?.toBase58() ?? ''} onCopy={() => toast.success('Copied to clipboard')}>
+              <div className="icon">
+                <img src={copy} alt="soga" />
+              </div>
+            </CopyToClipboard>
+            <div
+              className="icon"
+              onClick={() => {
+                onCancel()
+                void disconnect()
+              }}
+            >
+              <img src={out} alt="soga" />
+            </div>
+          </section>
+        </section>
       </div>
     </Modal>
   )
 }
 
 const ConnectWallet = () => {
-  const [visible, setVisible] = useState<boolean>(false)
+  const { connected, publicKey, select } = useWallet()
 
-  const onClick = () => {
-    return null
-  }
+  const [visible1, setVisible1] = useState<boolean>(false)
+  const [visible2, setVisible2] = useState<boolean>(false)
 
   return (
     <>
-      <button onClick={setVisible}>Connect Wallet</button>
-      <M visible={visible} onCancel={() => setVisible(false)} onClick={onClick} />
+      {connected ? (
+        <button onClick={setVisible2} className=" soga-connected">
+          <span />
+          {hideHashOrAddress(publicKey?.toBase58() ?? '')}
+        </button>
+      ) : (
+        <button onClick={setVisible1}>Connect Wallet</button>
+      )}
+      <Connect visible={visible1} onCancel={() => setVisible1(false)} onClick={select} />
+      <Account visible={visible2} onCancel={() => setVisible2(false)} onClick={select} />
     </>
   )
 }
