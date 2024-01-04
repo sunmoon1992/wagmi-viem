@@ -10,7 +10,7 @@ const Part3 = () => {
         <p>Mint NFT item</p>
         <p>My Soga</p>
         <section>
-          <Swiper index={'ddd'} limit={7}>
+          <Swiper index={'nft'} limit={7}>
             {times(10, (i) => (
               <div className="swiper-slide" key={i}>
                 <div className="card">

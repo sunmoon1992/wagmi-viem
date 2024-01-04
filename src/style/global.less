@@ -1,9 +1,16 @@
 @import 'base/_index.less';
+
 @res: '';
 
 body {
   color: @crfff;
   background: @cr000;
+  min-width: 800px;
+
+  &.h5 {
+    min-width: 100%;
+  }
+
   * {
     font-family: 'Mona Sans';
     user-select: none;

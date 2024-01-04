@@ -11,7 +11,7 @@ interface Props {
   callback?: (index: number) => void
 }
 
-const Components: React.FC<Props> = ({ callback, children, index, length = 0, limit = 0 }) => {
+const StackSwiper: React.FC<Props> = ({ callback, children, index, length = 0, limit = 0 }) => {
   const swiper = useRef<any>(null)
 
   useEffect(() => {
@@ -90,4 +90,27 @@ const Components: React.FC<Props> = ({ callback, children, index, length = 0, li
   )
 }
 
-export default memo(Components)
+export default memo(StackSwiper)
+
+export const NormalSwiper: React.FC<Props> = ({ callback, children, index, length = 0, limit = 0 }) => {
+  const swiper = useRef<any>(null)
+
+  useEffect(() => {
+    swiper.current?.destroy(false)
+
+    if (document.getElementById(`swiper-container-${index}`)) {
+      swiper.current = new Swiper(`.swiper-container-${index}`, {
+        slidesPerView: 4,
+        spaceBetween: 20
+      })
+    }
+
+    swiper.current?.init()
+  }, [children, index, limit, length, callback])
+
+  return (
+    <div className={`swiper-container swiper-container-${index}`} id={`swiper-container-${index}`}>
+      <div class="swiper-wrapper">{children}</div>
+    </div>
+  )
+}
