@@ -1,5 +1,6 @@
 import { NormalSwiper } from '@/components/Swiper'
 import { times } from 'lodash-es'
+import card from '@/assets/passcard.mp4'
 
 const Part3 = () => {
   return (
@@ -12,6 +13,7 @@ const Part3 = () => {
             {times(10, (i) => (
               <div className="swiper-slide" key={i}>
                 <div className="card">
+                  <video src={card} autoPlay />
                   <em>#000000</em>
                 </div>
               </div>

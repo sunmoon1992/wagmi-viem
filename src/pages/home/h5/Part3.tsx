@@ -1,3 +1,4 @@
+import card from '@/assets/passcard.mp4'
 import banner3 from '@/assets/m-banner3.png'
 import Swiper from '@/components/Swiper'
 import { times } from 'lodash-es'
@@ -14,6 +15,7 @@ const Part3 = () => {
             {times(10, (i) => (
               <div className="swiper-slide" key={i}>
                 <div className="card">
+                  <video src={card} />
                   <em>#000000</em>
                 </div>
               </div>
