@@ -8,7 +8,7 @@ const VideoPlayer: FC<any> = ({
   onEnded = () => null,
   onPlay = () => null,
   onPlaying = () => null,
-  onClick = () => null,
+  onClick = () => null
 }) => {
   const videoRef = useRef(null)
 

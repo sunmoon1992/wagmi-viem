@@ -1,7 +1,7 @@
-import { NormalSwiper } from '@/components/Swiper'
-import { times } from 'lodash-es'
 import card from '@/assets/passcard.mp4'
+import { NormalSwiper } from '@/components/Swiper'
 import VideoPlayer from '@/components/Video'
+import { times } from 'lodash-es'
 
 const Part3 = () => {
   return (
@@ -15,12 +15,19 @@ const Part3 = () => {
               <div className="swiper-slide" key={i}>
                 <div className="card">
                   <VideoPlayer video={card} />
-                  <em>#000000</em>
+                  <footer>
+                    <em>#000000</em>
+                    <button>BURN</button>
+                  </footer>
                 </div>
               </div>
             ))}
           </NormalSwiper>
         </section>
+        <p>
+          After the NFT mint ends, you can burn it <br />
+          within 24 hours and get permission to airdrop $SOGA.
+        </p>
       </div>
     </div>
   )
