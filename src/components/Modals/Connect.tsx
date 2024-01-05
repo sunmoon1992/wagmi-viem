@@ -28,7 +28,7 @@ const Connect = ({ visible, onCancel, onClick }: Props) => {
           >
             <img src={adapter.icon} alt="soga" />
             <span>
-              {adapter.name} {adapter.name === wallet?.adapter.name ? 'primary' : 'ghost'}
+              {adapter.name} {adapter.name !== wallet?.adapter.name && '(ghost)'}
             </span>
           </button>
         ))}
