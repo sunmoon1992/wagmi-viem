@@ -3,6 +3,7 @@ import sogaLogo from '@/assets/soga-logo.svg'
 
 import tg from '@/assets/tg.svg'
 import tw from '@/assets/tw.svg'
+import { MEDIA_LINKS } from '@/config'
 
 const Header = () => {
   return (
@@ -13,8 +14,8 @@ const Header = () => {
           <img src={sogaLogo} alt="soga" />
         </div>
         <nav>
-          <img src={tg} alt="soga" />
-          <img src={tw} alt="soga" />
+          <img src={tg} alt="soga" onClick={() => window.open(MEDIA_LINKS.tg)} />
+          <img src={tw} alt="soga" onClick={() => window.open(MEDIA_LINKS.tw)} />
         </nav>
       </section>
     </div>

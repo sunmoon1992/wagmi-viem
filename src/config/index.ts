@@ -1,6 +1,5 @@
 export const LANG_CACHE_KEY = 'LANG'
 export const MEDIA_LINKS = {
-  dc: '',
-  tw: '',
-  tg: ''
+  tw: 'https://twitter.com/sogasolana_',
+  tg: 'https://t.me/SOGA_Official_Chat'
 }
