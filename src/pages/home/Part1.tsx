@@ -1,6 +1,7 @@
 import banner1 from '@/assets/banner3.png'
 import tg from '@/assets/tg.svg'
 import tw from '@/assets/tw.svg'
+import { MEDIA_LINKS } from '@/config'
 
 const Part1 = () => {
   return (
@@ -17,8 +18,8 @@ const Part1 = () => {
 
       <nav>
         <button>MINT</button>
-        <img src={tg} alt="soga" />
-        <img src={tw} alt="soga" />
+        <img src={tg} alt="soga" onClick={() => window.open(MEDIA_LINKS.tg)} />
+        <img src={tw} alt="soga" onClick={() => window.open(MEDIA_LINKS.tw)} />
       </nav>
     </div>
   )
