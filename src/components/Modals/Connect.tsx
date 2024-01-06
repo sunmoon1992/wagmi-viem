@@ -16,6 +16,7 @@ interface Props {
 
 const Connect = ({ visible, onCancel, onClick }: Props) => {
   const { wallet, wallets } = useWallet()
+
   return (
     <Modal footer={null} visible={visible} title="Connect your wallet" onCancel={onCancel}>
       <div className="c-wallet-modal">
