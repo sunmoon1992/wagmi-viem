@@ -17,7 +17,6 @@ const Part1 = () => {
       </p>
 
       <nav>
-        <button>MINT</button>
         <img src={tg} alt="soga" onClick={() => window.open(MEDIA_LINKS.tg)} />
         <img src={tw} alt="soga" onClick={() => window.open(MEDIA_LINKS.tw)} />
       </nav>

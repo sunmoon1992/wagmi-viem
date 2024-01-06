@@ -253,7 +253,7 @@ button {
 
       &:nth-of-type(2) {
         position: relative;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
 
         em {
           left: 12%;
@@ -293,7 +293,7 @@ button {
     }
 
     ul {
-      gap: 32px;
+      gap: 24px;
       display: flex;
       flex-direction: column;
     }
@@ -306,6 +306,16 @@ button {
 
     button {
       padding: 15px 18px;
+    }
+
+    small {
+      color: @cr31DEAD;
+      display: block;
+      text-align: center;
+    }
+
+    &:last-child {
+      margin-top: 30px;
     }
   }
 }
@@ -347,6 +357,7 @@ button {
     display: flex;
     justify-content: center;
     .fs(16px, 600);
+
     dl {
       color: @cr31DEAD;
 
@@ -536,22 +547,20 @@ button {
 
     div {
       &:nth-of-type(2) {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
       }
     }
 
     section {
-      gap: 30px;
+      gap: 20px;
       width: 100%;
-      padding: 30px 20px;
+      padding: 20px;
 
       button {
         padding: 10px;
       }
-    }
 
-    ul {
-      gap: 30px;
+      &:last-child{margin-top: 20px}
     }
   }
 
@@ -610,6 +619,7 @@ button {
 
     .count {
       .fs(14px, 600);
+
       dl {
         dd {
           gap: 50px;
