@@ -1699,6 +1699,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"buffer-layout@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "buffer-layout@npm:1.2.2"
+  checksum: d90d1f622f592553555dd290d0e6dd0bababb2566655d0728812b2667af5a23d795929c38c25f5065252024fa29d75ea54eeb6f469d69814f4ebf614c6672acf
+  languageName: node
+  linkType: hard
+
 "buffer-xor@npm:^1.0.3":
   version: 1.0.3
   resolution: "buffer-xor@npm:1.0.3"
@@ -6218,6 +6225,7 @@ __metadata:
     "@vitejs/plugin-react-swc": "npm:^3.3.2"
     body-scroll-lock: "npm:^4.0.0-beta.0"
     buffer: "npm:^6.0.3"
+    buffer-layout: "npm:^1.2.2"
     classnames: "npm:^2.3.2"
     colors-console: "npm:^1.0.3"
     eslint: "npm:^8.45.0"
