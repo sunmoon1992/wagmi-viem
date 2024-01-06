@@ -13,7 +13,7 @@ const HomeH5 = loadable(() => import('@/pages/home/h5'))
 function App() {
   useScroll2Top()
 
-  const wallets = useMemo(() => [new PhantomWalletAdapter()], [])
+  const wallets = useMemo(() => [new PhantomWalletAdapter(),], [])
 
   return (
     <WalletProvider autoConnect wallets={wallets}>
