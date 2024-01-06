@@ -12,9 +12,9 @@ const Part2 = () => {
         <div>
           <span>Current progress</span>
           <span>
-                <em>1500</em>
-                <i>/1500</i>
-              </span>
+            <em>1500</em>
+            <i>/1500</i>
+          </span>
         </div>
         <div>
           <span />

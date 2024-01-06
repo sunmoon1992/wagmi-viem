@@ -30,6 +30,18 @@ const Part3 = () => {
           After the NFT mint ends, you can burn it <br />
           within 24 hours and get permission to airdrop $SOGA.
         </p>
+        <div className="count">
+          <dl>
+            <dd>
+              <span>Total</span>
+              <em>2000</em>
+            </dd>
+            <dd>
+              <span>Burn</span>
+              <em>0</em>
+            </dd>
+          </dl>
+        </div>
       </div>
     </div>
   )

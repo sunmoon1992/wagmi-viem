@@ -343,6 +343,22 @@ button {
     }
   }
 
+  .count {
+    display: flex;
+    justify-content: center;
+    .fs(16px, 600);
+    dl {
+      color: @cr31DEAD;
+
+      dd {
+        gap: 80px;
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+      }
+    }
+  }
+
   .card {
     width: 240px;
     height: 280px;
@@ -373,6 +389,7 @@ button {
         padding: 4px 8px;
         font-size: 12px;
         border-radius: 6px;
+
         &:hover {
           color: @crfff;
           border-bottom-right-radius: 20px;
@@ -557,6 +574,7 @@ button {
         font-size: 32px;
         margin-top: 10px;
       }
+
       &:nth-of-type(3) {
         font-size: 14px;
         margin-top: 20px;
@@ -584,8 +602,18 @@ button {
           padding: 0 10px;
 
           button {
-            color:@crfff;
+            color: @crfff;
           }
+        }
+      }
+    }
+
+    .count {
+      .fs(14px, 600);
+      dl {
+        dd {
+          gap: 50px;
+          margin-top: 16px;
         }
       }
     }
