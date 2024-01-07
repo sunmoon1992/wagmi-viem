@@ -21,6 +21,7 @@ const Connect = ({ visible, onCancel, onClick }: Props) => {
       <div className="c-wallet-modal">
         {wallets.map(({ adapter }) => (
           <button
+            key={adapter.name}
             onClick={() => {
               onClick(adapter.name)
               onCancel()

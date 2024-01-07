@@ -110,7 +110,7 @@ export const NormalSwiper: React.FC<Props> = ({ callback, children, index, lengt
 
   return (
     <div className={`swiper-container swiper-container-${index}`} id={`swiper-container-${index}`}>
-      <div class="swiper-wrapper">{children}</div>
+      <div className="swiper-wrapper">{children}</div>
     </div>
   )
 }

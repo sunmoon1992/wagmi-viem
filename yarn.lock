@@ -545,6 +545,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@solana/wallet-adapter-backpack@npm:^0.1.14":
+  version: 0.1.14
+  resolution: "@solana/wallet-adapter-backpack@npm:0.1.14"
+  dependencies:
+    "@solana/wallet-adapter-base": "npm:^0.9.23"
+  peerDependencies:
+    "@solana/web3.js": ^1.77.3
+  checksum: 889a26f1c5c918e12a67d3325a22e7c0c552fa796e5bfd9828915ac90ff53fdf674515cb71c19f9b908300ef794c14581392899fbd9436b8cfb7a1898a893ddf
+  languageName: node
+  linkType: hard
+
 "@solana/wallet-adapter-base@npm:^0.9.17, @solana/wallet-adapter-base@npm:^0.9.23":
   version: 0.9.23
   resolution: "@solana/wallet-adapter-base@npm:0.9.23"
@@ -6208,6 +6219,7 @@ __metadata:
   resolution: "soga@workspace:."
   dependencies:
     "@loadable/component": "npm:^5.15.3"
+    "@solana/wallet-adapter-backpack": "npm:^0.1.14"
     "@solana/wallet-adapter-phantom": "npm:^0.9.24"
     "@solana/wallet-adapter-react": "npm:^0.15.35"
     "@solana/web3.js": "npm:^1.87.6"
