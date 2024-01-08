@@ -1,3 +1,6 @@
+import { Countdown } from '@/pages/home/c/Countdown'
+import { D } from '@/utils/tools'
+
 const Features = () => {
   return (
     <div>
@@ -35,6 +38,7 @@ const Features = () => {
         </ul>
         <button>Go To MINT</button>
         <small>Max 1 mint per wallet</small>
+        <Countdown initTimestamp={D('2024-01-08 20:00:00').valueOf()} />
       </section>
 
       <section>
@@ -66,6 +70,7 @@ const Features = () => {
         </ul>
         <button>Go To MINT</button>
         <small>Max 1 mint per wallet</small>
+        <Countdown initTimestamp={D('2024-01-08 22:00:00').valueOf()} />
       </section>
     </div>
   )

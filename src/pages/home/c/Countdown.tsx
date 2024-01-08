@@ -31,5 +31,5 @@ export const Countdown = ({ initTimestamp }: Props) => {
     return h
   }, [estimatedTime])
 
-  return <>{`${h}hr:${estimatedTime[2]}min:${estimatedTime[3]}sec`}</>
+  return !estimatedTime[4] && (<small>{`${h} hr : ${estimatedTime[2]} min : ${estimatedTime[3]} sec`}</small>)
 }
