@@ -2,6 +2,7 @@ import banner1 from '@/assets/banner3.png'
 import tg from '@/assets/tg.svg'
 import tw from '@/assets/tw.svg'
 import { MEDIA_LINKS } from '@/config'
+import MintNFT from '@/pages/mint/MintNFT'
 
 const Part1 = () => {
   return (
@@ -17,6 +18,7 @@ const Part1 = () => {
       </p>
 
       <nav>
+        <MintNFT />
         <img src={tg} alt="soga" onClick={() => window.open(MEDIA_LINKS.tg)} />
         <img src={tw} alt="soga" onClick={() => window.open(MEDIA_LINKS.tw)} />
       </nav>

@@ -49,6 +49,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.23.4":
+  version: 7.23.7
+  resolution: "@babel/runtime@npm:7.23.7"
+  dependencies:
+    regenerator-runtime: "npm:^0.14.0"
+  checksum: 3e304133ee55b0750e03e53cb4efb47fb2bdcdb5795f85bbffa10595196c34b9be60eb65bd6d833c87f49fc827f0365f86f95f51d85b188004d3128bb5129c93
+  languageName: node
+  linkType: hard
+
 "@csstools/css-parser-algorithms@npm:^2.3.1":
   version: 2.3.2
   resolution: "@csstools/css-parser-algorithms@npm:2.3.2"
@@ -373,7 +382,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@noble/hashes@npm:1.3.3":
+"@noble/hashes@npm:1.3.3, @noble/hashes@npm:^1.3.2":
   version: 1.3.3
   resolution: "@noble/hashes@npm:1.3.3"
   checksum: 23c020b33da4172c988e44100e33cd9f8f6250b68b43c467d3551f82070ebd9716e0d9d2347427aa3774c85934a35fa9ee6f026fca2117e3fa12db7bedae7668
@@ -536,12 +545,111 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@solana/buffer-layout@npm:^4.0.0":
+"@solana/buffer-layout-utils@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@solana/buffer-layout-utils@npm:0.2.0"
+  dependencies:
+    "@solana/buffer-layout": "npm:^4.0.0"
+    "@solana/web3.js": "npm:^1.32.0"
+    bigint-buffer: "npm:^1.1.5"
+    bignumber.js: "npm:^9.0.1"
+  checksum: ed093999d7c0f93527a9b261a9a2a59e10b5ef78fc416fa896b86036fb4dadf923d17db68bffdc3e91eadecdb8b8cddd8ee37f12429980fcaba321e7b8a35d27
+  languageName: node
+  linkType: hard
+
+"@solana/buffer-layout@npm:^4.0.0, @solana/buffer-layout@npm:^4.0.1":
   version: 4.0.1
   resolution: "@solana/buffer-layout@npm:4.0.1"
   dependencies:
     buffer: "npm:~6.0.3"
   checksum: 6535f3908cf6dfc405b665795f0c2eaa0482a8c6b1811403945cf7b450e7eb7b40acce3e8af046f2fcc3eea1a15e61d48c418315d813bee4b720d56b00053305
+  languageName: node
+  linkType: hard
+
+"@solana/codecs-core@npm:2.0.0-experimental.8618508":
+  version: 2.0.0-experimental.8618508
+  resolution: "@solana/codecs-core@npm:2.0.0-experimental.8618508"
+  checksum: dbbf6492b61112ab16d92bbb0ebd5468306c33c6c4edbd78b94a9935a0991e3824b43f581e8bed76add142f90cd684fa160dcbf94ea3b8f95177b5c6c8e62bde
+  languageName: node
+  linkType: hard
+
+"@solana/codecs-data-structures@npm:2.0.0-experimental.8618508":
+  version: 2.0.0-experimental.8618508
+  resolution: "@solana/codecs-data-structures@npm:2.0.0-experimental.8618508"
+  dependencies:
+    "@solana/codecs-core": "npm:2.0.0-experimental.8618508"
+    "@solana/codecs-numbers": "npm:2.0.0-experimental.8618508"
+  checksum: 4057e8f7a9c794190000e54cf2d3ba7e324c9992cd2b83993439528a0c2d7b9dc4ad0295432a400252984a464efe5121ea441c067bbc3d77e378482100839ca8
+  languageName: node
+  linkType: hard
+
+"@solana/codecs-numbers@npm:2.0.0-experimental.8618508":
+  version: 2.0.0-experimental.8618508
+  resolution: "@solana/codecs-numbers@npm:2.0.0-experimental.8618508"
+  dependencies:
+    "@solana/codecs-core": "npm:2.0.0-experimental.8618508"
+  checksum: 4e53218122477465a1fee1231d05d9a5e71a223899087497972602474758517da79e0b59d520bce056a5493e843b7539bbec793ddf080a59b48590fce4072b69
+  languageName: node
+  linkType: hard
+
+"@solana/codecs-strings@npm:2.0.0-experimental.8618508":
+  version: 2.0.0-experimental.8618508
+  resolution: "@solana/codecs-strings@npm:2.0.0-experimental.8618508"
+  dependencies:
+    "@solana/codecs-core": "npm:2.0.0-experimental.8618508"
+    "@solana/codecs-numbers": "npm:2.0.0-experimental.8618508"
+  peerDependencies:
+    fastestsmallesttextencoderdecoder: ^1.0.22
+  checksum: 96a779933e4edea5745410cea3027296446ff50ad7d7248c945a4326bf77fe3df388e96de59c340f1b44f619d2538013e4688ab01d78c026bc25887d234f79a1
+  languageName: node
+  linkType: hard
+
+"@solana/options@npm:2.0.0-experimental.8618508":
+  version: 2.0.0-experimental.8618508
+  resolution: "@solana/options@npm:2.0.0-experimental.8618508"
+  dependencies:
+    "@solana/codecs-core": "npm:2.0.0-experimental.8618508"
+    "@solana/codecs-numbers": "npm:2.0.0-experimental.8618508"
+  checksum: 3adeafe735375dbf264f0416f6307ef7b07ee82fa78df1ab6bcb0cf05c6d094cffc87795ce153f5f1f686b4d109b05c29e0895c2eaa15e3ad90740a03b5011cf
+  languageName: node
+  linkType: hard
+
+"@solana/spl-token-metadata@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "@solana/spl-token-metadata@npm:0.1.2"
+  dependencies:
+    "@solana/codecs-core": "npm:2.0.0-experimental.8618508"
+    "@solana/codecs-data-structures": "npm:2.0.0-experimental.8618508"
+    "@solana/codecs-numbers": "npm:2.0.0-experimental.8618508"
+    "@solana/codecs-strings": "npm:2.0.0-experimental.8618508"
+    "@solana/options": "npm:2.0.0-experimental.8618508"
+    "@solana/spl-type-length-value": "npm:0.1.0"
+  peerDependencies:
+    "@solana/web3.js": ^1.87.6
+  checksum: 6ed03485d771f7164a47119c2472acb1fd9363faefb434e812d936748c70b01eaf40cbd542704879bd3013d331168a4f0f620c2e306ec3e364d3bcaf2eca84e1
+  languageName: node
+  linkType: hard
+
+"@solana/spl-token@npm:^0.3.10":
+  version: 0.3.10
+  resolution: "@solana/spl-token@npm:0.3.10"
+  dependencies:
+    "@solana/buffer-layout": "npm:^4.0.0"
+    "@solana/buffer-layout-utils": "npm:^0.2.0"
+    "@solana/spl-token-metadata": "npm:^0.1.2"
+    buffer: "npm:^6.0.3"
+  peerDependencies:
+    "@solana/web3.js": ^1.87.6
+  checksum: cffe0dad68fcd88b5ac3d49c4fd9c71c439506a069b6505e9637acdc82ccd7ef9974040a4d8c2b8f7d3e9dd34ed65fd201dde9b31bd2a44391aa46b1aee5b3bf
+  languageName: node
+  linkType: hard
+
+"@solana/spl-type-length-value@npm:0.1.0":
+  version: 0.1.0
+  resolution: "@solana/spl-type-length-value@npm:0.1.0"
+  dependencies:
+    buffer: "npm:^6.0.3"
+  checksum: a8f2fd6308dffa27827799146857a778ff807380578e187023f8fe90ebf8a68ed1f9f74a0c196cde7b757ea188ff2af040a727c18bb3c86a82f62fe3ec4c43bb
   languageName: node
   linkType: hard
 
@@ -655,6 +763,29 @@ __metadata:
     "@solana/wallet-adapter-base": "*"
     react: "*"
   checksum: 07a2d4be3646eca0a78f8a8769b97de245f5a9508ea5a5ca026d7ddbcf58c408513fefdf22cb3570fd9097b0edad1f0f3e966dd606b95d18e95529a60bc0399b
+  languageName: node
+  linkType: hard
+
+"@solana/web3.js@npm:^1.32.0":
+  version: 1.88.0
+  resolution: "@solana/web3.js@npm:1.88.0"
+  dependencies:
+    "@babel/runtime": "npm:^7.23.4"
+    "@noble/curves": "npm:^1.2.0"
+    "@noble/hashes": "npm:^1.3.2"
+    "@solana/buffer-layout": "npm:^4.0.1"
+    agentkeepalive: "npm:^4.5.0"
+    bigint-buffer: "npm:^1.1.5"
+    bn.js: "npm:^5.2.1"
+    borsh: "npm:^0.7.0"
+    bs58: "npm:^4.0.1"
+    buffer: "npm:6.0.3"
+    fast-stable-stringify: "npm:^1.0.0"
+    jayson: "npm:^4.1.0"
+    node-fetch: "npm:^2.7.0"
+    rpc-websockets: "npm:^7.5.1"
+    superstruct: "npm:^0.14.2"
+  checksum: 7f1c4dc9146b1dc382f31ce3b071e6a36499db47f27b189ee572ff51e187dd29a02d0790396a4ac39bad6480a8d02c039fceb82f3046523d62a94278f5597351
   languageName: node
   linkType: hard
 
@@ -1219,7 +1350,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"agentkeepalive@npm:^4.3.0":
+"agentkeepalive@npm:^4.3.0, agentkeepalive@npm:^4.5.0":
   version: 4.5.0
   resolution: "agentkeepalive@npm:4.5.0"
   dependencies:
@@ -1515,6 +1646,13 @@ __metadata:
     bindings: "npm:^1.3.0"
     node-gyp: "npm:latest"
   checksum: aa41e53d38242a2f05f85b08eaf592635f92e5328822784cda518232b1644efdbf29ab3664951b174cc645848add4605488e25c9439bcc749660c885b4ff6118
+  languageName: node
+  linkType: hard
+
+"bignumber.js@npm:^9.0.1, bignumber.js@npm:^9.1.2":
+  version: 9.1.2
+  resolution: "bignumber.js@npm:9.1.2"
+  checksum: e17786545433f3110b868725c449fa9625366a6e675cd70eb39b60938d6adbd0158cb4b3ad4f306ce817165d37e63f4aa3098ba4110db1d9a3b9f66abfbaf10d
   languageName: node
   linkType: hard
 
@@ -4811,7 +4949,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.6.12":
+"node-fetch@npm:^2.6.12, node-fetch@npm:^2.7.0":
   version: 2.7.0
   resolution: "node-fetch@npm:2.7.0"
   dependencies:
@@ -6219,6 +6357,7 @@ __metadata:
   resolution: "soga@workspace:."
   dependencies:
     "@loadable/component": "npm:^5.15.3"
+    "@solana/spl-token": "npm:^0.3.10"
     "@solana/wallet-adapter-backpack": "npm:^0.1.14"
     "@solana/wallet-adapter-phantom": "npm:^0.9.24"
     "@solana/wallet-adapter-react": "npm:^0.15.35"
@@ -6235,6 +6374,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:^6.0.0"
     "@typescript-eslint/parser": "npm:^6.0.0"
     "@vitejs/plugin-react-swc": "npm:^3.3.2"
+    bignumber.js: "npm:^9.1.2"
     body-scroll-lock: "npm:^4.0.0-beta.0"
     buffer: "npm:^6.0.3"
     buffer-layout: "npm:^1.2.2"
