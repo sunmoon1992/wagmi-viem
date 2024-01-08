@@ -25,7 +25,7 @@ const Slogan = () => {
         </p>}
 
       <nav>
-        <MintNFT />
+        {/*<MintNFT />*/}
         <img src={tg} alt='soga' onClick={() => window.open(MEDIA_LINKS.tg)} />
         <img src={tw} alt='soga' onClick={() => window.open(MEDIA_LINKS.tw)} />
       </nav>
