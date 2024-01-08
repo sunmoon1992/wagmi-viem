@@ -2,6 +2,7 @@ import { useWallet } from '@solana/wallet-adapter-react'
 import { useCallback, useEffect, useState } from 'react'
 import { PROOF_API } from '@/config'
 import MintNFT from '@/pages/mint/MintNFT'
+import toast from 'react-hot-toast'
 
 const Features = () => {
   const { publicKey } = useWallet()
@@ -10,8 +11,12 @@ const Features = () => {
     if (!publicKey) return
     const req = await fetch(PROOF_API + publicKey)
     const reqData = await req.json()
-    setPoof(reqData.proofs)
-    console.log('Proof', reqData.proofs)
+    if (reqData.proofs.length === 0) {
+      toast.error('Your wallet address is not in the whitelist')
+    } else {
+      setPoof(reqData.proofs)
+      console.log('Proof', reqData.proofs)
+    }
   }, [publicKey])
 
   useEffect(() => {
@@ -52,7 +57,6 @@ const Features = () => {
           </li>
         </ul>
         <MintNFT isPublicMint={false} whiteListMintProof={proof} />
-        <button>Go To MINT</button>
         <small>Max 1 mint per wallet</small>
       </section>
 
@@ -84,7 +88,6 @@ const Features = () => {
           </li>
         </ul>
         <MintNFT isPublicMint={true} />
-        {/*<button>Go To MINT</button>*/}
         <small>Max 1 mint per wallet</small>
       </section>
     </div>
