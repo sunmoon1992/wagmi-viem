@@ -1,6 +1,5 @@
 import { useWallet } from '@solana/wallet-adapter-react'
 import { useCallback, useEffect, useState } from 'react'
-import { WHITELIST_API } from '@/config'
 import MintNFT from '@/pages/mint/MintNFT'
 
 export interface WhiteListApi {

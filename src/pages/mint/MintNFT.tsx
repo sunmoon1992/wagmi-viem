@@ -19,6 +19,7 @@ import BigNumber from 'bignumber.js'
 import { Buffer } from 'buffer'
 import { useCallback, useState } from 'react'
 import * as console from 'console'
+import toast from 'react-hot-toast'
 
 const CONTRACT_PROGRAM_ID = new PublicKey('FXGypTfQELi8YE5v4AEgrB1zHLFYVNJ5yAYcGnV5vHZB')
 const config_info = new PublicKey('3XtgZrQb9aQHm2iW8qeTrR1xamKBAbytzqXdtyVgHZB3')
@@ -61,7 +62,10 @@ const MintNFT = ({ isPublicMint, isWhiteList, isMinted }: PublicMintNFTProps) =>
     if (!publicKey) {
       return
     }
-    if (!isPublicMint && !isWhiteList && isMinted) return
+    if (!isPublicMint && !isWhiteList && isMinted) {
+      toast.error('Your wallet address is not in the whitelist')
+      return
+    }
     setMinting(true)
     const lamports = await connection.getBalance(publicKey)
     console.log(
