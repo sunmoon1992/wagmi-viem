@@ -14,14 +14,14 @@ const HomeH5 = loadable(() => import('@/pages/home/h5'))
 function App() {
   useScroll2Top()
 
-  const wallets = useMemo(() => [new PhantomWalletAdapter(),new BackpackWalletAdapter()], [])
+  const wallets = useMemo(() => [new PhantomWalletAdapter(), new BackpackWalletAdapter()], [])
 
   return (
     <WalletProvider autoConnect wallets={wallets}>
       <div>
         <Routes>
-          <Route path="/" element={isMobile ? <HomeH5 /> : <Home />} />
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path='/' element={isMobile ? <HomeH5 /> : <Home />} />
+          <Route path='*' element={<Navigate to='/' />} />
         </Routes>
       </div>
       <Toaster toastOptions={{ style: { background: '#404040', color: '#fff' } }} />

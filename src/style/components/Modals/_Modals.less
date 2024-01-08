@@ -94,14 +94,24 @@
   flex-direction: column;
   button {
     width: 100%;
-    gap: 10px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 10px 16px;
     border-radius: 8px;
     color: @crC3C2D4;
     background: @cr232334;
     .fs(16px, 600);
+
+    div{
+      gap: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    small {
+      color:rgba(@crC3C2D4, 25%);
+    }
 
     &:hover {
       color: @crfff;
@@ -110,6 +120,10 @@
       border-top-left-radius: 30px;
       border-bottom-left-radius: 15px;
       border-top-right-radius: 15px;
+
+      small {
+        color:@cr000
+      }
     }
 
     img {
