@@ -282,7 +282,7 @@ const MintNFT = ({ isPublicMint, isWhiteList, isMinted }: PublicMintNFTProps) =>
     // )
 
   return (
-    <button onClick={mintNFT} disabled={(!publicKey || minting) || (!isPublicMint && !isWhiteList)}>
+    <button onClick={mintNFT} disabled={(!publicKey || minting) || (!isPublicMint && !isWhiteList) || isMinted}>
       {minting ? 'Minting...' : 'Go To MINT'}
     </button>
   )
