@@ -1,4 +1,23 @@
+import MintNFT from '@/pages/mint/MintNFT'
+import { useWallet } from '@solana/wallet-adapter-react'
+import { useCallback, useEffect, useState } from 'react'
+import { PROOF_API } from '@/config'
+
 const Part2 = () => {
+  const { publicKey } = useWallet()
+  const [proof, setPoof] = useState([])
+  const getProof = useCallback(async () => {
+    if (!publicKey) return
+    const req = await fetch(PROOF_API + publicKey)
+    const reqData = await req.json()
+    setPoof(reqData.proofs)
+    console.log('Proof', reqData.proofs)
+  }, [publicKey])
+
+  useEffect(() => {
+    getProof().then()
+  }, [getProof])
+
   return (
     <div className="soga-part2">
       <div className="inner">
@@ -35,7 +54,8 @@ const Part2 = () => {
                 <em>0 Sol</em>
               </li>
             </ul>
-            <button>Go To MINT</button>
+            <MintNFT isPublicMint={false} whiteListMintProof={proof} />
+            {/*<button>Go To MINT</button>*/}
             <small>Max 1 mint per wallet</small>
           </section>
 
@@ -66,7 +86,8 @@ const Part2 = () => {
                 <em>0 Sol</em>
               </li>
             </ul>
-            <button>Go To MINT</button>
+            <MintNFT isPublicMint={true} whiteListMintProof={proof} />
+            {/*<button>Go To MINT</button>*/}
             <small>Max 1 mint per wallet</small>
           </section>
         </div>
