@@ -21,14 +21,14 @@ import { useCallback, useState } from 'react'
 import * as console from 'console'
 import toast from 'react-hot-toast'
 
-const CONTRACT_PROGRAM_ID = new PublicKey('FXGypTfQELi8YE5v4AEgrB1zHLFYVNJ5yAYcGnV5vHZB')
-const config_info = new PublicKey('3XtgZrQb9aQHm2iW8qeTrR1xamKBAbytzqXdtyVgHZB3')
-const collection_mint = new PublicKey('H8FrtEmi9K7rjNm5dYUZm2ze8ueT7BCnqib5v4bK5Ute')
-const collection_metadata = new PublicKey('DYN8pp7P1QMziRoPjsW2KwEReJkjLMuYC3q8W3dr1LUi')
-const collection_edition = new PublicKey('9VzQQHUFdp4z8ndyTRHWvbXuFqJicRFvvvwJhfqxp9Qr')
-const collection_authority_record = new PublicKey('5g3X4w4ndPjEdb5WpS8KhuZBiPT6gKPJASsyDRddcKm4')
-const pda_creator = new PublicKey('4j4jvrFXQHiA6c7krpbQgVyqwaczuTdhoFfwz2MfrVh6')
-const charge_address = new PublicKey('XYJ5UyjL1ukmE1kR7hmKYqRT4zV7rJJfMXkys1kd6Lu')
+const CONTRACT_PROGRAM_ID = new PublicKey('4Vm77PDeH3i9nLhfkAjWaSayTFaGCu6fnW5Jo2qCjg4e')
+const config_info = new PublicKey('13Z64WtxpYvexwSdicwgzj9iT3ustcpSSCF2nVoCF5o1')
+const collection_mint = new PublicKey('3jiHd3gMyK9LjVFFLkNf2LF2Tw8PxANUyuVNX6sps7Wo')
+const collection_metadata = new PublicKey('DEt6GjyEndUzZNUyRrp1AXFhoRfzp1hCnfhhmEw9bawn')
+const collection_edition = new PublicKey('HUUnP1YWWnwqe8oXryvFSXrReBK9ncxp9Dy6QKtQHeLz')
+const collection_authority_record = new PublicKey('GUmS4sjty1b7tNW1zYbbWEDFKxviygspnyqct8TpitbZ')
+const pda_creator = new PublicKey('81JPvLiA5cWgKbwAs1DgufvPTZqfCgeEpmCKSWtPXqoW')
+const charge_address = new PublicKey('9ppiEsLybEazCHHaM1y2AcpEPgHX82aHPZD2E5LuL4ZQ')
 const metadata_program = new PublicKey('metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s')
 
 type PublicMintNFTProps = {
