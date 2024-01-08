@@ -43,9 +43,9 @@ const Part2 = () => {
         <div>
           <span>Public Sale</span>
           <span>
-                <em>500</em>
-                <i>/500</i>
-              </span>
+            <em>500</em>
+            <i>/500</i>
+          </span>
         </div>
         <div>
           <span />

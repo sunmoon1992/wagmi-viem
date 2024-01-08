@@ -28,8 +28,8 @@ const downloadLinks = {
 const Connect = ({ visible, onCancel, onClick }: Props) => {
   const { wallets } = useWallet()
   return (
-    <Modal footer={null} visible={visible} title='Connect your wallet' onCancel={onCancel}>
-      <div className='c-wallet-modal'>
+    <Modal footer={null} visible={visible} title="Connect your wallet" onCancel={onCancel}>
+      <div className="c-wallet-modal">
         {wallets.map(({ adapter }) => {
           return (
             <button
@@ -44,14 +44,14 @@ const Connect = ({ visible, onCancel, onClick }: Props) => {
               }}
             >
               <div>
-                <img src={adapter.icon} alt='soga' />
+                <img src={adapter.icon} alt="soga" />
                 <span>{adapter.name}</span>
               </div>
-              {adapter.readyState === 'NotDetected' && (<small>uninstall</small>)}
+              {adapter.readyState === 'NotDetected' && <small>uninstall</small>}
             </button>
           )
         })}
-        {!(wallets.find(({ adapter }) => adapter.name === okx.name)) && (
+        {!wallets.find(({ adapter }) => adapter.name === okx.name) && (
           <button
             key={okx.name}
             onClick={() => {
@@ -59,7 +59,7 @@ const Connect = ({ visible, onCancel, onClick }: Props) => {
             }}
           >
             <div>
-              <img src={okx.icon} alt='soga' />
+              <img src={okx.icon} alt="soga" />
               <span>{okx.name}</span>
             </div>
             <small>uninstall</small>
@@ -73,24 +73,24 @@ const Connect = ({ visible, onCancel, onClick }: Props) => {
 const Account = ({ visible, onCancel }: Omit<Props, 'onClick'>) => {
   const { publicKey, disconnect } = useWallet()
   return (
-    <Modal footer={null} visible={visible} title='Connected wallet' onCancel={onCancel}>
-      <div className='c-wallet-modal'>
+    <Modal footer={null} visible={visible} title="Connected wallet" onCancel={onCancel}>
+      <div className="c-wallet-modal">
         <section>
           <span>{hideHashOrAddress(publicKey?.toBase58() ?? '', 7, 10)}</span>
           <section>
             <CopyToClipboard text={publicKey?.toBase58() ?? ''} onCopy={() => toast.success('Copied to clipboard')}>
-              <div className='icon'>
-                <img src={copy} alt='soga' />
+              <div className="icon">
+                <img src={copy} alt="soga" />
               </div>
             </CopyToClipboard>
             <div
-              className='icon'
+              className="icon"
               onClick={() => {
                 onCancel()
                 void disconnect()
               }}
             >
-              <img src={out} alt='soga' />
+              <img src={out} alt="soga" />
             </div>
           </section>
         </section>
@@ -108,7 +108,7 @@ const ConnectWallet = () => {
   return (
     <>
       {connected ? (
-        <button onClick={setVisible2} className=' soga-connected'>
+        <button onClick={setVisible2} className=" soga-connected">
           <span />
           {hideHashOrAddress(publicKey?.toBase58() ?? '')}
         </button>

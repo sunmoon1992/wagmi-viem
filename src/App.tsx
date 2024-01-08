@@ -1,7 +1,7 @@
 import { useScroll2Top } from '@/hooks/useScroll2Top'
 import loadable from '@loadable/component'
-import { PhantomWalletAdapter } from '@solana/wallet-adapter-phantom'
 import { BackpackWalletAdapter } from '@solana/wallet-adapter-backpack'
+import { PhantomWalletAdapter } from '@solana/wallet-adapter-phantom'
 import { WalletProvider } from '@solana/wallet-adapter-react'
 import { useMemo } from 'react'
 import { isMobile } from 'react-device-detect'
@@ -20,8 +20,8 @@ function App() {
     <WalletProvider autoConnect wallets={wallets}>
       <div>
         <Routes>
-          <Route path='/' element={isMobile ? <HomeH5 /> : <Home />} />
-          <Route path='*' element={<Navigate to='/' />} />
+          <Route path="/" element={isMobile ? <HomeH5 /> : <Home />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
       <Toaster toastOptions={{ style: { background: '#404040', color: '#fff' } }} />
