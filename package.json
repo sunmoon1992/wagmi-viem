@@ -15,11 +15,13 @@
   },
   "dependencies": {
     "@loadable/component": "^5.15.3",
+    "@solana/spl-token": "^0.3.10",
     "@solana/wallet-adapter-backpack": "^0.1.14",
     "@solana/wallet-adapter-phantom": "^0.9.24",
     "@solana/wallet-adapter-react": "^0.15.35",
     "@solana/web3.js": "^1.87.6",
     "@tanstack/react-query": "^4.35.3",
+    "bignumber.js": "^9.1.2",
     "body-scroll-lock": "^4.0.0-beta.0",
     "buffer-layout": "^1.2.2",
     "classnames": "^2.3.2",
