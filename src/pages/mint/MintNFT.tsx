@@ -59,6 +59,7 @@ const MintNFT = ({ isPublicMint, isWhiteList, isMinted }: PublicMintNFTProps) =>
   }, [])
 
   const mintNFT = useCallback(async () => {
+    return
     if (!publicKey) {
       return
     }
