@@ -6,6 +6,7 @@ import { nodePolyfills } from 'vite-plugin-node-polyfills'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), nodePolyfills()],
+
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src')
@@ -13,7 +14,14 @@ export default defineConfig({
   },
   server: {
     host: '0.0.0.0',
-    port: 3000
+    port: 3000,
+    proxy: {
+      "/api": {
+        target: "http://13.212.236.185:8166/api",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
   },
   // import.meta.env.xx
   envPrefix: 'DAPP',
