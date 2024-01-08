@@ -1,7 +1,7 @@
 import { useScroll2Top } from '@/hooks/useScroll2Top'
 import loadable from '@loadable/component'
-import { PhantomWalletAdapter } from '@solana/wallet-adapter-phantom'
 import { BackpackWalletAdapter } from '@solana/wallet-adapter-backpack'
+import { PhantomWalletAdapter } from '@solana/wallet-adapter-phantom'
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react'
 import { clusterApiUrl } from '@solana/web3.js'
 import { useMemo } from 'react'
