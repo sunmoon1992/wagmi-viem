@@ -2,7 +2,6 @@ import banner3 from '@/assets/banner3.png'
 import tg from '@/assets/tg.svg'
 import tw from '@/assets/tw.svg'
 import { MEDIA_LINKS } from '@/config'
-import MintNFT from '@/pages/mint/MintNFT'
 import { isMobile } from 'react-device-detect'
 
 const Slogan = () => {
@@ -25,7 +24,6 @@ const Slogan = () => {
         </p>}
 
       <nav>
-        <MintNFT />
         <img src={tg} alt='soga' onClick={() => window.open(MEDIA_LINKS.tg)} />
         <img src={tw} alt='soga' onClick={() => window.open(MEDIA_LINKS.tw)} />
       </nav>

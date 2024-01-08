@@ -1,17 +1,28 @@
 import { useWallet } from '@solana/wallet-adapter-react'
 import { useCallback, useEffect, useState } from 'react'
-import { PROOF_API } from '@/config'
+import { WHITELIST_API } from '@/config'
 import MintNFT from '@/pages/mint/MintNFT'
+
+export interface WhiteListApi {
+  minted: boolean
+  whiteList: boolean
+}
 
 const Features = () => {
   const { publicKey } = useWallet()
-  const [proof, setPoof] = useState([])
+  const [proof, setPoof] = useState(false)
+  const [isMinted, setIsMinted] = useState(true)
   const getProof = useCallback(async () => {
     if (!publicKey) return
-    const req = await fetch(PROOF_API + publicKey)
-    const reqData = await req.json()
-    setPoof(reqData.proofs)
-    console.log('Proof', reqData.proofs)
+    try {
+      const req = await fetch('/api/getWhiteListAuth/' + publicKey)
+      const rep = await req.json()
+      const repData = rep.data as WhiteListApi
+      setPoof(repData.whiteList)
+      setIsMinted(repData.minted)
+    } catch (e) {
+      console.error('get proof failed!', e)
+    }
   }, [publicKey])
 
   useEffect(() => {
@@ -51,8 +62,7 @@ const Features = () => {
             <em>0 Sol</em>
           </li>
         </ul>
-        <MintNFT isPublicMint={false} whiteListMintProof={proof} />
-        <button>Go To MINT</button>
+        <MintNFT isPublicMint={false} isWhiteList={proof} isMinted={isMinted} />
         <small>Max 1 mint per wallet</small>
       </section>
 
@@ -84,7 +94,6 @@ const Features = () => {
           </li>
         </ul>
         <MintNFT isPublicMint={true} />
-        {/*<button>Go To MINT</button>*/}
         <small>Max 1 mint per wallet</small>
       </section>
     </div>
