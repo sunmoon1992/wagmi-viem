@@ -17,10 +17,10 @@ import {
 } from '@solana/web3.js'
 import BigNumber from 'bignumber.js'
 import { Buffer } from 'buffer'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import * as console from 'console'
 import toast from 'react-hot-toast'
-import { PUBLIC_MINT_API, WHITELIST_MINT_API } from '@/config'
+import { PUBLIC_MINT_API, PUBLIC_OPEN_TIME, WHITELIST_MINT_API } from '@/config'
 
 const CONTRACT_PROGRAM_ID = new PublicKey('52WhvjtvnJpUJhbRqHDrXM7YX7CWPmMxeiWaf2t1rbWn')
 const config_info = new PublicKey('7vNH4bvetujckcf9s4tAXnGtiRyHbEhwoEN4JCJH7jBW')
@@ -63,6 +63,13 @@ const MintNFT = ({ isPublicMint, isWhiteList, isMinted }: PublicMintNFTProps) =>
   const mintNFT = useCallback(async () => {
     if (!publicKey) {
       return
+    }
+    if (isPublicMint) {
+      const now = new Date().valueOf()
+      if (PUBLIC_OPEN_TIME - now > 0) {
+        toast.error('Public mint hasn’t started yet!')
+        return
+      }
     }
     if (!isPublicMint && !isWhiteList && isMinted) {
       toast.error('Your wallet address is not in the whitelist')
