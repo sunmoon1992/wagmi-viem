@@ -20,6 +20,7 @@ import { Buffer } from 'buffer'
 import { useCallback, useState } from 'react'
 import * as console from 'console'
 import toast from 'react-hot-toast'
+import { PUBLIC_MINT_API, WHITELIST_MINT_API } from '@/config'
 
 const CONTRACT_PROGRAM_ID = new PublicKey('4Vm77PDeH3i9nLhfkAjWaSayTFaGCu6fnW5Jo2qCjg4e')
 const config_info = new PublicKey('13Z64WtxpYvexwSdicwgzj9iT3ustcpSSCF2nVoCF5o1')
@@ -42,9 +43,9 @@ const MintNFT = ({ isPublicMint, isWhiteList, isMinted }: PublicMintNFTProps) =>
   const { publicKey, sendTransaction } = useWallet()
   const [minting, setMinting] = useState(false)
 
-  const recordWhiteListMint = useCallback(async (address: string ,tx: string) => {
+  const recordWhiteListMint = useCallback(async (address: string ,tx: string, isPublicMint: boolean) => {
     return  await fetch(
-      '/api/whiteListMint',
+      isPublicMint ? PUBLIC_MINT_API : WHITELIST_MINT_API,
       {
         method: 'POST',
         headers: {
@@ -155,7 +156,7 @@ const MintNFT = ({ isPublicMint, isWhiteList, isMinted }: PublicMintNFTProps) =>
       await connection.confirmTransaction(signature, 'confirmed')
       console.log('NFT Minted Successfully!')
       console.log('address', publicKey.toString())
-      await recordWhiteListMint(publicKey.toString(), signature)
+      await recordWhiteListMint(publicKey.toString(), signature, isPublicMint)
     } catch (error) {
       console.error(error)
       console.log('Minting Failed!')
