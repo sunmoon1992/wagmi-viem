@@ -13,6 +13,10 @@ button {
   border-radius: 15px;
   -webkit-font-smoothing: antialiased;
   background: @cr31DEAD;
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
   .tr;
   .fs(16px, 600);
 
@@ -482,7 +486,6 @@ button {
       background: transparent;
       border: 2px solid @cr31DEAD;
       padding: 6px 16px;
-
       &:hover {
         color: @cr000;
         background: @cr31DEAD;
