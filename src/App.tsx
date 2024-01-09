@@ -11,7 +11,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 
 const Home = loadable(() => import('@/pages/home'))
 const HomeH5 = loadable(() => import('@/pages/home/h5'))
-export const endpoint = 'https://dark-wandering-theorem.solana-mainnet.quiknode.pro/3e3fdbcd1497d603eea16e74c1bee1b371128dd1/'
+export const endpoint = 'https://solana-mainnet.g.alchemy.com/v2/wQgTJqxkI3Gkck1SDW54mEiGOu5FeAlV'
 function App() {
   useScroll2Top()
 
