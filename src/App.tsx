@@ -15,8 +15,9 @@ const HomeH5 = loadable(() => import('@/pages/home/h5'))
 function App() {
   useScroll2Top()
 
-  const network = 'devnet' // 选择 'mainnet-beta', 'testnet', 或 'devnet'
-  const endpoint = clusterApiUrl(network)
+  // const network = 'devnet' // 选择 'mainnet-beta', 'testnet', 或 'devnet'
+  // const endpoint = clusterApiUrl(network)
+  const endpoint = 'https://dark-wandering-theorem.solana-mainnet.quiknode.pro/3e3fdbcd1497d603eea16e74c1bee1b371128dd1/'
   const wallets = useMemo(() => [new PhantomWalletAdapter(), new BackpackWalletAdapter()], [])
 
   return (
