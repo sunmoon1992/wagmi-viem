@@ -17,7 +17,7 @@ import {
 } from '@solana/web3.js'
 import BigNumber from 'bignumber.js'
 import { Buffer } from 'buffer'
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import * as console from 'console'
 import toast from 'react-hot-toast'
 import { PUBLIC_MINT_API, WHITELIST_MINT_API } from '@/config'
@@ -42,6 +42,7 @@ const MintNFT = ({ isPublicMint, isWhiteList, isMinted }: PublicMintNFTProps) =>
   const { connection } = useConnection()
   const { publicKey, sendTransaction } = useWallet()
   const [minting, setMinting] = useState(false)
+  const [buttonText, setButtonText] = useState('')
 
   const recordWhiteListMint = useCallback(async (address: string ,tx: string, isPublicMint: boolean) => {
     return  await fetch(
@@ -155,6 +156,7 @@ const MintNFT = ({ isPublicMint, isWhiteList, isMinted }: PublicMintNFTProps) =>
       console.log(signature)
       await connection.confirmTransaction(signature, 'confirmed')
       console.log('NFT Minted Successfully!')
+      toast.success('NFT Minted Successfully!')
       console.log('address', publicKey.toString())
       await recordWhiteListMint(publicKey.toString(), signature, isPublicMint)
     } catch (error) {
@@ -282,9 +284,30 @@ const MintNFT = ({ isPublicMint, isWhiteList, isMinted }: PublicMintNFTProps) =>
     //   [publicKey, sendTransaction, connection, isWhiteList]
     // )
 
+  useEffect(() => {
+    if (!publicKey) {
+      setButtonText('Connect Wallet')
+      return
+    }
+    if (!isPublicMint && !isWhiteList) {
+      setButtonText('You are not in the whitelist')
+      return
+    }
+    if (isPublicMint && isMinted) {
+      setButtonText('Max 1 mint per wallet')
+      return
+    }
+    if (isWhiteList && isMinted) {
+      setButtonText('Max 1 mint per wallet')
+      return
+    }
+    setButtonText(minting ? 'Minting...' : 'Go To MINT')
+
+  }, [isWhiteList, isPublicMint, isMinted, publicKey])
+
   return (
     <button onClick={mintNFT} disabled={(!publicKey || minting) || (!isPublicMint && !isWhiteList) || isMinted}>
-      {minting ? 'Minting...' : 'Go To MINT'}
+      {buttonText}
     </button>
   )
 }
