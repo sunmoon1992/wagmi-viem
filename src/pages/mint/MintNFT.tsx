@@ -24,7 +24,7 @@ import { PUBLIC_MINT_API, WHITELIST_MINT_API } from '@/config'
 
 const CONTRACT_PROGRAM_ID = new PublicKey('4Vm77PDeH3i9nLhfkAjWaSayTFaGCu6fnW5Jo2qCjg4e')
 const config_info = new PublicKey('13Z64WtxpYvexwSdicwgzj9iT3ustcpSSCF2nVoCF5o1')
-const collection_mint = new PublicKey('3jiHd3gMyK9LjVFFLkNf2LF2Tw8PxANUyuVNX6sps7Wo')
+export const collection_mint = new PublicKey('3jiHd3gMyK9LjVFFLkNf2LF2Tw8PxANUyuVNX6sps7Wo')
 const collection_metadata = new PublicKey('DEt6GjyEndUzZNUyRrp1AXFhoRfzp1hCnfhhmEw9bawn')
 const collection_edition = new PublicKey('HUUnP1YWWnwqe8oXryvFSXrReBK9ncxp9Dy6QKtQHeLz')
 const collection_authority_record = new PublicKey('GUmS4sjty1b7tNW1zYbbWEDFKxviygspnyqct8TpitbZ')

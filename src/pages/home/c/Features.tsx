@@ -33,11 +33,15 @@ const Features = () => {
   }, [publicKey])
 
   const getTotalOverView = useCallback(async () => {
-    const req = await fetch(OVERVIEW_API)
-    const rep = await req.json()
-    const repData = rep.data as OverviewApi
-    setTotalPublicMint(repData.public)
-    setTotalWhiteListMint(repData.whitelist)
+    try {
+      const req = await fetch(OVERVIEW_API)
+      const rep = await req.json()
+      const repData = rep.data as OverviewApi
+      setTotalPublicMint(repData.public)
+      setTotalWhiteListMint(repData.whitelist)
+    } catch (e) {
+      console.error('get total overView!', e)
+    }
   }, [])
 
   useEffect(() => {
