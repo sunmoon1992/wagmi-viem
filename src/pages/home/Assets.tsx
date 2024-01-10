@@ -1,6 +1,6 @@
 import MyCards from '@/pages/home/c/MyCards'
 
-const Part3 = () => {
+const Assets = () => {
   return (
     <div className="soga-part3">
       <div className="inner">
@@ -10,4 +10,4 @@ const Part3 = () => {
   )
 }
 
-export default Part3
+export default Assets

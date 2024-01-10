@@ -1,8 +1,8 @@
+import Assets from '@/pages/home/Assets'
+import Mint from '@/pages/home/Mint'
 import Footer from '@/pages/home/c/Footer'
 import Header from '@/pages/home/c/Header'
 import Slogan from '@/pages/home/c/Slogan'
-import Part2 from '@/pages/home/Part2'
-import Part3 from '@/pages/home/Part3'
 import * as React from 'react'
 
 function Index() {
@@ -10,8 +10,8 @@ function Index() {
     <div>
       <Header />
       <Slogan />
-      <Part2 />
-      <Part3 />
+      <Mint />
+      <Assets />
       <Footer />
     </div>
   )

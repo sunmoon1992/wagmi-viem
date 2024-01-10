@@ -5,7 +5,7 @@ const Part2 = () => {
     <div className="soga-part2">
       <div className="inner">
         <Features />
-        <img src={banner2} alt='soga' />
+        <img src={banner2} alt="soga" />
       </div>
     </div>
   )

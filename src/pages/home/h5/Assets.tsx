@@ -1,7 +1,7 @@
 import banner3 from '@/assets/m-banner3.png'
 import MyCards from '@/pages/home/c/MyCards'
 
-const Part3 = () => {
+const Assets = () => {
   return (
     <div className="soga-part3">
       <img src={banner3} alt="soga" />
@@ -12,4 +12,4 @@ const Part3 = () => {
   )
 }
 
-export default Part3
+export default Assets

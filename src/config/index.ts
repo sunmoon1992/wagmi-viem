@@ -3,15 +3,8 @@ export const MEDIA_LINKS = {
   tw: 'https://twitter.com/soga_solana',
   tg: 'https://t.me/SOGA_Official_Chat'
 }
-
-export const PUBLIC_OPEN_TIME = 1704805200000
-
-export const PROOF_API = 'http://175.41.171.194/proof/'
-
-export const WHITELIST_API = '/api/getWhiteListAuth/'
-
-export const WHITELIST_MINT_API = '/api/whiteListMintNFT'
-
-export const PUBLIC_MINT_API = '/api/publicMintNFT'
-
-export const OVERVIEW_API = '/api/getTotalData'
+export const ENDPOINT = 'https://solana-mainnet.g.alchemy.com/v2/wQgTJqxkI3Gkck1SDW54mEiGOu5FeAlV'
+// export const ENDPOINT = 'https://api.devnet.solana.com'
+// export const ENDPOINT = 'https://api.testnet.solana.com'
+// https://solana-api.projectserum.com
+export const BLACK = '11111111111111111111111111111111'

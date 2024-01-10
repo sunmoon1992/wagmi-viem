@@ -1,61 +1,6 @@
-import { useWallet } from '@solana/wallet-adapter-react'
-import { useCallback, useEffect, useState } from 'react'
-import MintNFT from '@/pages/mint/MintNFT'
-import { OVERVIEW_API } from '@/config'
-
-export interface WhiteListApi {
-  minted: boolean
-  whiteList: boolean
-}
-
-export interface OverviewApi {
-  public: number
-  whitelist: number
-}
+import MintNFT from '@/pages/home/c/MintNFT'
 
 const Features = () => {
-  const { publicKey } = useWallet()
-  const [proof, setPoof] = useState(false)
-  const [isMinted, setIsMinted] = useState(true)
-  const [totalPublicMint, setTotalPublicMint] = useState(0)
-  const [totalWhiteListMint, setTotalWhiteListMint] = useState(0)
-  const getProof = useCallback(async () => {
-    if (!publicKey) return
-    try {
-      const req = await fetch('/api/getWhiteListAuth/' + publicKey)
-      const rep = await req.json()
-      const repData = rep.data as WhiteListApi
-      setPoof(repData.whiteList)
-      setIsMinted(repData.minted)
-    } catch (e) {
-      console.error('get proof failed!', e)
-    }
-  }, [publicKey])
-
-  const getTotalOverView = useCallback(async () => {
-    try {
-      const req = await fetch(OVERVIEW_API)
-      const rep = await req.json()
-      const repData = rep.data as OverviewApi
-      setTotalPublicMint(repData.public)
-      setTotalWhiteListMint(repData.whitelist)
-    } catch (e) {
-      console.error('get total overView!', e)
-    }
-  }, [])
-
-  useEffect(() => {
-    getProof().then()
-  }, [getProof])
-
-  useEffect(() => {
-    getTotalOverView().then()
-    const interval = setInterval(() => {
-      getTotalOverView().then()
-    }, 30000)
-    return () => clearInterval(interval)
-  }, [getTotalOverView])
-
   return (
     <div>
       <p>
@@ -67,14 +12,14 @@ const Features = () => {
         <div>
           <span>Whitelist</span>
           <span>
-            <em>{totalWhiteListMint}</em>
+            <em>0</em>
             <i>/1500</i>
           </span>
         </div>
         <div>
           <span />
-          <span style={{ width: `${totalWhiteListMint / 1500 * 100}%` }} />
-          <em>{(totalWhiteListMint / 1500 * 100).toFixed(2)}%</em>
+          <span style={{ width: `0.00%` }} />
+          <em>0.00%</em>
         </div>
         <ul>
           <li>
@@ -90,7 +35,7 @@ const Features = () => {
             <em>0 Sol</em>
           </li>
         </ul>
-        <MintNFT isPublicMint={false} isWhiteList={proof} isMinted={isMinted} />
+        <MintNFT />
         <small>Max 1 mint per wallet</small>
       </section>
 
@@ -98,14 +43,14 @@ const Features = () => {
         <div>
           <span>Public Sale</span>
           <span>
-            <em>{totalPublicMint}</em>
+            <em>0</em>
             <i>/500</i>
           </span>
         </div>
         <div>
           <span />
-          <span style={{ width: `${totalPublicMint / 500 * 100}%` }} />
-          <em>{(totalPublicMint / 500 * 100).toFixed(2)}%</em>
+          <span style={{ width: `0.00%` }} />
+          <em>0.00%</em>
         </div>
         <ul>
           <li>
@@ -121,7 +66,7 @@ const Features = () => {
             <em>0 Sol</em>
           </li>
         </ul>
-        <MintNFT isPublicMint={true} />
+        <MintNFT />
         <small>Max 1 mint per wallet</small>
       </section>
     </div>
