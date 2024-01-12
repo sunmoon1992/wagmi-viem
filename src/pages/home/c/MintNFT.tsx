@@ -8,11 +8,12 @@ import {
   getAssociatedTokenAddress
 } from '@solana/spl-token'
 import { useConnection, useWallet } from '@solana/wallet-adapter-react'
-import { Keypair, SYSVAR_RENT_PUBKEY, SystemProgram, Transaction, TransactionInstruction } from '@solana/web3.js'
+import { PublicKey,Keypair, SYSVAR_RENT_PUBKEY, SystemProgram, Transaction, TransactionInstruction } from '@solana/web3.js'
 import { Buffer } from 'buffer'
 import * as console from 'console'
 import { useCallback } from 'react'
 import toast from 'react-hot-toast'
+import { u8, struct } from '@solana/buffer-layout'
 
 const config = minPublicKeyConfig.mainnet
 
@@ -108,7 +109,23 @@ const MintNFT = () => {
     }
   }, [publicKey, connection])
 
-  return <button onClick={handle}>Go To MINT</button>
+  const handle1 = useCallback(async () => {
+    if (!publicKey) return
+    const s = struct([
+      u8('minted')
+    ])
+    const res = await connection.getAccountInfo(new PublicKey('78bD3gEA1mS9qZksNitZT8xrk4pHJkZGh8kAoRVruJGV'))
+    try {
+      console.log(res, s.decode(res.data as any))
+    } catch (error) {
+      console.log(error)
+    }
+  }, [publicKey, connection])
+
+  return <>
+    <button onClick={handle}>Go To MINT</button>
+    <button onClick={handle1}>Get Mint Info</button>
+  </>
 }
 
 export default MintNFT
